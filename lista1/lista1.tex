@@ -235,6 +235,22 @@ Desse modo, a velocidade \(w\) de \(B\) no referencial \(S'\) é dada por
     w = \frac{u - v}{1 - \frac{uv}{c^2}}.
 \end{equation*}
 
+%\begin{proposition}{Identidades de funções hiperbólicas}{prop:hip}
+%   Para todo \(\alpha, \beta \in \mathbb{R}\), valem as identidades
+%   \begin{equation*}
+%      \sinh \left(\alpha + \beta \right) = \sinh \alpha \cosh \beta + \cosh \alpha \sinh \beta,
+%   \end{equation*}
+%   \begin{equation*}
+%      \cosh \left(\alpha + \beta \right) = \cosh \alpha \cosh \beta + \sinh \alpha \sinh \beta.
+%   \end{equation*}
+%\end{proposition}
+%\begin{proof}
+%    Temos
+%    \begin{align*}
+%        \cosh\left(\alpha + \beta\right) &= \frac{e^{\alpha + \beta} - e^{-\alpha - \beta}}{2}\\
+%        &= \frac{}{2}
+%    \end{align*}
+%\end{proof}
 É conveniente introduzir a rapidez \(\tanh \phi_u = \frac{u}{c}\) e \(\tanh \phi_v = \frac{v}{c}\), donde segue
 \begin{align*}
     \tanh \phi_w &= \frac{\tanh \phi_u - \tanh \phi_v}{1 - \tanh \phi_u \tanh \phi_v}\\
@@ -289,6 +305,10 @@ Deste modo, a rapidez representa uma parametrização para \enquote{rotações h
 \section*{Exercício 5}
 \section*{Exercício 6}
 \section*{Exercício 7}
+No referencial \(\Sigma'\) de repouso da barra, suas extremidades se encontram em todo instante no plano \(x_0y_0\) na origem e no ponto \((L_0 \cos\theta_0, L_0 \sin \theta_0)\).
+
+O referencial \(\Sigma'\) se move em relação ao referencial \(\Sigma\) com velocidade \(v\hat{x}\).
+
 \section*{Exercício 8}
 
 \begin{proposition}{\textit{Boost} de um 4-vetor arbitrário}{boost}
@@ -394,14 +414,29 @@ donde segue que os fótons emitidos têm mesma frequência \(\nu\), mas direçõ
 \end{equation*}
 por conservação de energia.
 
-Seja \(\Sigma'\) o referencial em que a partícula de massa \(m\) se move com velocidade \(\vec{v}\). Os momentos \(\vec{p}_1'\) e \(\vec{p}_2'\) dos fótons neste referencial devem satisfazer
-\begin{equation*}
-    \vec{p} = \vec{p}_1' + \vec{p}_2',
-\end{equation*}
-em que \(\vec{p}\) é o momento da partícula, que depende da velocidade \(\vec{v}\). Notemos que  o 4-momento de um dos fótons é dado por
+Notemos que  o 4-momento de um dos fótons é dado por
 \begin{align*}
-    P_1^\mu &= \left(\frac{h \nu_1}{c}, \frac{h\nu_1}{c}\hat{n}_1\right)\\
-            &= \hbar \left(\frac{\omega_1}{c}, \vec{k}_1\right),
+    P_1^\mu &= \left(\frac{h \nu}{c}, \frac{h\nu}{c}\hat{n}_1\right)\\
+            &= \hbar \left(\frac{\omega}{c}, \vec{k}\right),
 \end{align*}
-onde \(\omega_1\) é a frequência angular e \(\vec{k_1} = \frac{2\pi \nu_1}{c}\hat{n}_1\) o vetor de onda associados à propagação deste fóton. Deste modo, definimos o 4-vetor de onda \(K^\mu = \left(\frac{\omega}{c}, \vec{k}\right)\) para fótons.
+onde \(\omega = 2\pi \nu\) é a frequência angular e \(\vec{k} = \frac{2\pi \nu}{c}\hat{n}_1\) o vetor de onda associados à propagação deste fóton. Deste modo, definimos o 4-vetor de onda \(K^\mu = \frac{1}{\hbar} P^\mu\) para fótons. Após o decaimento, os 4-vetores dos fótons são dados por
+\begin{equation*}
+    K_1^\mu = \left(\frac{\omega}{c}, \vec{k}\right) \text{ e }K_2^\mu = \left(\frac{\omega}{c}, -\vec{k}\right)
+\end{equation*}
+no referencial \(\Sigma\).
+
+Seja \(\Sigma'\) o referencial em que a partícula de massa \(m\) se move com velocidade \(\vec{v} = v \hat{n}\). Isto é, o referencial \(\Sigma'\) se move com velocidade \(-\vec{v}\) em relação à \(\Sigma\). Pela \cref{prop:boost}, os 4-vetores de onda dos fótons são dados por
+\begin{equation*}
+    K_1^{\mu'} = \left(\gamma\frac{\omega + \frac{1}{c} \vec{v} \cdot \vec{k}}{c}, \vec{k} + \left[(\gamma - 1)(\vec{k} \cdot \hat{n}) + \gamma \beta \frac{\omega}{c} \right] \hat{n}\right)
+\end{equation*}
+e
+\begin{equation*}
+    K_2^{\mu'} = \left(\gamma\frac{\omega - \frac{1}{c} \vec{v} \cdot \vec{k}}{c}, -\vec{k} + \left[-(\gamma - 1)(\vec{k} \cdot \hat{n}) + \gamma \beta \frac{\omega}{c} \right] \hat{n}\right)
+\end{equation*}
+em \(\Sigma'\). Assim, o 4-momento da partícula é dado por
+\begin{align*}
+    P^{\mu'} &= \hbar \left(K_1^{\mu'} + K_2^{\mu'}\right)\\
+    &= \left(2\gamma\frac{h\nu}{c}, 2\gamma \beta \frac{h\nu}{c}\hat{n}\right)\\
+    &= \left(\gamma \frac{E}{c}, \gamma \beta \frac{E}{c} \hat{n}\right)
+\end{align*}
 \end{document}
