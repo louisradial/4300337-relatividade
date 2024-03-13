@@ -42,55 +42,55 @@
 \usepackage{luacolor}
 \usepackage[breakable]{tcolorbox}
 
-% \difdef{fp}{}{
-%     outer-Ldelim = \left.,
-%     outer-Rdelim = \right|,
-%     sub-nudge=0 mu
-% }
-% \newcommand\todo[1][!]{{\color{Red} TODO {#1}}}
-% \difdef{l}{i}{outer-Rdelim = \,, outer-Ldelim=}
-% \NewDocumentCommand\dli{}{\dl.i.}
-% \DeclareMathOperator\Riem{Riem}
-% \DeclareMathOperator\Orb{Orb}
-% \DeclareMathOperator\Stab{Stab}
-% \DeclareMathOperator\sgn{sgn}
-% \DeclareMathOperator\End{End}
-% \DeclareMathOperator\tr{tr}
-% \DeclareMathOperator\sech{sech}
-% \DeclareMathOperator\hor{hor}
-% \DeclareMathOperator\ver{ver}
-% \DeclarePairedDelimiter\abs{\lvert}{\rvert}
-% \DeclarePairedDelimiter\norm{\lVert}{\rVert}
-% \DeclarePairedDelimiterX\inner[2]{\langle}{\rangle}{#1,\mathopen{}#2}
-% \DeclarePairedDelimiter\set{\{}{\}}
+\difdef{fp}{}{
+    outer-Ldelim = \left.,
+    outer-Rdelim = \right|,
+    sub-nudge=0 mu
+}
+\newcommand\todo[1][!]{{\color{Red} TODO {#1}}}
+\difdef{l}{i}{outer-Rdelim = \,, outer-Ldelim=}
+\NewDocumentCommand\dli{}{\dl.i.}
+\DeclareMathOperator\Riem{Riem}
+\DeclareMathOperator\Orb{Orb}
+\DeclareMathOperator\Stab{Stab}
+\DeclareMathOperator\sgn{sgn}
+\DeclareMathOperator\End{End}
+\DeclareMathOperator\tr{tr}
+\DeclareMathOperator\sech{sech}
+\DeclareMathOperator\hor{hor}
+\DeclareMathOperator\ver{ver}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiterX\inner[2]{\langle}{\rangle}{#1,\mathopen{}#2}
+\DeclarePairedDelimiter\set{\{}{\}}
 
-% \newenvironment{smallpmatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
-% \newcommand\ract{\mathbin{\vartriangleleft}}
-% \newcommand\ractalt{\mathbin{\blacktriangleleft}}
-% \newcommand\lact{\mathbin{\vartriangleright}}
-% \newcommand\lactalt{\mathbin{\blacktriangleright}}
-% \newcommand\ad[1]{\operatorname{ad}_{#1}}
-% \newcommand\Ad[1]{\operatorname{Ad}_{#1}}
-% \newcommand\preim[2]{\operatorname{preim}_{#1}{\left(#2\right)}}
-% \newcommand\id[1]{\operatorname{id}_{#1}}
-% \newcommand\colorunderline[2]{{\color{#1}\underline{{\color{black}{#2}}}}}
-% \newcommand\Hom[2][]{\ensuremath{\operatorname{Hom}_{#1}{\left(#2\right)}}}
-% \newcommand\bundle[3]{\ensuremath{#1 \mathrel{\overset{#2}{\to}} #3}}
-% \newcommand\smooth[1]{\ensuremath{\mathcal{C}^\infty(#1)}}
-% \newcommand\sections[1]{\ensuremath{\Gamma\left(#1\right)}}
-% \newcommand\forms[2][]{\ensuremath{\Lambda^{#1}{\left({#2}\right)}}}
-% \newcommand\ffamily[3]{\ensuremath{\set*{#1}_{#2}^{#3}}}
-% \newcommand\family[2]{\ensuremath{\set*{#1}_{#2}}}
-% \newcommand\vetor[1]{\ensuremath{\boldsymbol{#1}}}
-% \newcommand\linear{\ensuremath{\mathrel{\tilde{\to}}}}
-% \newcommand\topology[1]{\ensuremath{\left(#1, \mathcal{O}_{#1}\right)}}
-% \newcommand\manifold[1]{\ensuremath{\left(#1, \mathcal{O}_{#1}, \mathscr{A}_{#1}\right)}}
-% \newcommand\restrict[2]{\ensuremath{\left.#1\right\rvert_{#2}}}
-% \newcommand\bfield[1]{\ensuremath{\diffp*{}{#1}}}
-% \newcommand\bvec[3][]{\ensuremath{\diffp*{#1}{#2}[#3]}}
-% \newcommand\bset[3]{\ensuremath{\set*{\diffp*{}{{#1}^1}[#3], \dots, \diffp*{}{{#1}^{#2}}[#3]}}}
-% \newcommand\pf[2][]{\ensuremath{{#2}_{\ast{#1}}}}
-% \newcommand\pb[2][]{\ensuremath{{#2}^{\ast}_{#1}}}
+\newenvironment{smallpmatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
+\newcommand\ract{\mathbin{\vartriangleleft}}
+\newcommand\ractalt{\mathbin{\blacktriangleleft}}
+\newcommand\lact{\mathbin{\vartriangleright}}
+\newcommand\lactalt{\mathbin{\blacktriangleright}}
+\newcommand\ad[1]{\operatorname{ad}_{#1}}
+\newcommand\Ad[1]{\operatorname{Ad}_{#1}}
+\newcommand\preim[2]{\operatorname{preim}_{#1}{\left(#2\right)}}
+\newcommand\id[1]{\operatorname{id}_{#1}}
+\newcommand\colorunderline[2]{{\color{#1}\underline{{\color{black}{#2}}}}}
+\newcommand\Hom[2][]{\ensuremath{\operatorname{Hom}_{#1}{\left(#2\right)}}}
+\newcommand\bundle[3]{\ensuremath{#1 \mathrel{\overset{#2}{\to}} #3}}
+\newcommand\smooth[1]{\ensuremath{\mathcal{C}^\infty(#1)}}
+\newcommand\sections[1]{\ensuremath{\Gamma\left(#1\right)}}
+\newcommand\forms[2][]{\ensuremath{\Lambda^{#1}{\left({#2}\right)}}}
+\newcommand\ffamily[3]{\ensuremath{\set*{#1}_{#2}^{#3}}}
+\newcommand\family[2]{\ensuremath{\set*{#1}_{#2}}}
+\newcommand\vetor[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand\linear{\ensuremath{\mathrel{\tilde{\to}}}}
+\newcommand\topology[1]{\ensuremath{\left(#1, \mathcal{O}_{#1}\right)}}
+\newcommand\manifold[1]{\ensuremath{\left(#1, \mathcal{O}_{#1}, \mathscr{A}_{#1}\right)}}
+\newcommand\restrict[2]{\ensuremath{\left.#1\right\rvert_{#2}}}
+\newcommand\bfield[1]{\ensuremath{\diffp*{}{#1}}}
+\newcommand\bvec[3][]{\ensuremath{\diffp*{#1}{#2}[#3]}}
+\newcommand\bset[3]{\ensuremath{\set*{\diffp*{}{{#1}^1}[#3], \dots, \diffp*{}{{#1}^{#2}}[#3]}}}
+\newcommand\pf[2][]{\ensuremath{{#2}_{\ast{#1}}}}
+\newcommand\pb[2][]{\ensuremath{{#2}^{\ast}_{#1}}}
 
 % catppuccin (latte)
 \definecolor{Rosewater}{RGB}{220,138,120}
@@ -219,6 +219,57 @@ Neste caso, \(\sin \phi = \sqrt{1 - \beta^2}\), então
 \end{align*}
 
 \section*{Exercício 3}
+O grupo de Lorentz \(\mathrm{O}(1,3)\) pode ser representado como \begin{equation*}
+    \mathrm{O}(1,3) = \set*{\Lambda \in \mathrm{GL}(\mathbb{R}^4) : \Lambda^\top \eta \Lambda = \eta},
+\end{equation*}
+em que \(\eta\) é a matriz dada por
+\begin{equation*}
+    \eta = \begin{pmatrix}
+        1 & 0 & 0 & 0\\
+        0 & -1 & 0 & 0\\
+        0 & 0 & -1 & 0\\
+        0 & 0 & 0 & -1\\
+    \end{pmatrix},
+\end{equation*}
+representando a métrica de Minkowski.
+
+Notemos que se duas matrizes são iguais, então certamente os seus determinantes também o são. Desse modo, para \(\Lambda \in \mathrm{O}(1,3)\) temos
+\begin{align*}
+    \Lambda^\top \eta \Lambda = \eta &\implies \det\left(\Lambda^\top \eta \Lambda\right) = \det \eta\\
+                                     &\implies \det \Lambda^\top \det \eta \det \Lambda = \det \eta\\
+                                     &\implies \left(\det \Lambda\right)^2 = 1\\
+                                     &\implies \det \Lambda = \pm 1,
+\end{align*}
+já que o determinante da matriz transposta é igual ao determinante da matriz.
+
+Em termos das componentes, temos
+\begin{equation*}
+    \eta_{\mu\nu} = \eta_{\rho\sigma}\Lambda\indices{^\rho_\mu}\Lambda\indices{^\sigma_\nu},
+\end{equation*}
+utilizando a notação de Einstein. Em particular, para \(\mu = \nu = 0\),
+\begin{equation*}
+    \eta_{\rho\sigma}\Lambda\indices{^\rho_0}\Lambda\indices{^\sigma_0} = \eta_{00},
+\end{equation*}
+ou de forma mais explícita,
+\begin{equation*}
+    \left(\Lambda\indices{^0_0}\right)^2 = 1 + \left(\Lambda\indices{^1_0}\right)^2+ \left(\Lambda\indices{^2_0}\right)^2+ \left(\Lambda\indices{^3_0}\right)^2.
+\end{equation*}
+Assim, como os elementos de \(\Lambda\) são números reais, devemos ter \(\left|\Lambda\indices{^0_0}\right| \geq 1\).
+
+Notemos que uma reflexão dos eixos espaciais como \((ct, x,y,z) \mapsto (ct, -x, y, z)\) é uma transformação ortogonal em relação à métrica de Minkowski, já que uma reflexão dos eixos em \(\mathbb{R}^3\) é uma transformação ortogonal em relação à métrica Euclidiana. O determinante de transformações deste tipo é sempre igual a \(-1\). Semelhantemente, transformações que refletem o eixo temporal \((ct, x,y, z) \mapsto ((-ct, x,y, z))\) também é ortogonal em relação à métrica de Minkowski e tem determinante \(-1\). Deste modo, para ignorar transformações deste tipo, devemos adicionar a restrição \(\det \Lambda = 1\). Definimos o grupo
+\begin{equation*}
+    \mathrm{SO}(1,3) = \set*{\Lambda \in \mathrm{O}(1,3) : \det \Lambda = 1}
+\end{equation*}
+das transformações ortogonais em relação à métrica de Minkowski, exceto as reflexões espaciais e temporais.
+
+Entretanto, uma composição de uma reflexão espacial e de uma reflexão temporal tem determinante unitário. Nestes casos, a componente \(\Lambda\indices{^0_0}\) deve ser negativa, portanto podemos restringir o grupo de Lorentz para conter apenas \textit{boosts} e rotações com o grupo
+\begin{equation*}
+    \mathrm{SO}^\uparrow(1,3) = \set*{\Lambda \in \mathrm{SO}(1,3) : \Lambda\indices{^0_0} \geq 1},
+\end{equation*}
+chamado de grupo de Lorentz próprio.
+
+Mostremos que o conjunto \(\mathrm{SO}^\uparrow(1,3)\) é um grupo. Notemos que a identidade \(\id_{\mathbb{R}^4} \in \)
+
 \section*{Exercício 4}
 Seja \(S\) o referencial do observador \(O\), em que os observadores \(A\) e \(B\) se movem com velocidade \(v\) e \(u,\) respectivamente. Seja \(S'\) o referencial de \(A\), se \((ct, x, 0, 0)\) é a 4-posição de \(B\) em \(S\), com \(x = ut\), então \((ct', x', 0, 0)\) é a 4-posição de \(B\) em \(S'\), em que
 \begin{align*}
@@ -234,6 +285,7 @@ Desse modo, a velocidade \(w\) de \(B\) no referencial \(S'\) é dada por
 \begin{equation*}
     w = \frac{u - v}{1 - \frac{uv}{c^2}}.
 \end{equation*}
+
 
 %\begin{proposition}{Identidades de funções hiperbólicas}{prop:hip}
 %   Para todo \(\alpha, \beta \in \mathbb{R}\), valem as identidades
