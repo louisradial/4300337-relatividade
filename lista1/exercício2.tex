@@ -1,0 +1,30 @@
+\section*{Exercício 2}
+Sejam \(t_1\) o instante em que o jato é emitido e \(t_2 = t_1 + \Delta t\) um instante posterior. Nestes instantes, sinais luminosos são emitidos em direção ao observador em \(O\), que os recebe nos instantes \(t_1' = t_1 + \frac{r + v\Delta t \cos\theta}{c}\) e \(t_2' = t_2 + \frac{r}{c}\). Deste modo, os sinais são recebidos em \(O\) em um intervalo \(\Delta t' = t_2' - t_1'\) dado por
+\begin{equation*}
+    \Delta t' = \Delta t \left(1 - \beta\cos\theta\right),
+\end{equation*}
+em que \(\beta = \frac{v}{c}\). A distância percorrida entre as emissões dos sinais luminosos é \(v\Delta t \sin\theta,\) de modo que a velocidade aparente \(v_{\mathrm{ap}} = \frac{v \Delta t \sin\theta}{\Delta t'}\) medida em \(O\) é
+\begin{equation*}
+    v_{\mathrm{ap}} = \frac{\beta \sin \theta}{1 - \beta \cos \theta}c.
+\end{equation*}
+
+O ângulo \(\phi\) que maximiza a velocidade aparente satisfaz
+\begin{equation*}
+    \diffp{v_\mathrm{ap}}{\theta}[\theta = \phi] = 0 \iff \frac{\beta \cos \phi \left(1 - \beta \cos\phi\right) - \beta^2\sin^2\phi}{\left(1 - \beta \cos\phi\right)^2} = 0,
+\end{equation*}
+donde segue
+\begin{equation*}
+    \cos\phi = \beta.
+\end{equation*}
+Neste caso, \(\sin \phi = \sqrt{1 - \beta^2}\), então
+\begin{equation*}
+    v_\mathrm{ap}^\mathrm{max} = \frac{\beta}{\sqrt{1-\beta^2}} c
+\end{equation*}
+é a velocidade aparente máxima. Ainda, para \(\beta > \frac{1}{\sqrt2}\), a velocidade aparente máxima é maior do que a velocidade da luz. De fato,
+\begin{align*}
+    \beta > \frac{1}{\sqrt{2}} &\implies 2\beta^2 > 1\\
+                               &\implies \beta^2 > 1 - \beta^2\\
+                               &\implies \beta > \sqrt{1 - \beta^2}\\
+                               &\implies v_\mathrm{ap}^\mathrm{max} > c.
+\end{align*}
+

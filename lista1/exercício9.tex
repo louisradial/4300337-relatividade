@@ -1,0 +1,27 @@
+\section*{Exercício 9}
+Em um referencial \(S\) em que a 4-posição de uma partícula tem componentes \(x^\mu\), definimos sua 4-velocidade e 4-aceleração pelas componentes
+\begin{equation*}
+    v^\mu = \diff{x^\mu}{\tau} \text{ e } a^\mu = \diff{v^\mu}{\tau}.
+\end{equation*}
+Assim, temos \(v^\mu = (\gamma_v c, \gamma_v \vec{v})\), em que \(\vec{v}\) é a 3-velocidade da partícula e \(\gamma_v = \diff{t}{\tau}\), e
+\begin{align*}
+    a^\mu &= \left(c\diff{\gamma_v}{\tau}, \diff{\gamma_v}{\tau} \vec{v} + \gamma_v \diff{\vec{v}}{\tau}\right)\\
+          &= \left(c \gamma_v \dot \gamma_v, \gamma_v \dot \gamma_v \vec{v} + \gamma_v^2 \vec{a} \right),
+\end{align*}
+onde \(\dot \gamma_v = \diff{\gamma_v}{t}\) e \(\vec{a} = \diff{\vec{v}}{t}\).
+
+Sendo \(\eta\) a métrica de Minkowski, temos
+\begin{equation*}
+    \eta_{\mu \nu} v^\mu v^\nu = c^2.
+\end{equation*}
+Derivando em relação a \(\tau\), obtemos
+\begin{equation*}
+    \eta_{\mu\nu}\diff{v^\mu}{\tau}v^\nu = 0 \implies a^\mu v_\mu  = 0,
+\end{equation*}
+como desejado.
+
+Em um dado instante em que a velocidade espacial da partícula é \(\vec{u} = u \hat{n}\) no referencial \(S\), tomamos nossa atenção ao referencial \(S'\) que se move em relação a \(S\) com velocidade espacial \(\vec{u}\). Neste mesmo instante, a 4-velocidade da partícula é \(v^{\mu'} = (c, 0)\) no referencial \(S'\), de modo que a componente temporal da 4-aceleração da partícula deve se anular para respeitar a identidade invariante \(a^{\mu'}v_{\mu'} = 0\). Assim,
+\begin{equation*}
+    a^{\mu'} = (0, \vec{a'})
+\end{equation*}
+é a 4-aceleração da partícula em \(S'\), em que \(\vec{a'} = \diff{\vec{v}}{t'}\).

@@ -1,0 +1,51 @@
+\section*{Exercício 10}
+Seja \(\Sigma\) o referencial de repouso de uma partícula de massa \(m\). Após seu decaimento em dois fótons de momentos \(\vec{p}_1 \) e \(\vec{p}_2\), temos por conservação de momento que
+\begin{equation*}
+    \vec{p}_1 = -\vec{p}_2,
+\end{equation*}
+donde segue que os fótons emitidos têm mesma frequência \(\nu\), mas direções opostas. Assim, neste referencial, a energia da partícula massiva é dada por
+\begin{equation*}
+    E = 2h\nu,
+\end{equation*}
+por conservação de energia.
+
+Notemos que  o 4-momento de um dos fótons é dado por
+\begin{align*}
+    P_1^\mu &= \left(\frac{h \nu}{c}, \frac{h\nu}{c}\hat{n}_1\right)\\
+            &= \hbar \left(\frac{\omega}{c}, \vec{k}\right),
+\end{align*}
+onde \(\omega = 2\pi \nu\) é a frequência angular e \(\vec{k} = \frac{2\pi \nu}{c}\hat{n}_1\) o vetor de onda associados à propagação deste fóton. Deste modo, definimos o 4-vetor de onda \(K^\mu = \frac{1}{\hbar} P^\mu\) para fótons. Após o decaimento, os 4-vetores dos fótons são dados por
+\begin{equation*}
+    K_1^\mu = \left(\frac{\omega}{c}, \vec{k}\right) \text{ e }K_2^\mu = \left(\frac{\omega}{c}, -\vec{k}\right)
+\end{equation*}
+no referencial \(\Sigma\).
+
+Seja \(\Sigma'\) o referencial em que a partícula de massa \(m\) se move com velocidade \(\vec{v} = v \hat{n}\). Isto é, o referencial \(\Sigma'\) se move com velocidade \(-\vec{v}\) em relação à \(\Sigma\). Pela \cref{prop:boost}, os 4-vetores de onda dos fótons são dados por
+\begin{equation*}
+    K_1^{\mu'} = \left(\gamma\frac{\omega + \frac{1}{c} \vec{v} \cdot \vec{k}}{c}, \vec{k} + \left[(\gamma - 1)(\vec{k} \cdot \hat{n}) + \gamma \beta \frac{\omega}{c} \right] \hat{n}\right)
+\end{equation*}
+e
+\begin{equation*}
+    K_2^{\mu'} = \left(\gamma\frac{\omega - \frac{1}{c} \vec{v} \cdot \vec{k}}{c}, -\vec{k} + \left[-(\gamma - 1)(\vec{k} \cdot \hat{n}) + \gamma \beta \frac{\omega}{c} \right] \hat{n}\right)
+\end{equation*}
+em \(\Sigma'\). Assim, o 4-momento da partícula é dado por
+\begin{align*}
+    P^{\mu'} &= \hbar \left(K_1^{\mu'} + K_2^{\mu'}\right)\\
+    &= \left(2\gamma\frac{h\nu}{c}, 2\gamma \beta \frac{h\nu}{c}\hat{n}\right)\\
+    &= \left(\gamma \frac{E}{c}, \gamma \beta \frac{E}{c} \hat{n}\right).
+\end{align*}
+
+No limite não-relativístico, em que \(\frac{v^2}{c^2} \ll 1\), certamente a diferença entre a energia da partícula no referencial \(\Sigma'\) e no referencial \(\Sigma\) deve tender à energia cinética clássica, isto é,
+\begin{equation*}
+    \gamma E - E \xrightarrow{\beta^2 \ll 1} \frac12 mv^2.
+\end{equation*}
+Expandindo \(\gamma - 1\) por séries de Taylor ao redor de \(\beta = 0\), obtemos
+\begin{equation*}
+    \gamma E - E = E \left[\frac12 \beta^2 + \frac38\beta^4 + O(\beta^6)\right],
+\end{equation*}
+portanto no limite \(\beta^2 \ll 1\), devemos ter
+\begin{equation*}
+    \frac12 \beta^2 E = \frac12 m\beta^2c^2 \implies E = mc^2.
+\end{equation*}
+
+Deste modo, o momento da partícula no referencial \(\Sigma'\) é dado por \(\vec{p} = \gamma m v \hat{n} = \gamma m \vec{v}\) e sua energia por \(E' = \gamma m c^2\).

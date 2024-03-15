@@ -1,0 +1,66 @@
+\section*{Exercício 8}
+
+\begin{proposition}{\textit{Boost} de um 4-vetor arbitrário}{boost}
+    Um quadrivetor \(S^\mu = (\sigma, \vec{s})\) no referencial \(\Sigma\) tem componentes \(S^{\mu'} = (\sigma', \vec{s'})\) no referencial \(\Sigma'\), que se move com velocidade \(\vec{v} = v\hat{n}\) em relação a \(\Sigma\), onde
+    \begin{equation*}
+        \sigma' = \gamma (\sigma - \beta \vec{s} \cdot \hat{n})
+    \end{equation*}
+    e
+    \begin{equation*}
+        \vec{s'} = \vec{s} + \left[(\gamma - 1)(\vec{s} \cdot \hat{n}) - \gamma \beta \sigma\right]\hat{n},
+    \end{equation*}
+    em que \(\beta = \frac{v}{c}\) e \(\gamma = (1 - \beta^2)^{-\frac12}\).
+\end{proposition}
+\begin{proof}
+    Podemos assumir sem perda de generalidade que \(\hat{n} = \hat{x}\), em que \(\vec{s} = s_x \hat{x} + s_y \hat{y} + s_z \hat{z}\), portanto
+    \begin{equation*}
+        \left\{
+        \begin{aligned}
+            \sigma' &= \gamma (\sigma - \beta s_x)\\
+            s_x' &= \gamma (s_x - \beta \sigma)\\
+            s_y' &= s_y\\
+            s_z' &= s_z
+        \end{aligned}
+        \right.
+    \end{equation*}
+    são as transformações de Lorentz usuais. Notando que \(s_x = \vec{s}\cdot\hat{n}\), segue que
+    \begin{equation*}
+        \sigma' = \gamma (\sigma - \beta \vec{s} \cdot\hat{n})\text{ e }s_x' = \gamma (\vec{s} \cdot \hat{n} - \beta \sigma).
+    \end{equation*}
+    Ainda, \(\vec{s'} = s_x' \hat{x} + s_y' \hat{y} + s_z'\hat{z}\), portanto
+    \begin{align*}
+        \vec{s'} &= \left(s_x' - s_x\right) \hat{x} + \left(s_x \hat{x} + s_y \hat{y} + s_z \hat{z}\right)\\
+                 &= \vec{s} + \left(s_x' - s_x\right) \hat{n}\\
+                 &= \vec{s} + \left[\gamma (\vec{s} \cdot \hat{n} - \beta \sigma) - \vec{s}\cdot\hat{n}\right]\hat{n}\\
+                 &= \vec{s} + \left[(\gamma - 1)(\vec{s}\cdot\hat{n}) - \gamma \beta \sigma\right]\hat{n},
+    \end{align*}
+    como desejado.
+\end{proof}
+
+No referencial \(\Sigma\), a partícula se move com velocidade \(\vec{u} = u \cos \theta \hat{x} + u \sin \theta \hat{y}\), portanto sua 4-velocidade tem componentes \((\gamma_u c, \gamma_u \vec{u})\) neste referencial. O referencial \(\Sigma'\) se move com velocidade \(\vec{v} = -v\hat{x}\) em relação a \(\Sigma\), de modo que a 4-velocidade da partícula em \(\Sigma'\) tem componentes \((\gamma_w c, \gamma_w \vec{w})\), dadas pela expressão da \cref{prop:boost}, isto é
+\begin{align*}
+    \gamma_w c &= \gamma_v (\gamma_u c - \beta_v \gamma_u \vec{u} \cdot (-\hat{x}))\\
+               &= \gamma_v(\gamma_u c + \beta_v \gamma_u u \cos\theta)\\
+               &= \gamma_u \gamma_v (1 + \beta_u \beta_v \cos\theta) c
+\end{align*}
+e
+\begin{align*}
+    \gamma_w \vec{w} &= \gamma_u \vec{u} + \left[(\gamma_v - 1)\gamma_u \vec{u} \cdot (-\hat{x}) - \gamma_v \beta_v \gamma_u c\right](-\hat{x})\\
+                     &= \gamma_u \vec{u} + \left[(\gamma_v - 1)\gamma_u \beta_u \cos\theta + \gamma_u \gamma_v \beta_v\right]c\hat{x}\\
+                     &= \gamma_u \gamma_v \left(\beta_u \cos\theta + \beta_v\right) c\hat{x} + \gamma_u \beta_u \sin \theta c \hat{y}.
+\end{align*}
+Desse modo,
+\begin{equation*}
+    \vec{w} = \frac{\beta_u \cos\theta + \beta_v}{1 + \beta_u \beta_v \cos\theta} c \hat{x} + \frac{\beta_u \sin \theta}{\gamma_v \left(1 + \beta_u \beta_v \cos \theta\right)} c \hat{y}
+\end{equation*}
+é a velocidade da partícula em \(\Sigma'\), que faz um ângulo \(\theta'\) dado por
+\begin{equation*}
+    \tan \theta' = \frac{\beta_u \sin\theta}{\gamma_v \left(\beta_u \cos\theta + \beta_v\right)},
+\end{equation*}
+em relação ao eixo \(x\).
+
+Um triângulo retângulo de catetos de comprimento \(L_x\) e \(L_y\) situados ao longo dos eixos \(x\) e \(y\), respectivamente, que se encontra em repouso em \(\Sigma\) é visto por \(\Sigma'\) como um triângulo retângulo de catetos \(L_x'\) e \(L_y'\) que se move com velocidade \(v\hat{x}\). Pelas transformações de Lorentz, obtemos \(L_y' = L_y\) e \(L_x' = \frac{L_x}{\gamma_v}\). Assim, se \(\varphi\) é o ângulo compreendido entre o lado de comprimento \(L_x\) e a hipotenusa no referencial \(\Sigma\), o ângulo \(\varphi'\) análogamente medido em \(\Sigma'\) é dado por
+\begin{equation*}
+    \tan \varphi' = \gamma_v \tan \varphi.
+\end{equation*}
+

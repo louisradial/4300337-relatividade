@@ -1,0 +1,74 @@
+\section*{Exercício 4}
+Seja \(S\) o referencial do observador \(O\), em que os observadores \(A\) e \(B\) se movem com velocidade \(v\) e \(u,\) respectivamente. Seja \(S'\) o referencial de \(A\), se \((ct, x, 0, 0)\) é a 4-posição de \(B\) em \(S\), com \(x = ut\), então \((ct', x', 0, 0)\) é a 4-posição de \(B\) em \(S'\), em que
+\begin{align*}
+    x' &= \gamma \left(x - vt\right)\\
+       &= \gamma (u - v)t.
+\end{align*}
+e
+\begin{align*}
+    t' &= \gamma \left(t - \frac{v}{c^2}x\right)\\
+       &= \gamma \left(1 - \frac{uv}{c^2}\right)t.
+\end{align*}
+Desse modo, a velocidade \(w\) de \(B\) no referencial \(S'\) é dada por
+\begin{equation*}
+    w = \frac{u - v}{1 - \frac{uv}{c^2}}.
+\end{equation*}
+
+
+%\begin{proposition}{Identidades de funções hiperbólicas}{prop:hip}
+%   Para todo \(\alpha, \beta \in \mathbb{R}\), valem as identidades
+%   \begin{equation*}
+%      \sinh \left(\alpha + \beta \right) = \sinh \alpha \cosh \beta + \cosh \alpha \sinh \beta,
+%   \end{equation*}
+%   \begin{equation*}
+%      \cosh \left(\alpha + \beta \right) = \cosh \alpha \cosh \beta + \sinh \alpha \sinh \beta.
+%   \end{equation*}
+%\end{proposition}
+%\begin{proof}
+%    Temos
+%    \begin{align*}
+%        \cosh\left(\alpha + \beta\right) &= \frac{e^{\alpha + \beta} - e^{-\alpha - \beta}}{2}\\
+%        &= \frac{}{2}
+%    \end{align*}
+%\end{proof}
+É conveniente introduzir a rapidez \(\tanh \phi_u = \frac{u}{c}\) e \(\tanh \phi_v = \frac{v}{c}\), donde segue
+\begin{align*}
+    \tanh \phi_w &= \frac{\tanh \phi_u - \tanh \phi_v}{1 - \tanh \phi_u \tanh \phi_v}\\
+                 &= \tanh\left(\phi_u - \phi_v\right).
+\end{align*}
+Logo, como a tangente hiperbólica é uma função injetora,
+\begin{equation*}
+    \phi_w = \phi_u - \phi_v,
+\end{equation*}
+isto é, a rapidez simplifica a adição relativística de velocidades.
+
+Ainda, para uma rapidez arbitrária \(\phi\), temos \( \gamma = \left(1 - \tanh^2\phi\right)^{-\frac12} = \cosh \phi, \) e \( \gamma \beta =  \sinh \phi \) de modo que a matriz de uma transformação de Lorentz para um \textit{boost} ao longo da direção \(x\) pode ser dada por
+\begin{equation*}
+    \Lambda = \begin{pmatrix}
+        \cosh \phi && -\sinh \phi && 0 && 0\\
+        -\sinh \phi && \cosh \phi && 0 && 0\\
+        0 && 0 && 1 && 0 \\
+        0 && 0 && 0 && 1
+    \end{pmatrix}.
+\end{equation*}
+
+Tornemos nossa atenção ao bloco superior esquerdo da matriz acima
+\begin{equation*}
+    H(\phi) = \begin{pmatrix}
+        \cosh \phi && -\sinh \phi\\
+        -\sinh \phi && \cosh \phi
+    \end{pmatrix}.
+\end{equation*}
+Assim como rotações preservam a métrica euclidiana, isto é, mapeiam pontos de um círculo no mesmo círculo, a transformação linear \(H(\phi)\) preserva a métrica de Minkowski, isto é, mapeia pontos da hipérbole \((ct)^2 - x^2 = s^2\) em pontos na mesma hipérbole. De fato, consideramos um ponto \((ct, x)\) nesta hipérbole e computamos a ação desta transformação neste ponto, obtendo o ponto \((ct', x')\) dado por
+\begin{align*}
+    \begin{bmatrix}ct'\\x'\end{bmatrix} &= H(\phi) \begin{bmatrix}ct\\x\end{bmatrix}\\
+                                        &= \begin{bmatrix} ct \cosh \phi - x\sinh \phi\\ -ct\sinh \phi + x \cosh \phi \end{bmatrix},
+\end{align*}
+que pertence à mesma hipérbole do ponto original, visto que
+\begin{align*}
+    (ct')^2 - (x')^2 &= (ct \cosh \phi - x \sinh \phi)^2 - (-ct \sinh \phi + x \cosh \phi)^2\\
+                     &= (ct)^2 \left(\cosh^2 \phi - \sinh^2 \phi\right) + x^2 \left(\sinh^2 \phi - \cosh^2 \phi\right)\\
+                     &= (ct)^2 - x^2.
+\end{align*}
+Deste modo, a rapidez representa uma parametrização para \enquote{rotações hiperbólicas}.
+
