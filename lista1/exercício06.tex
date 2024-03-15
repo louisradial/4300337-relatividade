@@ -1,9 +1,44 @@
 \section*{Exercício 6}
-Seja \(\Sigma\) o referencial em que \(A\) se move com velocidade \(v_A^C=\frac45c\) e \(B\) se move com velocidade \(v_B^C = \frac35c\) na mesma direção. Neste referencial, a velocidade relativa entre \(A\) e \(B\) é \(v = \frac15c\), de modo que o tempo que \(A\) leva para ultrapassar \(B\) é
+
+Consideremos os eventos \(E_1\), em que a traseira do trem \(B\) coincide com a frente do trem \(A\), e \(E_2\), em que a traseira de \(A\) coincide com a frente de \(B\). Os referenciais utilizados a seguir são sincronizados em relação ao evento \(E_1\), isto é, as origens dos referenciais representam este evento.
+
+Seja \(\Sigma_C\) o referencial de \(C\), em que \(A\) se move com velocidade \(v_A=\frac45c\) e \(B\) se move com velocidade \(v_B = \frac35c\) na mesma direção. Neste referencial, a velocidade relativa entre \(A\) e \(B\) é \(v = \frac15c\), de modo que o tempo que \(A\) leva para ultrapassar \(B\) é
 \begin{equation*}
-    \Delta t = \frac{L_A + L_B}{v},
+    t_{E_2}^C = \frac{L_A + L_B}{v_A - v_B},
 \end{equation*}
 em que \(L_A\) é o comprimento de \(A\) e \(L_B\) de \(B\) neste referencial. Assim,
 \begin{equation*}
-    \Delta t = \frac{\frac{1}{\gamma_A} + \frac{1}{\gamma_B}}{v}L = \frac{7L}{c}.
+    t_{E_2}^C = \frac{\frac{1}{\gamma_A} + \frac{1}{\gamma_B}}{v}L = \frac{7L}{c}.
+\end{equation*}
+Desta forma, a traseira de \(A\) tem posição dada por
+\begin{align*}
+    x_{E_2}^C &= -L_A + v_At_{E_2}^C\\
+              &= \frac{v_B}{v_A - v_B}L_A + \frac{v_A}{v_A - v_B}L_B\\
+              &= 5L
+\end{align*}
+Isto é, em \(\Sigma_C\), o evento \(E_2\) tem coordenadas \(\left(7L, 5L\right)\).
+
+No referencial \(\Sigma_A\) de repouso do trem \(A\), temos pelas transformações de Lorentz,
+\begin{equation*}
+    ct_{E_2}^A = \gamma_A \left(ct_{E_2}^C - \frac{v_A}{c}x_{E_2}^C\right) = 5L
+\end{equation*}
+\begin{equation*}
+    x_{E_2}^A = \gamma_A \left(x_{E_2}^C - v_At_{E_2}^C\right) = -L,
+\end{equation*}
+isto é, a ultrapassagem demora \(\frac{5L}{c}\) e ocorre na posição \(-L\), que é a posição de sua traseira, como esperado. Pelo mesmo argumento, no referencial \(\Sigma_B\) de repouso do trem \(B\), temos
+\begin{equation*}
+    ct_{E_2}^B = \gamma_B \left(ct_{E_2}^C - \frac{v_B}{c}x_{E_2}^C\right) = 5L
+\end{equation*}
+\begin{equation*}
+    x_{E_2}^B = \gamma_B \left(x_{E_2}^C - v_Bt_{E_2}^C\right) = L,
+\end{equation*}
+isto é, a ultrapassagem demora \(\frac{5L}{c}\) e ocorre na posição \(-L\), que é a posição de sua frente, como esperado.
+
+É fácil verificar que o intervalo entre os eventos \(E_1\) e \(E_2\) é igual em todos os referenciais utilizados, isto é,
+\begin{equation*}
+    s^2 = -c^2\left(t_{E_2} - t_{E_1}\right)^2 + \left(x_{E_2} - x_{E_1}\right)^2 = -24L^2.
+\end{equation*}
+Deste modo, o tempo próprio \(\tau\) de um referencial \(\Sigma_D\) que observa ambos os eventos na mesma posição é dado por
+\begin{equation*}
+    c\tau^2 = -s^2 \implies \tau = \frac{2\sqrt{6}L}{c}.
 \end{equation*}
