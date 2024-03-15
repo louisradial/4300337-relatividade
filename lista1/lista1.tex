@@ -266,7 +266,7 @@ Entretanto, uma composição de uma reflexão espacial e de uma reflexão tempor
 \begin{equation*}
     \mathrm{SO}^\uparrow(1,3) = \set*{\Lambda \in \mathrm{SO}(1,3) : \Lambda\indices{^0_0} \geq 1},
 \end{equation*}
-chamado de grupo de Lorentz próprio.
+chamado de grupo de Lorentz restrito.
 
 Mostremos que o conjunto \(\mathrm{SO}(1,3)\) é um grupo sob composição de transformações lineares, isto é, sob multiplicação matricial. Notemos que a identidade \(\id{\mathbb{R}^4} \in \mathrm{GL}(\mathbb{R}^4)\) pertence a \(\mathrm{SO}^\uparrow(1,3) \subset \mathrm{SO}(1,3)\), já que \(\det\id{\mathbb{R}^4} = 1\) e \({\id{\mathbb{R}^4}}\indices{^0_0} = 1\). Como um subconjunto do grupo \(\mathrm{GL}(\mathbb{R}^4)\), a composição de transformações de Lorentz é certamente associativa, portanto devemos mostrar que esta composição é também um elemento de \(\mathrm{SO}^\uparrow(1,3)\). De fato, sejam \(\Lambda, M \in \mathrm{SO}(1,3)\), então para \(N = \Lambda \cdot M\) temos
 \begin{align*}
@@ -366,7 +366,24 @@ que pertence à mesma hipérbole do ponto original, visto que
 Deste modo, a rapidez representa uma parametrização para \enquote{rotações hiperbólicas}.
 
 \section*{Exercício 5}
+
+Consideremos os referenciais \(\Sigma\) de repouso do túnel e \(\Sigma'\) de repouso do trem. Em \(\Sigma,\) como tanto o túnel quanto o trem são medidos com comprimento \(L\), portanto existe um instante em que as extremidades do túnel e do trem são coincidentes, denotados pelos eventos \(A\) e \(B\) no diagrama de espaço-tempo abaixo. Entretanto, o evento \(B\), em que a frente do trem coincide com a saída do túnel, só é simultâneo ao evento \(A\), em que a parte de trás do trem coincide com a entrada do túnel, no referencial \(\Sigma\): no referencial \(\Sigma'\), o evento \(B\) é simultâneo com o evento \(D\), onde a traseira do trem se encontra antes de entrar no túnel, e o evento \(A\) é simultâneo com o evento \(C\), onde a parte frontal do trem se encontra após a saída do túnel. Desse modo, os eventos simultâneos a \(A\) e \(B\) são compatíveis com a observação em \(\Sigma'\) de que o túnel é menor do que o trem, visto que neste referencial sempre que uma extremidade do trem é coincidente com uma extremidade do túnel, há uma porção do trem externa ao túnel. Concluímos portanto que ambas as observações são válidas, devido ao fato de que a simultaneidade não é absoluta.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{tunel_trem.png}
+    \caption{Diagrama de espaço-tempo}
+\end{figure}
+
 \section*{Exercício 6}
+Seja \(\Sigma\) o referencial em que \(A\) se move com velocidade \(v_A^C=\frac45c\) e \(B\) se move com velocidade \(v_B^C = \frac35c\) na mesma direção. Neste referencial, a velocidade relativa entre \(A\) e \(B\) é \(v = \frac15c\), de modo que o tempo que \(A\) leva para ultrapassar \(B\) é
+\begin{equation*}
+    \Delta t = \frac{L_A + L_B}{v},
+\end{equation*}
+em que \(L_A\) é o comprimento de \(A\) e \(L_B\) de \(B\) neste referencial. Assim,
+\begin{equation*}
+    \Delta t = \frac{\frac{1}{\gamma_A} + \frac{1}{\gamma_B}}{v}L = \frac{7L}{c}.
+\end{equation*}
 \section*{Exercício 7}
 No referencial \(\Sigma'\) de repouso da barra, suas extremidades se encontram em todo instante no plano \(x_0y_0\) na origem e no ponto \((L_0 \cos\theta_0, L_0 \sin \theta_0)\).
 
