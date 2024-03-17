@@ -1,1 +1,22 @@
 \section*{Exercício 5}
+Utilizando a notação \(\mu \to \mu'\) para denotar uma transformação de Lorentz das componentes de um quadrivetor,
+\begin{equation*}
+    x^{\mu'} = \Lambda\indices{^{\mu'}_\mu} x^\mu\quad\text{e}\quad x_{\mu'} = \Lambda\indices{^{\mu}_{\mu'}}x_{\mu'},
+\end{equation*}
+temos que as componentes \(T\indices{^{\mu_1,\dots,\mu_p}_{\nu_1,\dots,\nu_q}}\) de um tensor tipo \((p,q)\) se transformam de acordo com
+\begin{equation*}
+    T\indices{^{\mu'_1,\dots,\mu'_p}_{\nu'_1,\dots,\nu'_q}} = \Lambda\indices{^{\mu'_1}_{\mu_1}}\dotsm\Lambda\indices{^{\mu'_p}_{\mu_p}} \Lambda\indices{^{\nu_1}_{\nu'_1}}\dotsm\Lambda\indices{^{\nu_q}_{\nu'_q}} T\indices{^{\mu_1,\dots,\mu_p}_{\nu_1,\dots,\nu_q}}.
+\end{equation*}
+
+Dada uma base \(\hat{e}_{(\mu)}\), temos
+\begin{equation*}
+    x = x^\mu \hat{e}_{(\mu)} = x^{\mu'} \hat{e}_{(\mu')},
+\end{equation*}
+isto é, uma mudança de referencial não muda o vetor em si, apenas os valores das componentes. Assim,
+\begin{align*}
+    x^\mu \hat{e}_{(\mu)} &= \Lambda\indices{^{\mu'}_\nu} x^\nu \Lambda\indices{^\sigma_{\mu'}} \hat{e}_{(\sigma)} \implies \Lambda\indices{^\sigma_{\mu'}}\Lambda\indices{^{\mu'}_\nu}   = \delta\indices{^\sigma_\nu}.
+\end{align*}
+Pelo mesmo argumento para o espaço dual, obtemos
+\begin{equation*}
+    \Lambda\indices{^{\sigma'}_\mu}\Lambda\indices{^\mu_{\nu'}} = \delta\indices{^{\sigma'}_{\nu'}}.
+\end{equation*}
