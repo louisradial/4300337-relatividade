@@ -1,1 +1,29 @@
 \section*{Exercício 4}
+
+Consideremos a força \(F^i = \diff{p^i}{\tau}\). Em notação vetorial temos \(\vec{p} = \gamma m \vec{v}\), donde segue
+\begin{align*}
+    \vec{F} &= \diff{\gamma}{\tau} m \vec{v} + \gamma m \diff{\vec{v}}{\tau}\\
+            &= \diff{\gamma}{t} \diff{t}{\tau} m \vec{v} + \gamma m \diff{\vec{v}}{t} \diff{t}{\tau}\\
+            &= \diff{\gamma}{t} \gamma m \vec{v} + \gamma^2m\vec{a},
+\end{align*}
+onde \(\vec{a} = \diff{\vec{v}}{t}\) é a 3-aceleração da partícula.
+
+Notemos que
+\begin{align*}
+    \diff{\gamma}{t} &= \left[1 - \left(\frac{v}{c}\right)^2\right]^{-\frac32} \frac{v}{c^2}\diff{v}{t}\\
+                     &= \frac{\gamma^3}{c^2} \inner{\vec{v}}{\vec{a}},
+\end{align*}
+onde foi utilizada a relação
+\begin{equation*}
+    2v\diff{v}{t} = \diff*{\inner{\vec{v}}{\vec{v}}}{t} = 2\inner{\vec{v}}{\vec{a}}.
+\end{equation*}
+Dessa forma, obtemos
+\begin{equation*}
+    \vec{F} = \gamma^2 m \left(\vec{a} + \frac{\gamma^2}{c^2}\inner{\vec{v}}{\vec{a}}\vec{v}\right).
+\end{equation*}
+
+No caso particular em que a força é paralela à velocidade, devemos ter que a aceleração é também paralela à velocidade. Assim, \(\vec{v} = v \hat{n}\), \(\vec{a} = a\hat{n}\) e \(\vec{F} = F\hat{n}\) para algum vetor unitário \(\hat{n}\), então
+\begin{align*}
+    F &= \gamma^2 ma \left(1 + \gamma^2\frac{v^2}{c^2}\right)\\
+      &= \gamma^4 ma.
+\end{align*}
