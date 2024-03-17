@@ -1,1 +1,24 @@
 \section*{Exercício 2}
+No referencial do centro de massa, o 4-momento do sistema é dado por
+\begin{equation*}
+    P^\mu = \left(m_1c^2, \vec{0}\right)^\mu,
+\end{equation*}
+visto que antes do decaimento a partícula de massa \(m_1\) está em repouso neste referencial. Notaremos por \(\left(P_{m_i}\right)^\mu\) a componente (neste caso contravariante) \(\mu\) do 4-momento da partícula de massa \(m_i\). Por conservação do 4-momento, temos
+\begin{equation*}
+    \left(P_{m_1}\right)^\mu = \left(P_{m_2}\right)^\mu + \left(P_{m_3}\right)^\mu,
+\end{equation*}
+com \(P_{m_1}\) dado acima.
+
+Assim, temos
+\begin{align*}
+    \left(P_{m_2}\right)_\mu \left(P_{m_2}\right)^\mu &= \left(P_{m_1} - P_{m_3}\right)_\mu\left(P_{m_1}-P_{m_3}\right)^\mu\\
+                                                      &= \left(P_{m_1}\right)_\mu\left(P_{m_1}\right)^\mu + \left(P_{m_2}\right)_\mu\left(P_{m_2}\right)^\mu - 2\left(P_{m_1}\right)_\mu\left(P_{m_3}\right)^\mu.
+\end{align*}
+Como \(\left(P_{m_i}\right)_\mu \left(P_{m_i}\right)^\mu = -m_i^2c^2\), obtemos a energia da partícula de massa \(m_3\)
+\begin{equation*}
+    -m_2^2c^2 = -m_1^2c^2 - m_3^2c^2 + 2 m_1 E_3 \implies E_3 = \frac{m_1^2 -m_2^2 + m_3^2}{2m_1}c^2.
+\end{equation*}
+Pelo mesmo argumento, obtemos a energia da outra partícula
+\begin{equation*}
+    -m_3^2c^2 = -m_1^2 c^2 - m_2c^2 + 2m_1E_2 \implies E_2 = \frac{m_1^2 + m_2^2 - m_3^2}{2m_1}c^2.
+\end{equation*}
