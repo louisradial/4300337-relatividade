@@ -20,3 +20,22 @@ Pelo mesmo argumento para o espaço dual, obtemos
 \begin{equation*}
     \Lambda\indices{^{\sigma'}_\mu}\Lambda\indices{^\mu_{\nu'}} = \delta\indices{^{\sigma'}_{\nu'}}.
 \end{equation*}
+
+Podemos mostrar a invariância do intervalo \(\dl{s^2} = \eta_{\mu\nu}\dl{x^{\mu}}\dl{x^{\nu}}\). Pela transformações de tensores, temos
+\begin{align*}
+    \eta_{\mu'\nu'}\dl{x^{\mu'}}\dl{x^{\nu'}} &= \Lambda\indices{^\mu_{\mu'}}\Lambda\indices{^\nu_{\nu'}}\eta_{\mu\nu} \Lambda\indices{^{\mu'}_{\sigma}}\dl{x^\sigma} \Lambda\indices{^{\nu'}_\rho}\dl{x^\rho}\\
+                                              &= \delta\indices{^\mu_\sigma} \delta\indices{^\nu_{\rho}} \eta_{\mu\nu} \dl{x^\sigma} \dl{x^\rho}\\
+                                              &= \eta_{\mu\nu} \dl{x^\sigma} \dl{x^\rho}\\
+                                              &= \dl{s}^2.
+\end{align*}
+
+Podemos mostrar também a invariância do Delta de Kronecker \(\delta\indices{^\mu_\nu}\). Consideremos \(\delta\indices{^{\mu'}_{\nu'}} = \eta^{\mu'\sigma'}\eta_{\sigma'\nu'}\), então
+\begin{align*}
+    \delta\indices{^{\mu'}_{\nu'}} &= \Lambda\indices{^{\mu'}_{\alpha}}\Lambda\indices{^{\sigma'}_{\beta}} \eta^{\alpha\beta} \Lambda\indices{^{\rho}_{\sigma'}}\Lambda\indices{^\lambda_{\nu'}}\eta_{\rho\lambda}\\
+                                   &= \Lambda\indices{^\rho_{\sigma'}}\Lambda\indices{^{\sigma'}_{\beta}} \Lambda\indices{^{\mu'}_{\alpha}} \Lambda\indices{^\lambda_{\nu'}} \eta^{\alpha \beta} \eta_{\rho \lambda}\\
+                                   &= \delta\indices{^\rho_\beta} \Lambda\indices{^{\mu'}_{\alpha}}\Lambda\indices{^\lambda_{\nu'}}\eta^{\alpha \beta}\eta_{\rho \lambda}\\
+                                   &= \Lambda\indices{^{\mu'}_{\alpha}}\Lambda\indices{^\lambda_{\nu'}}\eta^{\alpha \rho}\eta_{\rho \lambda}\\
+                                   &= \Lambda\indices{^{\mu'}_{\alpha}}\Lambda\indices{^\lambda_{\nu'}} \delta\indices{^\alpha_{\lambda}}\\
+                                   &= \Lambda\indices{^{\mu'}_{\alpha}}\Lambda\indices{^\alpha_{\nu'}}\\
+                                   &= \delta\indices{^{\mu'}_{\nu'}}
+\end{align*}
