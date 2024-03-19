@@ -29,13 +29,11 @@ Podemos mostrar a invariância do intervalo \(\dl{s^2} = \eta_{\mu\nu}\dl{x^{\mu
                                               &= \dl{s}^2.
 \end{align*}
 
-Podemos mostrar também a invariância do Delta de Kronecker \(\delta\indices{^\mu_\nu}\). Consideremos \(\delta\indices{^{\mu'}_{\nu'}} = \eta^{\mu'\sigma'}\eta_{\sigma'\nu'}\), então
+Consideremos \(\delta\indices{^{\mu'}_{\nu'}} = \eta^{\mu'\sigma'}\eta_{\sigma'\nu'}\), então
 \begin{align*}
-    \delta\indices{^{\mu'}_{\nu'}} &= \Lambda\indices{^{\mu'}_{\alpha}}\Lambda\indices{^{\sigma'}_{\beta}} \eta^{\alpha\beta} \Lambda\indices{^{\rho}_{\sigma'}}\Lambda\indices{^\lambda_{\nu'}}\eta_{\rho\lambda}\\
-                                   &= \Lambda\indices{^\rho_{\sigma'}}\Lambda\indices{^{\sigma'}_{\beta}} \Lambda\indices{^{\mu'}_{\alpha}} \Lambda\indices{^\lambda_{\nu'}} \eta^{\alpha \beta} \eta_{\rho \lambda}\\
-                                   &= \delta\indices{^\rho_\beta} \Lambda\indices{^{\mu'}_{\alpha}}\Lambda\indices{^\lambda_{\nu'}}\eta^{\alpha \beta}\eta_{\rho \lambda}\\
-                                   &= \Lambda\indices{^{\mu'}_{\alpha}}\Lambda\indices{^\lambda_{\nu'}}\eta^{\alpha \rho}\eta_{\rho \lambda}\\
-                                   &= \Lambda\indices{^{\mu'}_{\alpha}}\Lambda\indices{^\lambda_{\nu'}} \delta\indices{^\alpha_{\lambda}}\\
-                                   &= \Lambda\indices{^{\mu'}_{\alpha}}\Lambda\indices{^\alpha_{\nu'}}\\
-                                   &= \delta\indices{^{\mu'}_{\nu'}}
+    \delta\indices{^{\mu'}_{\nu'}} &= \Lambda\indices{^{\mu'}_{\mu}}\Lambda\indices{^{\sigma'}_{\beta}} \eta^{\mu\beta} \Lambda\indices{^{\rho}_{\sigma'}}\Lambda\indices{^\nu_{\nu'}}\eta_{\rho\nu}\\
+                                   &= \Lambda\indices{^\rho_{\sigma'}}\Lambda\indices{^{\sigma'}_{\beta}} \Lambda\indices{^{\mu'}_{\mu}} \Lambda\indices{^\nu_{\nu'}} \eta^{\mu \beta} \eta_{\rho \nu}\\
+                                   &= \delta\indices{^\rho_\beta} \Lambda\indices{^{\mu'}_{\mu}}\Lambda\indices{^\nu_{\nu'}}\eta^{\mu \beta}\eta_{\rho \nu}\\
+                                   &= \Lambda\indices{^{\mu'}_{\mu}}\Lambda\indices{^\nu_{\nu'}}\eta^{\mu \rho}\eta_{\rho \nu}\\
+                                   &= \Lambda\indices{^{\mu'}_{\mu}}\Lambda\indices{^\nu_{\nu'}} \delta\indices{^\mu_{\nu}}.
 \end{align*}
