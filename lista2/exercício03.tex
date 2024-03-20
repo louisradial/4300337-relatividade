@@ -1,1 +1,57 @@
 \section*{Exercício 3}
+O processo de propulsão certamente deve respeitar a conservação de energia e momento, neste caso, temos
+\begin{equation*}
+    d(\gamma mv) = -dp\quad\text{e}\quad d(\gamma mc^2) = c dp,
+\end{equation*}
+onde \(p\) é o momento do fóton. Desta forma, temos
+\begin{align*}
+    d\left(\gamma mc + \gamma m v\right) = 0.
+\end{align*}
+Notemos que
+\begin{equation*}
+    d \gamma = \gamma^3 \frac{v}{c^2} dv,
+\end{equation*}
+portanto
+\begin{equation*}
+    \gamma (v + c) dm + m \gamma \left(\gamma^2\frac{v(v + c)}{c^2} + 1\right) dv = 0.
+\end{equation*}
+Dividindo por \(\gamma m (v + c),\) obtemos
+\begin{equation*}
+    \frac{dm}{m} + \frac{\gamma^2}{c}dv = 0.
+\end{equation*}
+Em termos de \(\beta = \frac{v}{c}\), temos
+\begin{equation*}
+    \frac{dm}{m} + \frac{d\beta}{1 - \beta^2} = 0.
+\end{equation*}
+
+Se o foguete parte do repouso com massa inicial \(M\), temos
+\begin{align*}
+    \ln{\left(\frac{m}{M}\right)} &= -\int_0^\beta \frac{\dl\xi}{1 - \xi^2}\\
+                                  &= -\frac12 \int_0^\beta \left(\frac1{\xi+1} - \frac1{\xi-1}\right)\dl\xi\\
+                                  &= -\frac12\ln{\left(\frac{\beta + 1}{1 - \beta}\right)}\\
+                                  &= \ln{\sqrt{\frac{1 - \beta}{1+ \beta}}}.
+\end{align*}
+Desse modo, o foguete tem massa
+\begin{equation*}
+    m = M\sqrt{\frac{1 - \beta}{1 + \beta}}
+\end{equation*}
+quando sua velocidade é igual a \(\beta c\).
+
+Se \(\sigma = \diff{m}{\tau}\) é a taxa em que o foguete converte massa em fótons no referencial instantaneamente de repouso do foguete, então a taxa no referencial terreste é \(\frac\sigma\gamma = \diff{m}{t}\). Neste caso, temos
+\begin{align*}
+    \frac{\sigma}{M} &= \gamma  \diff*{\sqrt{\frac{1 - \beta}{1+\beta}}}{t}\\
+                     &= -\gamma  \frac{\frac{1}{(1+\beta)^2}}{\sqrt{\frac{1-\beta}{1+\beta}}}\diff{\beta}{t}\\
+                     &= -\frac{1}{(1+\beta)^2(1-\beta)} \diff{\beta}{t},
+\end{align*}
+isto é, uma equação diferencial a variáveis separáveis,
+\begin{equation*}
+    -\frac{\sigma}{M} \dl{t} = \frac{\dl{\beta}}{(1+\beta)^2(1-\beta)}.
+\end{equation*}
+
+Integrando, obtemos
+\begin{align*}
+    t &= -\frac{M}{\sigma} \int_0^\beta \frac{\dl\xi}{(1+\xi)^2(1-\xi)}\\
+      &= -\frac{M}{4\sigma} \int_0^\beta \left(\frac{2}{(1+\xi)^2} + \frac{1}{1+\xi} - \frac{1}{\xi - 1}\right)\dl\xi\\
+      &= \frac{M}{4 \sigma} \left[2(1+\xi)^{-1} + \ln{\left(\frac{1-\xi}{1+\xi}\right)}\right]_0^\beta\\
+      &= \frac{M}{4 \sigma} \left[-\frac{2\beta}{1+\beta} + \ln{\left(\frac{1-\beta}{1+\beta}\right)}\right].
+\end{align*}
