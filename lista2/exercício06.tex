@@ -1,1 +1,48 @@
 \section*{Exercício 6}
+Consideremos um tensor \(T^{\mu\nu}\), então
+\begin{equation*}
+    {T'}^{\alpha \beta} = \Lambda\indices{^\alpha_\mu}\Lambda\indices{^\beta_\nu}T^{\mu\nu}
+\end{equation*}
+expressa a transformação das componentes sob uma transformação de Lorentz \(\Lambda\). No caso particular em que a transformação é uma rotação no grupo restrito de Lorentz, segue que as únicas componentes não nulas dessa transformação são
+\begin{equation*}
+    \Lambda\indices{^0_0} = 1\quad\text{e}\quad\Lambda\indices{^i_j} = R\indices{^i_j},
+\end{equation*}
+para uma dada matriz de rotação \(R\indices{^i_j} \in \mathrm{SO}(3)\). Desse modo, temos
+% \begin{align*}
+%     {T'}^{00} &= \Lambda\indices{^0_\mu}\Lambda\indices{^0_\nu}T^{\mu\nu}\\
+%               &= \Lambda\indices{^0_0}\Lambda\indices{^0_\nu}T^{0\nu} + \Lambda\indices{^0_m}\Lambda\indices{^0_\nu}T^{m\nu}\\
+%               &= \Lambda\indices{^0_0}T^{00} + \Lambda\indices{^0_n}T^{0n}\\
+%               &= T^{00},
+% \end{align*}
+% \begin{align*}
+%     {T'}^{i0} &= \Lambda\indices{^i_\mu}\Lambda\indices{^0_\nu}T^{\mu\nu}\\
+%               &= \Lambda\indices{^i_\mu}T^{\mu0}\\
+%               &= \Lambda\indices{^i_m}T^{m0}\\
+%               &= R\indices{^i_m}T^{m0},
+% \end{align*}
+% \begin{align*}
+%     {T'}^{0j} &= \Lambda\indices{^0_\mu}\Lambda\indices{^j_\nu}T^{\mu\nu}\\
+%               &= \Lambda\indices{^j_\nu}T^{0\nu}\\
+%               &= \Lambda\indices{^j_n}T^{0n}\\
+%               &= R\indices{^j_n}T^{0n},
+% \end{align*}
+% \begin{align*}
+%     {T'}^{ij} &= \Lambda\indices{^i_\mu}\Lambda\indices{^j_\nu}T^{\mu\nu}\\
+%               &= \Lambda\indices{^i_m}\Lambda\indices{^j_n}T^{mn}\\
+%               &= R\indices{^i_m}R\indices{^j_n}T^{mn}.
+% \end{align*}
+\begin{align*}
+    {T'}^{00} &= \Lambda\indices{^0_\mu}\Lambda\indices{^0_\nu}T^{\mu\nu} &
+    {T'}^{i0} &= \Lambda\indices{^i_\mu}\Lambda\indices{^0_\nu}T^{\mu\nu} &
+    {T'}^{0j} &= \Lambda\indices{^0_\mu}\Lambda\indices{^j_\nu}T^{\mu\nu} &
+    {T'}^{ij} &= \Lambda\indices{^i_\mu}\Lambda\indices{^j_\nu}T^{\mu\nu}\\
+              &= \Lambda\indices{^0_0}\Lambda\indices{^0_\nu}T^{0\nu} + \Lambda\indices{^0_m}\Lambda\indices{^0_\nu}T^{m\nu} &
+              &= \Lambda\indices{^i_\mu}T^{\mu0}&
+              &= \Lambda\indices{^j_\nu}T^{0\nu}&
+              &= \Lambda\indices{^i_m}\Lambda\indices{^j_n}T^{mn}\\
+              &= T^{00}&
+              &= R\indices{^i_m}T^{m0}&
+              &= R\indices{^j_n}T^{0n}&
+              &= R\indices{^i_m}R\indices{^j_n}T^{mn},
+\end{align*}
+isto é, a componente \(T^{00}\) é inalterada, as componentes \(T^{i0}\) e \(T^{0j}\) se transformam como componentes de 3-vetores, e as componentes \(T^{ij}\) se transformam como componentes de um 3-tensor.
