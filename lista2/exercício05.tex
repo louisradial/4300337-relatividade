@@ -1,39 +1,41 @@
 \section*{Exercício 5}
-Utilizando a notação \(\mu \to \mu'\) para denotar uma transformação de Lorentz das componentes de um quadrivetor,
+A transformação de Lorentz de das componentes de um quadrivetor é dada por
 \begin{equation*}
-    x^{\mu'} = \Lambda\indices{^{\mu'}_\mu} x^\mu\quad\text{e}\quad x_{\mu'} = \Lambda\indices{^{\mu}_{\mu'}}x_{\mu'},
+    x'^{\nu} = \Lambda\indices{^{\nu}_\mu} x^\mu\quad\text{e}\quad x'_{\nu} = \Lambda\indices{_{\nu}^{\mu}}x_{\mu},
 \end{equation*}
-temos que as componentes \(T\indices{^{\mu_1,\dots,\mu_p}_{\nu_1,\dots,\nu_q}}\) de um tensor tipo \((p,q)\) se transformam de acordo com
+então temos que as componentes \(T\indices{^{\mu_1,\dots,\mu_p}_{\nu_1,\dots,\nu_q}}\) de um tensor tipo \((p,q)\) se transformam de acordo com
 \begin{equation*}
-    T\indices{^{\mu'_1,\dots,\mu'_p}_{\nu'_1,\dots,\nu'_q}} = \Lambda\indices{^{\mu'_1}_{\mu_1}}\dotsm\Lambda\indices{^{\mu'_p}_{\mu_p}} \Lambda\indices{^{\nu_1}_{\nu'_1}}\dotsm\Lambda\indices{^{\nu_q}_{\nu'_q}} T\indices{^{\mu_1,\dots,\mu_p}_{\nu_1,\dots,\nu_q}}.
+    {T'}\indices{^{\alpha_1,\dots,\alpha_p}_{\beta_1,\dots,\beta_q}} = \Lambda\indices{^{\alpha_1}_{\mu_1}}\dotsm\Lambda\indices{^{\alpha_p}_{\mu_p}} \Lambda\indices{^{\nu_1}_{\beta_1}}\dotsm\Lambda\indices{^{\nu_q}_{\beta_q}} T\indices{^{\mu_1,\dots,\mu_p}_{\nu_1,\dots,\nu_q}}.
 \end{equation*}
 
-Dada uma base \(\hat{e}_{(\mu)}\), temos
+Dadas bases \(\hat{e}_{\mu}\) e \(\hat{e}'_\nu\), temos
 \begin{equation*}
-    x = x^\mu \hat{e}_{(\mu)} = x^{\mu'} \hat{e}_{(\mu')},
+    x = x^\mu \hat{e}_{\mu} = x'^{\nu} \hat{e}'_{\nu},
 \end{equation*}
 isto é, uma mudança de referencial não muda o vetor em si, apenas os valores das componentes. Assim,
-\begin{align*}
-    x^\mu \hat{e}_{(\mu)} &= \Lambda\indices{^{\mu'}_\nu} x^\nu \Lambda\indices{^\sigma_{\mu'}} \hat{e}_{(\sigma)} \implies \Lambda\indices{^\sigma_{\mu'}}\Lambda\indices{^{\mu'}_\nu}   = \delta\indices{^\sigma_\nu}.
-\end{align*}
-Pelo mesmo argumento para o espaço dual, obtemos
 \begin{equation*}
-    \Lambda\indices{^{\sigma'}_\mu}\Lambda\indices{^\mu_{\nu'}} = \delta\indices{^{\sigma'}_{\nu'}}.
+    x = \left(\Lambda\indices{^\nu_\sigma}x^\sigma\right)\left(\Lambda\indices{_\nu^\rho} \hat{e}_{\rho}\right) \implies \Lambda\indices{^\nu_\sigma}\Lambda\indices{_\nu^\rho} = \delta\indices{^\rho_\sigma}.
 \end{equation*}
 
-Podemos mostrar a invariância do intervalo \(\dl{s^2} = \eta_{\mu\nu}\dl{x^{\mu}}\dl{x^{\nu}}\). Pela transformações de tensores, temos
+Podemos mostrar a invariância do intervalo \(\dl{s^2} = \eta_{\alpha \beta}\dl{x^{\alpha}}\dl{x^{\beta}}\). Pela transformações de tensores, temos
 \begin{align*}
-    \eta_{\mu'\nu'}\dl{x^{\mu'}}\dl{x^{\nu'}} &= \Lambda\indices{^\mu_{\mu'}}\Lambda\indices{^\nu_{\nu'}}\eta_{\mu\nu} \Lambda\indices{^{\mu'}_{\sigma}}\dl{x^\sigma} \Lambda\indices{^{\nu'}_\rho}\dl{x^\rho}\\
-                                              &= \delta\indices{^\mu_\sigma} \delta\indices{^\nu_{\rho}} \eta_{\mu\nu} \dl{x^\sigma} \dl{x^\rho}\\
-                                              &= \eta_{\mu\nu} \dl{x^\sigma} \dl{x^\rho}\\
-                                              &= \dl{s}^2.
+    \eta'_{\mu\nu} \dl{x'}^\mu \dl{x'}^\nu &= \left(\Lambda\indices{_\mu^\alpha}\Lambda\indices{_\nu^\beta}\eta_{\alpha \beta}\right)\left(\Lambda\indices{^\mu_\sigma}\dl{x}^\sigma\right)\left(\Lambda\indices{^\nu_\rho}\dl{x}^\rho\right)\\
+                                           &= \delta\indices{^\alpha_\sigma}\delta\indices{^\beta_\rho} \eta_{\alpha \beta} \dl{x}^\sigma \dl{x}^\rho\\
+                                           &= \eta_{\alpha \beta} \dl{x}^\alpha \dl{x}^\beta\\
+                                           &= \dl{s}^2.
 \end{align*}
 
-Consideremos \(\delta\indices{^{\mu'}_{\nu'}} = \eta^{\mu'\sigma'}\eta_{\sigma'\nu'}\), então
+Consideremos \(\delta\indices{^\mu_\nu} = \eta^{\mu \sigma}\eta_{\sigma \nu}\), então
 \begin{align*}
-    \delta\indices{^{\mu'}_{\nu'}} &= \Lambda\indices{^{\mu'}_{\mu}}\Lambda\indices{^{\sigma'}_{\beta}} \eta^{\mu\beta} \Lambda\indices{^{\rho}_{\sigma'}}\Lambda\indices{^\nu_{\nu'}}\eta_{\rho\nu}\\
-                                   &= \Lambda\indices{^\rho_{\sigma'}}\Lambda\indices{^{\sigma'}_{\beta}} \Lambda\indices{^{\mu'}_{\mu}} \Lambda\indices{^\nu_{\nu'}} \eta^{\mu \beta} \eta_{\rho \nu}\\
-                                   &= \delta\indices{^\rho_\beta} \Lambda\indices{^{\mu'}_{\mu}}\Lambda\indices{^\nu_{\nu'}}\eta^{\mu \beta}\eta_{\rho \nu}\\
-                                   &= \Lambda\indices{^{\mu'}_{\mu}}\Lambda\indices{^\nu_{\nu'}}\eta^{\mu \rho}\eta_{\rho \nu}\\
-                                   &= \Lambda\indices{^{\mu'}_{\mu}}\Lambda\indices{^\nu_{\nu'}} \delta\indices{^\mu_{\nu}}.
+    {\delta'}\indices{^\alpha_\beta} &= \Lambda\indices{^\alpha_\mu}\Lambda\indices{_\beta^\nu}\delta{^\mu_\nu}\\
+                                     &= \Lambda\indices{^\alpha_\nu}\Lambda\indices{_\beta^\nu}\\
+                                     &= \delta\indices{^\alpha_\beta},
 \end{align*}
+isto é, o delta de Kronecker é invariante por transformações de Lorentz.
+
+Consideremos o símbolo de Levi-Civita \(\epsilon^{\mu\nu\rho\sigma}\), então
+\begin{align*}
+    \epsilon'^{\alpha \beta \kappa \lambda} &= \Lambda\indices{^\alpha_\mu}\Lambda\indices{^\beta_\nu}\Lambda\indices{^\kappa_\rho}\Lambda{^\lambda_\sigma} \epsilon^{\mu\nu\rho\sigma}\\
+                                            &= \det{(\Lambda)} \epsilon^{\alpha \beta \kappa \lambda}.
+\end{align*}
+Assim, o símbolo de Levi-Civita é invariante por transformações do grupo restrito de Lorentz.
