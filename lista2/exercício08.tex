@@ -1,1 +1,129 @@
 \section*{Exercício 8}
+Consideremos as equações de Maxwell em sua forma covariante
+\begin{equation*}
+    \partial_\mu F^{\nu\mu} = \mu_0 J^\nu \quad \text{e} \quad \partial^\rho \epsilon_{\rho \sigma \mu \nu}F^{\mu\nu} = 0,
+\end{equation*}
+onde o tensor de Faraday \(F^{\mu\nu}\) tem suas componentes dadas por
+\begin{equation*}
+    F^{0i} = \frac{E^i}{c}\quad\text{e}\quad F^{ij} = \epsilon^{ijk}B_k,
+\end{equation*}
+com as demais dadas pela propriedade antissimétrica do tensor, isto é, \(F^{\mu\nu} = -F^{\nu\mu}\).
+
+Substituindo \(\nu = 0\) na primeira equação obtemos
+\begin{align*}
+    \partial_\mu F^{0\mu} = \mu_0 J^0 &\iff \partial_i F^{0i} = \mu_0 \rho c\\
+                                      &\iff \partial_i E^i = \mu_0 \rho c^2\\
+                                      &\iff \boldsymbol\nabla \cdot \boldsymbol{E} = \frac{\rho}{\varepsilon_0}.
+\end{align*}
+Para os outros índices, isto é, \(\nu = j\), obtemos
+\begin{align*}
+    \partial_\mu F^{j \mu} = \mu_0 J^j &\iff \partial_0 F^{j0} + \partial_i F^{ji} = \mu_0 J^j\\
+                                       &\iff -\frac{1}{c^2}\diffp{E^j}{t} + \partial_i \epsilon^{jik}B_k = \mu_0 J^j\\
+                                       &\iff -\mu_0\epsilon_0 \diffp{E^j}{t} - \partial_i\epsilon^{ijk}B_k = \mu_0 J^j\\
+                                       &\iff (\boldsymbol\nabla\times\boldsymbol{B})^j = \mu_0 \left(\boldsymbol{J} + \epsilon_0 \diffp{\boldsymbol{E}}{t}\right)^j\\
+                                       &\iff \boldsymbol\nabla\times\boldsymbol{B} = \mu_0\left( \boldsymbol{J} + \epsilon_0 \diffp{\boldsymbol{E}}{t}\right).
+\end{align*}
+Assim, mostramos que a primeira equação é equivalente à lei de Ampère-Maxwell e à lei de Gauss elétrica.
+
+Substituindo \(\sigma = 0\) na segunda equação obtemos
+\begin{align*}
+    \partial^\rho\epsilon_{\rho0\mu\nu}F^{\mu\nu}=0 &\iff \partial^r \epsilon_{r0mn}F^{mn} = 0\\
+                                                    &\iff -\partial^r \epsilon_{0rmn} \epsilon^{mnl} B_l = 0\\
+                                                    &\iff \partial^r \epsilon_{rmn}\epsilon^{mnl}B_l = 0\\
+                                                    &\iff 2\partial^r \delta\indices{^l_r}B_l = 0\\
+                                                    &\iff \boldsymbol\nabla\cdot\boldsymbol{B} = 0.
+\end{align*}
+Para os outros índices, \(\sigma = s\), obtemos
+\begin{align*}
+    \partial^\rho\epsilon_{\rho s\mu\nu}F^{\mu\nu}=0 & \iff \partial^0 \epsilon_{0smn} F^{mn} + \partial^r\epsilon_{rs\mu\nu}F^{\mu\nu} = 0\\
+                                                     &\iff 2\partial^0 \delta\indices{^k_s} B_k + \partial^r \epsilon_{rs0\nu} F^{0\nu} + \partial^r \epsilon_{rsm\nu} F^{m\nu} = 0\\
+                                                     &\iff - \frac2c \diffp{B_s}{t} + \partial^r \epsilon_{rs0n}F^{0n} + \partial^r \epsilon_{rsm0}F^{m0} + \partial^r \epsilon_{rsmn}F^{mn} = 0\\
+                                                     &\iff - \frac2c \diffp{B_s}{t} + \frac2c\partial^r \epsilon_{rs0n}E^n = 0\\
+                                                     &\iff - \partial^r \epsilon_{srn}E^n = \diffp{B_s}{t}\\
+                                                     &\iff -(\boldsymbol\nabla\times \boldsymbol{E})_s = \diffp{B_s}{t}\\
+                                                     &\iff \boldsymbol\nabla\times \boldsymbol{E} = - \diffp{\boldsymbol{B}}{t}.
+\end{align*}
+Isto é, a segunda equação é equivalente à lei de Faraday e à lei de Gauss magnética.
+
+Consideremos uma carga pontual estacionária em um referencial inercial \(S\), em que o campo elétrico é dado por
+\begin{equation*}
+    \boldsymbol{E} = \frac{Q}{4\pi\epsilon_0 r^2}\boldsymbol{\hat{r}},
+\end{equation*}
+então o tensor de Faraday neste referencial tem componentes
+\begin{equation*}
+    F^{0i} = \frac{Q}{4\pi\epsilon_0} \left(x_k x^k\right)^{-\frac32} x^i\quad\text{e}\quad F^{ji} = 0.
+\end{equation*}
+Em um referencial \(S'\), que se move com velocidade \(\boldsymbol{v} = v\boldsymbol{\hat{\imath}}\) em relação à \(S\), o tensor de Faraday tem componentes dados por
+\begin{align*}
+    F'^{\sigma \rho} &= \Lambda\indices{^\sigma_\mu}\Lambda\indices{^\rho_\nu} F^{\mu\nu}\\
+                      &= \Lambda\indices{^\sigma_0}\Lambda\indices{^\rho_n}F^{0n} + \Lambda\indices{^\sigma_m}\Lambda\indices{^\rho_0} F^{m0} + \Lambda\indices{^\sigma_m}\Lambda\indices{^\rho_n} F^{mn}\\
+                      &= \left(\Lambda\indices{^\sigma_0}\Lambda\indices{^\rho_k} - \Lambda\indices{^\sigma_k}\Lambda\indices{^\rho_0}\right)F^{0k}.
+\end{align*}
+Calculando-os explicitamente, obtemos
+\begin{align*}
+    F'^{01} &= \left(\gamma \Lambda\indices{^1_k} + \gamma \beta \Lambda\indices{^0_k}\right)F^{0k}&
+    F'^{02} &= \left(\Lambda\indices{^0_0}\Lambda\indices{^2_k} - \Lambda\indices{^0_k}\Lambda\indices{^2_0}\right)F^{0k}&
+    F'^{03} &= \left(\Lambda\indices{^0_0}\Lambda\indices{^3_k} - \Lambda\indices{^0_k}\Lambda\indices{^3_0}\right)F^{0k}\\
+            &= \left(\gamma^2 - \gamma^2 \beta^2\right)F^{01}&
+            &= \gamma \Lambda\indices{^2_k} F^{0k} &
+            &= \gamma \Lambda\indices{^3_k} F^{0k}\\
+            &= F^{01} &
+            &= \gamma F^{02} &
+            &= \gamma F^{03}
+\end{align*}
+
+\begin{align*}
+    F'^{12} &= \left(\Lambda\indices{^1_0}\Lambda\indices{^2_k} - \Lambda\indices{^1_k}\Lambda\indices{^2_0}\right)F^{0k}&
+    F'^{13} &= \left(\Lambda\indices{^1_0}\Lambda\indices{^3_k} - \Lambda\indices{^1_k}\Lambda\indices{^3_0}\right)F^{0k}&
+    F'^{23} &= \left(\Lambda\indices{^2_0}\Lambda\indices{^3_k} - \Lambda\indices{^2_k}\Lambda\indices{^3_0}\right)F^{0k}\\
+            &= -\gamma \beta \Lambda\indices{^2_k}F^{0k}&
+            &= -\gamma \beta \Lambda\indices{^3_k}F^{0k}&
+            &= 0\\
+            &= -\gamma \beta F^{02}&
+            &= -\gamma \beta F^{03}
+\end{align*}
+portanto os campos elétrico e magnético nesse referencial são dados por
+\begin{align*}
+    \boldsymbol{E}' &= \frac{Q}{4\pi \epsilon_0} \left(x_k x^k\right)^{-\frac32}\left(x^1 \boldsymbol{\hat{\imath}} + \gamma x^2 \boldsymbol{\hat{\jmath}} + \gamma x^3\boldsymbol{\hat{k}}\right)\\
+                    &= \frac{\gamma Q}{4\pi\epsilon_0} \left(\gamma^2(x' + vt')^2+(y')^2 + (z')^2\right)^{-\frac32}\left( (x' + vt') \boldsymbol{\hat{\imath}} + y' \boldsymbol{\hat{\jmath}} + z'\boldsymbol{\hat{k}}\right)
+\end{align*}
+e
+\begin{align*}
+    \boldsymbol{B}' &= \frac{\gamma vQ}{4\pi \epsilon_0 c^2} \left(x_kx^k\right)^{-\frac32}\left(x^3 \boldsymbol{\hat{\jmath}} - x^2\boldsymbol{\hat{k}}\right)\\
+                    &= \frac{\mu_0\gamma vQ}{4\pi} \left(\gamma^2(x' + vt')^2+(y')^2 + (z')^2\right)^{-\frac32}\left( z' \boldsymbol{\hat{\jmath}} - y'\boldsymbol{\hat{k}}\right).
+\end{align*}
+
+% \begin{align*}
+%     F'^{01} &= \left(\gamma \Lambda\indices{^1_k} + \gamma \beta \Lambda\indices{^0_k}\right)F^{0k}\\
+%             &= \left(\gamma^2 - \gamma^2 \beta^2\right)F^{01}\\
+%             &= F^{01}
+% \end{align*}
+%
+% \begin{align*}
+%     F'^{02} &= \left(\Lambda\indices{^0_0}\Lambda\indices{^2_k} - \Lambda\indices{^0_k}\Lambda\indices{^2_0}\right)F^{0k}\\
+%             &= \gamma \Lambda\indices{^2_k} F^{0k}\\
+%             &= \gamma F^{02}
+% \end{align*}
+%
+% \begin{align*}
+%     F'^{03} &= \left(\Lambda\indices{^0_0}\Lambda\indices{^3_k} - \Lambda\indices{^0_k}\Lambda\indices{^3_0}\right)F^{0k}\\
+%             &= \gamma \Lambda\indices{^3_k} F^{0k}\\
+%             &= \gamma F^{03}
+% \end{align*}
+%
+% \begin{align*}
+%     F'^{12} &= \left(\Lambda\indices{^1_0}\Lambda\indices{^2_k} - \Lambda\indices{^1_k}\Lambda\indices{^2_0}\right)F^{0k}\\
+%             &= -\gamma \beta \Lambda\indices{^2_k}F^{0k}\\
+%             &= -\gamma \beta F^{02}
+% \end{align*}
+%
+% \begin{align*}
+%     F'^{13} &= \left(\Lambda\indices{^1_0}\Lambda\indices{^3_k} - \Lambda\indices{^1_k}\Lambda\indices{^3_0}\right)F^{0k}\\
+%             &= -\gamma \beta \Lambda\indices{^3_k}F^{0k}\\
+%             &= -\gamma \beta F^{03}
+% \end{align*}
+%
+% \begin{align*}
+%     F'^{23} &= \left(\Lambda\indices{^2_0}\Lambda\indices{^3_k} - \Lambda\indices{^2_k}\Lambda\indices{^3_0}\right)F^{0k}\\
+%             &= 0
+% \end{align*}
