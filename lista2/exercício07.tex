@@ -4,12 +4,12 @@ A ação para uma partícula de massa \(m\) é dada por
 \begin{align*}
     S &= -\int mc\sqrt{-\eta_{\mu\nu} \dl{x^\mu} \dl{x^\nu}}\\
       &= - \int \dli{t}mc \sqrt{-\eta_{\mu\nu} \dot{x}^\mu \dot{x}^\nu}\\
-      &= - \int \dli{t} \frac{mc^2}{\gamma(\dot{\vec{x}})},
+      &= - \int \dli{t} \frac{mc^2}{\gamma(\dot{\boldsymbol{x}})},
 \end{align*}
 portanto a lagrangiana é dada por
 \begin{align*}
-    \mathcal{L}(\vec{x}, \dot{\vec{x}}) &= - mc\sqrt{-\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}\\
-                                        &= - \frac{mc^2}{\gamma(\dot{\vec{x}})}.
+    \mathcal{L}(\boldsymbol{x}, \dot{\boldsymbol{x}}) &= - mc\sqrt{-\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}\\
+                                        &= - \frac{mc^2}{\gamma(\dot{\boldsymbol{x}})}.
 \end{align*}
 
 Deste modo, o momento canônico é dado por
@@ -17,8 +17,8 @@ Deste modo, o momento canônico é dado por
     p_i = \diffp{\mathcal{L}}{\dot{x}^i} &= -mc\diffp*{\sqrt{-\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}}{\dot{x}^i}\\
                                          &= \frac{mc}{2\sqrt{-\eta_{\mu\nu}\dot{x}^\mu \dot{x}^\nu}}\diffp*{\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}{\dot{x}^i}\\
                                          &= \frac{mc}{\sqrt{-\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}} \eta_{\mu\nu} \delta\indices{^\mu_i} \dot{x}^\nu\\
-                                         &= m\gamma(\dot{\vec{x}}) \delta^\mu_i \dot{x}_\mu\\
-                                         &= m \gamma(\dot{\vec{x}}) \dot{x}_i,
+                                         &= m\gamma(\dot{\boldsymbol{x}}) \delta^\mu_i \dot{x}_\mu\\
+                                         &= m \gamma(\dot{\boldsymbol{x}}) \dot{x}_i,
 \end{align*}
 e a Hamiltoniana por
 \begin{align*}

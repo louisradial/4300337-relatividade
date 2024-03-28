@@ -1,32 +1,32 @@
 \section*{Exercício 4}
-Consideremos a força \(F^i = \diff{p^i}{t}\). Em notação vetorial temos \(\vec{p} = \gamma m \vec{v}\), donde segue
+Consideremos a força \(F^i = \diff{p^i}{t}\). Em notação vetorial temos \(\boldsymbol{p} = \gamma m \boldsymbol{v}\), donde segue
 \begin{align*}
-    \vec{F} &= \diff{\gamma}{t} m \vec{v} + \gamma m \diff{\vec{v}}{t}\\
-            &= \diff{\gamma}{t}  m \vec{v} + \gamma m\vec{a},
+    \boldsymbol{F} &= \diff{\gamma}{t} m \boldsymbol{v} + \gamma m \diff{\boldsymbol{v}}{t}\\
+            &= \diff{\gamma}{t}  m \boldsymbol{v} + \gamma m\boldsymbol{a},
 \end{align*}
-onde \(\vec{a} = \diff{\vec{v}}{t}\) é a 3-aceleração da partícula.
+onde \(\boldsymbol{a} = \diff{\boldsymbol{v}}{t}\) é a 3-aceleração da partícula.
 
 Notemos que
 \begin{align*}
     \diff{\gamma}{t} &= \left[1 - \left(\frac{v}{c}\right)^2\right]^{-\frac32} \frac{v}{c^2}\diff{v}{t}\\
-                     &= \frac{\gamma^3}{c^2} \inner{\vec{v}}{\vec{a}},
+                     &= \frac{\gamma^3}{c^2} \inner{\boldsymbol{v}}{\boldsymbol{a}},
 \end{align*}
 onde foi utilizada a relação
 \begin{equation*}
-    2v\diff{v}{t} = \diff*{\inner{\vec{v}}{\vec{v}}}{t} = 2\inner{\vec{v}}{\vec{a}}.
+    2v\diff{v}{t} = \diff*{\inner{\boldsymbol{v}}{\boldsymbol{v}}}{t} = 2\inner{\boldsymbol{v}}{\boldsymbol{a}}.
 \end{equation*}
 Dessa forma, obtemos
 \begin{equation*}
-    \vec{F} = \gamma m \left(\vec{a} + \frac{\gamma^2}{c^2}\inner{\vec{v}}{\vec{a}}\vec{v}\right).
+    \boldsymbol{F} = \gamma m \left(\boldsymbol{a} + \frac{\gamma^2}{c^2}\inner{\boldsymbol{v}}{\boldsymbol{a}}\boldsymbol{v}\right).
 \end{equation*}
 
-No caso particular em que a força é paralela à velocidade, devemos ter que a aceleração é também paralela à velocidade. Assim, \(\vec{v} = v \hat{n}\), \(\vec{a} = a\hat{n}\) e \(\vec{F} = F\hat{n}\) para algum vetor unitário \(\hat{n}\), então
+No caso particular em que a força é paralela à velocidade, devemos ter que a aceleração é também paralela à velocidade. Assim, \(\boldsymbol{v} = v \boldsymbol{\hat{n}}\), \(\boldsymbol{a} = a\boldsymbol{\hat{n}}\) e \(\boldsymbol{F} = F\boldsymbol{\hat{n}}\) para algum vetor unitário \(\boldsymbol{\hat{n}}\), então
 \begin{align*}
     F &= \gamma ma \left(1 + \gamma^2\frac{v^2}{c^2}\right)\\
       &= \gamma^3 ma.
 \end{align*}
 
-Como um exemplo, tomemos uma partícula de carga \(q\) com velocidade \(\vec{v} = v\hat{x}\) que parte do repouso na origem num campo uniforme \(\vec{E} = E\hat{x}\). Assim,
+Como um exemplo, tomemos uma partícula de carga \(q\) com velocidade \(\boldsymbol{v} = v\boldsymbol{\hat{\imath}}\) que parte do repouso na origem num campo uniforme \(\boldsymbol{E} = E\boldsymbol{\hat{\imath}}\). Assim,
 \begin{equation*}
     qE = \gamma^3 ma.
 \end{equation*}
@@ -41,16 +41,16 @@ Resolvendo para \(v\), obtemos
 
 No caso particular em que a força é ortogonal à velocidade, devemos ter
 \begin{align*}
-    \inner{\vec{F}}{\vec{v}} = 0 &\implies \inner{\vec{a}}{\vec{v}}\left(1 + \gamma^2 \beta^2\right) = 0\\
-                                 &\implies \inner{\vec{a}}{\vec{v}} = 0,
+    \inner{\boldsymbol{F}}{\boldsymbol{v}} = 0 &\implies \inner{\boldsymbol{a}}{\boldsymbol{v}}\left(1 + \gamma^2 \beta^2\right) = 0\\
+                                 &\implies \inner{\boldsymbol{a}}{\boldsymbol{v}} = 0,
 \end{align*}
 de modo que
 \begin{equation*}
-    \vec{F} = \gamma m\vec{a}.
+    \boldsymbol{F} = \gamma m\boldsymbol{a}.
 \end{equation*}
-Como um exemplo, tomemos uma partícula de carga \(q\) com velocidade \(\vec{v} = v \hat{\varphi}\) contida no plano \(xy\) que se move num campo magnético uniforme \(\vec{B} = B \hat{z}\). Assim,
+Como um exemplo, tomemos uma partícula de carga \(q\) com velocidade \(\boldsymbol{v} = v \boldsymbol{\hat{\varphi}}\) contida no plano \(xy\) que se move num campo magnético uniforme \(\boldsymbol{B} = B \boldsymbol{\hat{k}}\). Assim,
 \begin{align*}
-    \gamma m\vec{a} = q \vec{v} \times \vec{B} &\implies -\gamma m v \dot\varphi \hat{r} = qvB \hat{r}\\
+    \gamma m\boldsymbol{a} = q \boldsymbol{v} \times \boldsymbol{B} &\implies -\gamma m v \dot\varphi \boldsymbol{\hat{r}} = qvB \boldsymbol{\hat{r}}\\
                                                &\implies \dot\varphi = -\frac{qB}{m \gamma},
 \end{align*}
 portanto a frequência \(f\) de oscilação do movimento orbital é
