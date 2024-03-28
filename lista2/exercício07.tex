@@ -1,1 +1,43 @@
 \section*{Exercício 7}
+
+A ação para uma partícula de massa \(m\) é dada por
+\begin{align*}
+    S &= -\int mc\sqrt{-\eta_{\mu\nu} \dl{x^\mu} \dl{x^\nu}}\\
+      &= - \int \dli{t}mc \sqrt{-\eta_{\mu\nu} \dot{x}^\mu \dot{x}^\nu}\\
+      &= - \int \dli{t} \frac{mc^2}{\gamma(\dot{\vec{x}})},
+\end{align*}
+portanto a lagrangiana é dada por
+\begin{align*}
+    \mathcal{L}(\vec{x}, \dot{\vec{x}}) &= - mc\sqrt{-\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}\\
+                                        &= - \frac{mc^2}{\gamma(\dot{\vec{x}})}.
+\end{align*}
+
+Deste modo, o momento canônico é dado por
+\begin{align*}
+    p_i = \diffp{\mathcal{L}}{\dot{x}^i} &= -mc\diffp*{\sqrt{-\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}}{\dot{x}^i}\\
+                                         &= \frac{mc}{2\sqrt{-\eta_{\mu\nu}\dot{x}^\mu \dot{x}^\nu}}\diffp*{\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}{\dot{x}^i}\\
+                                         &= \frac{mc}{\sqrt{-\eta_{\mu\nu}\dot{x}^\mu\dot{x}^\nu}} \eta_{\mu\nu} \delta\indices{^\mu_i} \dot{x}^\nu\\
+                                         &= m\gamma(\dot{\vec{x}}) \delta^\mu_i \dot{x}_\mu\\
+                                         &= m \gamma(\dot{\vec{x}}) \dot{x}_i,
+\end{align*}
+e a Hamiltoniana por
+\begin{align*}
+    \mathcal{H} = p_i\dot{x}^i - \mathcal{L} &= m \gamma \dot{x}_i\dot{x}^i + \frac{mc^2}{\gamma}\\
+                                             &=  \gamma mc^2\left(\frac{\dot{x}_i\dot{x}^i}{c^2} + \frac{1}{\gamma^2}\right)\\
+                                             &= \gamma mc^2,
+\end{align*}
+uma vez que \(\frac{1}{\gamma^2} = 1 - \frac{\dot{x}_i\dot{x}^i}{c^2}.\)
+
+Consideremos a ação
+\begin{equation*}
+    \tilde{S} = -\frac12 \int \dli{\zeta}\left[\sigma(\zeta)\left(\diff{x}{\zeta}\right)^2 + \frac{m^2}{\sigma(\zeta)}\right]
+\end{equation*}
+então pela equação de Euler-Lagrange para \(\sigma\), temos
+\begin{align*}
+    \diffp*{\left[\sigma\left(\diff{x}{\zeta}\right)^2 + \frac{m^2}{\sigma}\right]}{\sigma} = 0 &\implies \left(\diff{x}{\zeta}\right)^2 - \frac{m^2}{\sigma^2} = 0\\
+                                                                                                &\implies \frac{m^2}{\sigma^2} = \left(\diff{x}{\zeta}\right)^2.
+\end{align*}
+Assim, substituindo na ação, obtemos
+\begin{equation*}
+    \tilde{S} = -\int\dli{\zeta} \sigma(\zeta) \left(\diff{x}{\zeta}\right)^2.
+\end{equation*}
