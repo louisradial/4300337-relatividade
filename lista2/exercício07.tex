@@ -22,9 +22,9 @@ Deste modo, o momento canônico é dado por
 \end{align*}
 e a Hamiltoniana por
 \begin{align*}
-    \mathcal{H} = p_i\dot{x}^i - \mathcal{L} &= m \gamma \dot{x}_i\dot{x}^i + \frac{mc^2}{\gamma}\\
-                                             &=  \gamma mc^2\left(\frac{\dot{x}_i\dot{x}^i}{c^2} + \frac{1}{\gamma^2}\right)\\
-                                             &= \gamma mc^2,
+    \mathcal{H} = p_i\dot{x}^i - \mathcal{L} &= m \gamma(\boldsymbol{\dot{x}}) \dot{x}_i\dot{x}^i + \frac{mc^2}{\gamma(\boldsymbol{\dot{x}})}\\
+                                             &=  \gamma(\boldsymbol{\dot{x}}) mc^2\left(\frac{\dot{x}_i\dot{x}^i}{c^2} + \frac{1}{\gamma^2(\boldsymbol{\dot{x}})}\right)\\
+                                             &= \gamma(\boldsymbol{\dot{x}}) mc^2,
 \end{align*}
 uma vez que \(\frac{1}{\gamma^2} = 1 - \frac{\dot{x}_i\dot{x}^i}{c^2}.\)
 
@@ -38,6 +38,7 @@ então pela equação de Euler-Lagrange para \(\sigma\), temos
                                                                                                 &\implies \frac{m^2}{\sigma^2} = \left(\diff{x}{\zeta}\right)^2.
 \end{align*}
 Assim, substituindo na ação, obtemos
-\begin{equation*}
-    \tilde{S} = -\int\dli{\zeta} \sigma(\zeta) \left(\diff{x}{\zeta}\right)^2.
-\end{equation*}
+\begin{align*}
+    \tilde{S} &= -\int\dli{\zeta} \sigma(\zeta) \left(\diff{x}{\zeta}\right)^2 = -\int\dli{\zeta} m\diff{x}{\zeta} = -m \int \dli{x},
+\end{align*}
+que seria a mesma ação para a partícula de massa \(m\) em unidades naturais e se \(\dl{x} = \dl{s}\).
