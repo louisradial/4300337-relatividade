@@ -35,9 +35,17 @@ Notemos que isso é uma equação diferencial a variáveis separáveis
     \left[1 - \left(\frac{v}{c}\right)^2\right]^{-\frac32}\dl{v} = \frac{qE}{m} \dl{t} \implies \frac{v}{\sqrt{1 - \left(\frac{v}{c}^2\right)}} = \frac{qEt}{m}.
 \end{equation*}
 Resolvendo para \(v\), obtemos
-\begin{equation*}
-    v^2 = \frac{1}{\left(\frac{m}{qEt}\right)^2 + \left(\frac{1}{c}\right)^2} \implies v = \sqrt{\frac{c^2}{\left(\frac{mc}{qEt}\right)^2 - 1}}.
-\end{equation*}
+\begin{align*}
+    v^2 = \frac{1}{\left(\frac{m}{qEt}\right)^2 + \left(\frac{1}{c}\right)^2} &\implies v = \sqrt{\frac{c^2}{\left(\frac{mc}{qEt}\right)^2 + 1}}\\
+                                                                              &\implies v = \frac{\frac{qEt}{mc}}{\sqrt{1 + \left(\frac{qEt}{mc}\right)^2}}c.
+\end{align*}
+Integrando em relação ao tempo para obter a posição, temos
+\begin{align*}
+    x = c\int_{0}^{t}\dli{t}{\frac{\frac{qEt}{mc}}{\sqrt{1 + \left(\frac{qEt}{mc}\right)^2}}} &\implies x = \frac{mc^2}{2qE} \int_{1}^{1+\left(\frac{qEt}{mc}\right)^2} \dli{\zeta} \zeta^{-\frac12}\\
+                                                                                              &\implies x = \frac{mc^2}{qE} \left[\sqrt\zeta\right]_{1}^{1+\left(\frac{qEt}{mc}\right)^2}\\
+                                                                                              &\implies x = \frac{mc^2}{qE}\left(\sqrt{1 + \left(\frac{qEt}{mc}\right)^2} - 1\right),
+\end{align*}
+partindo de \(x = 0\).
 
 No caso particular em que a força é ortogonal à velocidade, devemos ter
 \begin{align*}
