@@ -51,7 +51,15 @@ isto é, uma equação diferencial a variáveis separáveis,
 Integrando, obtemos
 \begin{align*}
     t &= -\frac{M}{\sigma} \int_0^\beta \frac{\dl\xi}{(1+\xi)^2(1-\xi)}\\
-      &= -\frac{M}{4\sigma} \int_0^\beta \left(\frac{2}{(1+\xi)^2} + \frac{1}{1+\xi} - \frac{1}{\xi - 1}\right)\dl\xi\\
-      &= \frac{M}{4 \sigma} \left[2(1+\xi)^{-1} + \ln{\left(\frac{1-\xi}{1+\xi}\right)}\right]_0^\beta\\
-      &= \frac{M}{4 \sigma} \left[-\frac{2\beta}{1+\beta} + \ln{\left(\frac{1-\beta}{1+\beta}\right)}\right].
+      &= \frac{M}{4\sigma} \int_\beta^0 \left(\frac{2}{(1+\xi)^2} + \frac{1}{1+\xi} - \frac{1}{\xi - 1}\right)\dl\xi\\
+      &= \frac{M}{4 \sigma} \left[-2(1+\xi)^{-1} + \ln{\left(\frac{1+\xi}{1-\xi}\right)}\right]_\beta^0\\
+      &= \frac{M}{2 \sigma} \left[-(1+\xi)^{-1} + \artanh\xi\right]_\beta^0\\
+      &= -\frac{M}{2 \sigma} \left(\frac{\beta}{1+\beta} + \artanh\beta\right).
 \end{align*}
+
+% Alternativamente, consideremos \(\dl{m} = \sigma \dl{\tau}\) na equação diferencial, onde obtemos
+% \begin{align*}
+%     \frac{\sigma \dl{\tau}}{M\sqrt{\frac{1-\beta}{1+\beta}}} + \frac{\dl{\beta}}{1-\beta^2} = 0 &\implies \frac{\sigma\dl{t}}{M \gamma}\sqrt{\frac{1+\beta}{1-\beta}} + \gamma^2 \dl{\beta} = 0\\
+%                                                                                                 &\implies \frac{\sigma}{M}\dl{t} = - \frac{\gamma^3 \sqrt{1-\beta}}{\sqrt{1+\beta}}\dl{\beta}\\
+%                                                                                                 &\implies \frac{\sigma}{M}\dl{t} = - (1 - \beta)^{-1}(1+\beta)^{-2}
+% \end{align*}
