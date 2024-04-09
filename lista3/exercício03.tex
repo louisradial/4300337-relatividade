@@ -1,1 +1,44 @@
 \section*{Exercício 3}
+Consideremos coordenadas esféricas para o espaço tridimensional Euclidiano, dadas por
+\begin{equation*}
+    r = \sqrt{x^2 + y^2 + z^2},\quad \cos\theta = \frac{z}{r},\quad\text{e}\quad\tan\phi=\frac{y}{x}.
+\end{equation*}
+Alternativamente, temos
+\begin{equation*}
+    x = r\sin\theta\cos\phi,\quad y = r\sin\theta\sin\phi,\quad\text{e}\quad z = r\cos\theta,
+\end{equation*}
+de modo que os vetores da base no sistema de coordenadas esféricas são dados por
+\begin{align*}
+    \vetor{e}_r &= \diffp{x}{r}\vetor{e}_x + \diffp{y}{r}\vetor{e}_y + \diffp{z}{r}\vetor{e}_z\\
+                &= \sin\theta\cos\phi\vetor{e}_x + \sin\theta\sin\phi\vetor{e}_y + \cos\theta \vetor{e}_z,
+\end{align*}
+\begin{align*}
+    \vetor{e}_\theta &= \diffp{x}{\theta}\vetor{e}_x + \diffp{y}{\theta}\vetor{e}_y + \diffp{z}{\theta}\vetor{e}_z \\
+                   &= r\cos\theta\cos\phi \vetor{e}_x + r\cos\theta\sin\phi\vetor{e}_y - r\sin\theta\vetor{e}_z,
+\end{align*}
+e
+\begin{align*}
+    \vetor{e}_\phi &= \diffp{x}{\phi}\vetor{e}_x + \diffp{y}{\phi}\vetor{e}_y + \diffp{z}{\phi}\vetor{e}_z\\
+                   &= -r\sin\theta\sin\phi \vetor{e}_x + r\sin\theta\cos\phi\vetor{e}_y.
+\end{align*}
+
+Assim, os coeficientes da métrica Euclidiana nas coordenadas esféricas são dados por
+\begin{equation*}
+    g_{rr} = 1, \quad g_{\theta\theta} = r^2, \quad\text{e}\quad g_{\phi\phi} = r^2\sin^2\theta,
+\end{equation*}
+e as outras componentes nulas.
+
+Consideremos agora a métrica da relatividade restrita \(\eta_{\mu\nu}\) e as coordenadas em rotação
+\begin{equation*}
+    \begin{cases}
+        t' = t\\
+        x' = \sqrt{x^2 + y^2}\cos{(\phi - \omega t)}\\
+        y' = \sqrt{x^2 + y^2}\sin{(\phi - \omega t)}\\
+        z' = z
+    \end{cases}
+\end{equation*}
+onde \(\tan\phi = \frac{y}{x}\). Notemos que
+\begin{equation*}
+    x' = x\cos{\omega t} + y\sin{\omega t}\quad\text{e}\quad y' = -x\sin{\omega t} + y\cos{\omega t}
+\end{equation*}
+então ao tomar combinações lineares das equaççoes
