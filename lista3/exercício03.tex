@@ -41,4 +41,40 @@ onde \(\tan\phi = \frac{y}{x}\). Notemos que
 \begin{equation*}
     x' = x\cos{\omega t} + y\sin{\omega t}\quad\text{e}\quad y' = -x\sin{\omega t} + y\cos{\omega t}
 \end{equation*}
-então ao tomar combinações lineares das equaççoes
+então ao tomar combinações lineares das equações acima e utilizando \(t' = t\), temos
+\begin{equation*}
+    \begin{cases}
+        t = t'\\
+        x = x' \cos{\omega t'} - y' \sin{\omega t'}\\
+        y = x'\sin{\omega t'} + y' \cos{\omega t'}\\
+        z = z'
+    \end{cases}.
+\end{equation*}
+Assim, os vetores da base são dados por \(\vetor{e}_{\mu'} = \diffp{x^\nu}{x^{\mu'}}\vetor{e}_{\nu}\), isto é,
+\begin{equation*}
+    \begin{cases}
+        \vetor{e}_{0'} = \vetor{e}_0 - \omega(x' \sin{\omega t'} + y' \cos{\omega t'})\vetor{e}_1 + \omega(x' \cos{\omega t'} - y'\cos{\omega t'})\vetor{e}_2\\
+        \vetor{e}_{1'} = \cos{\omega t'} \vetor{e}_1 + \sin{\omega t'} \vetor{e}_2\\
+        \vetor{e}_{2'} = -\sin{\omega t'} \vetor{e}_1 + \cos{\omega t'} \vetor{e}_2\\
+        \vetor{e}_{3'} = \vetor{e}_3
+    \end{cases}.
+\end{equation*}
+
+Utilizando a bilinearidade do tensor métrico temos que suas componentes são dadas por
+\begin{equation*}
+    g_{\mu'\nu'} = \begin{pmatrix}
+        1 + \omega^2(x'^2 + y'^2) && -\omega y' && \omega x' && 0\\
+        -\omega y' && 1 && 0 && 0\\
+        \omega x' && 0 && 1 && 0\\
+        0 && 0 && 0 && 1\\
+    \end{pmatrix}_{\mu'\nu'}.
+\end{equation*}
+Desse modo, as componentes \(g^{\mu'\nu'}\) são dadas por
+\begin{equation*}
+    g_{\mu'\nu'} = \begin{pmatrix}
+        1 && \omega y' && -\omega x' && 0\\
+        \omega y' && 1+\omega^2 y'^2 && -\omega^2x'y' && 0\\
+        -\omega x' && -\omega^2x'y' && 1+\omega^2 x'^2 && 0\\
+        0 && 0 && 0 && 1\\
+    \end{pmatrix}_{\mu'\nu'}.
+\end{equation*}
