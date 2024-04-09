@@ -1,1 +1,15 @@
 \section*{Exercício 6}
+Um espaço topológico é uma dupla \topology{M} composta por um conjunto \(M\) e uma topologia \(\mathcal{O}_M\). Um subconjunto \(U\) de \(M\) é dito ser aberto em relação a este espaço topológico se \(U \in \mathcal{O}_M\). Uma aplicação \(f : M \to N\) entre espaços topológicos \topology{M} e \topology{N} é dita contínua se sua pré-imagem de um aberto é aberta, e é dita um homeomorfismo se for bijetiva e tanto \(f\) quanto \(f^{-1}\) forem contínuas. Se existe um homeomorfismo entre dois espaços topológicos, estes são ditos homeomorfos.
+
+Se existe um número inteiro \(n\) tal que todo aberto \(U \in \mathcal{O}_M\) é homeomorfo a \(\mathbb{R}^n\), em relação à topologia usual do espaço Euclidiano, dizemos que \topology{M} é um espaço topológico localmente Euclidiano de dimensão \(n\). Ainda, para cada aberto \(U \in \mathcal{O}_M\) existe um homeomorfismo \(x : U \to x(U) \subset \mathbb{R}^n\), e chamamos o par \((U,x)\) de carta local. Um atlas \(\mathscr{A}_M\) é uma coleção de cartas locais tal que a união dos abertos cobre o conjunto \(M\).
+
+Consideremos agora duas cartas \((U, x), (V, x) \in \mathscr{A}_M\) tal que \(U \cap V \neq \emptyset\).
+\begin{equation*}
+    \begin{tikzcd}[column sep = normal, row sep = large]
+        &\arrow[swap]{dl}{x} U \cap V\arrow{dr}{y}&\\
+        x(U\cap V) \arrow{rr}{y \circ x^{-1}} & & y(U\cap V)
+    \end{tikzcd}
+\end{equation*}
+Como uma composição de homeomorfismos, segue que a aplicação de transição \(y \circ x^{-1} : \mathbb{R}^n \to \mathbb{R}^n\) é um homeomorfismo, isto é, contínua. Como uma função em \(\mathbb{R}^n\), podemos utilizar análise usual para decidir se esta função é diferenciável. Duas cartas locais \((U, x), (V, y)\) são ditas \(\mathcal{C}^k\)-compatíveis se ou \(U \cap V \neq \emptyset\) e a aplicação de transição \(y \circ x^{-1}\) é de classe \(\mathcal{C}^k\) ou se \(U \cap V = \emptyset\). Ainda, um atlas é dito \(\mathcal{C}^k\)-compatível se todo par de cartas locais são \(\mathcal{C}^k\)-compatíveis.
+
+Uma variedade diferenciável \manifold{M} é um espaço topológico \topology{M} localmente Euclidiano munido de um atlas maximal suave \(\mathscr{A}_M\), isto é, um atlas \(\mathcal{C}^\infty\)-compatível que contém todas as cartas locais que são suavemente compatíveis.
