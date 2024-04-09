@@ -1,1 +1,38 @@
 \section*{Exercício 5}
+Utilizando os resultados do exercício anterior, os coeficientes da conexão de Levi-Civita para as coordenadas esféricas no espaço Euclidiano são dados por
+\begin{align*}
+    \Gamma\indices{^r_{\theta\theta}} &= -r & \Gamma\indices{^r_{\phi\phi}} &= -r\sin^2\theta\\
+    \Gamma\indices{^\theta_{\theta r}} &= \frac{1}{r} & \Gamma\indices{^\theta_{\phi\phi}} &= -\sin\theta\cos\theta\\
+    \Gamma\indices{^\phi_{\phi r}} &= \frac{1}{r} & \Gamma\indices{^\phi_{\phi\theta}} &= \frac{1}{r} \cot\theta,
+\end{align*}
+e os outros termos são ou nulos ou obtidos pela simetria da conexão.
+
+Seja uma curva
+\begin{align*}
+    \gamma : I \subset \mathbb{R} &\to \mathbb{R}^3\\
+                          \lambda &\mapsto \left(x^r(\lambda), x^\theta(\lambda), x^\phi(\lambda)\right)
+\end{align*}
+cujo vetor tangente é dado por \(X = X^i \vetor{e}_i\), com \(X^i = \diff{x^i}{\lambda}\) ao longo de \(\gamma\), e seja um campo de vetores \(Y = Y^i \vetor{e}_i\), com \(i = r, \theta, \phi\). Temos então
+\begin{align*}
+    \nabla_X Y &= X^i \nabla_{\vetor{e}_i} (Y^j \vetor{e}_j)\\
+               &= X^i (\partial_{i}Y^j) \vetor{e_j} + X^iY^j\nabla_{\vetor{e}_i}\vetor{e}_j\\
+               &= X^i (\partial_{i}Y^k + \Gamma\indices{^k_{ij}}Y^j)\vetor{e_k}.
+\end{align*}
+No caso em que \(Y = X\), temos
+\begin{align*}
+    \nabla_X X &= X^i (\partial_i X^k + \Gamma\indices{^k_{ij}}X_j)\vetor{e}_k\\
+               &= \left(\diff{x^i}{\lambda} \diffp*{\diff{x^k}{\lambda}}{x^i} + \Gamma\indices{^k_{ij}}\diff{x^i}{\lambda}\diff{x^j}{\lambda}\right)\vetor{e}_k\\
+               &= \left(\diff[2]{x^k}{\lambda} + \Gamma\indices{^k_{ij}}\diff{x^i}{\lambda}\diff{x^j}{\lambda}\right)\vetor{e}_k.
+\end{align*}
+Assim, para que \(\gamma\) seja uma geodésica, devemos ter \(\nabla_X X = 0\), isto é,
+\begin{equation*}
+   \diff[2]{x^k}{\lambda} + \Gamma\indices{^k_{ij}}\diff{x^i}{\lambda}\diff{x^j}{\lambda} = 0
+\end{equation*}
+para todo \(k\). Assim, de forma explícita, as equações da geodésica são dadas por
+\begin{equation*}
+    \begin{cases}
+        \ddot{r} - r\dot{\theta}^2 -r\dot{\phi}^2 \sin^2\theta = 0\\
+        \ddot{\theta} + \frac2r \dot{r}\dot{\theta} - \dot{\phi}^2\sin\theta\cos\theta=0\\
+        \ddot{\phi} + \frac2r \dot{r}\dot{\phi} + \frac2r \dot\phi\dot\theta \cot\theta = 0
+    \end{cases}.
+\end{equation*}
