@@ -1,1 +1,25 @@
 \section*{Exercício 4}
+Para uma conexão de Levi-Civita, isto é, simétrica e compatível com o tensor métrico, os seus coeficientes \(\Gamma\indices{^\rho_{\alpha\beta}}\) são dados por
+\begin{equation*}
+    \Gamma\indices{^\rho_{\alpha\beta}} = -\frac12 g^{\rho\sigma}\left(\partial_\sigma g_{\alpha \beta} - \partial_{\alpha}g_{\beta \sigma} - \partial_{\beta}g_{\sigma \alpha}\right)
+\end{equation*}
+para todas as triplas de índices \(\rho, \alpha, \beta\).
+
+Para uma métrica diagonal, isto é, \(g_{\mu\nu} = 0 \iff \mu \neq \nu\), temos \(g^{\mu\nu} = 0 \iff \mu \neq \nu\), de modo que os coeficientes da conexão são dados por
+\begin{equation*}
+    \Gamma\indices{^\rho_{\alpha\beta}} = -\frac1{2g_{\rho\rho}}\left(\partial_\rho g_{\alpha \beta} - \partial_{\alpha}g_{\beta \rho} - \partial_{\beta}g_{\rho \alpha}\right)
+\end{equation*}
+neste caso, e nesta expressão índices repetidos não são somados. Podemos simplificar adiante separando em casos: sejam \(\mu, \nu, \lambda\) índices todos distintos, então
+\begin{align*}
+    \Gamma\indices{^\lambda_{\lambda\lambda}} &= -\frac1{2g_{\lambda\lambda}}\left(\partial_\lambda g_{\lambda \lambda} - \partial_{\lambda}g_{\lambda \lambda} - \partial_{\lambda}g_{\lambda \lambda}\right)&
+    \Gamma\indices{^\lambda_{\mu\lambda}} &= -\frac1{2g_{\lambda\lambda}}\left(\partial_\lambda g_{\mu \lambda} - \partial_{\mu}g_{\lambda \lambda} - \partial_{\lambda}g_{\lambda \mu}\right)\\
+                                          &= \frac{\partial_{\lambda}g_{\lambda \lambda}}{2g_{\lambda \lambda}} = \partial_{\lambda}\ln{\sqrt{\abs{g_{\lambda \lambda}}}}&
+                                          &= \frac{\partial_{\mu}g_{\lambda \lambda}}{2g_{\lambda \lambda}} = \partial_{\mu} \ln{\sqrt{\abs{g_{\lambda \lambda}}}}
+\end{align*}
+\begin{align*}
+    \Gamma\indices{^\lambda_{\mu\mu}} &= -\frac1{2g_{\lambda\lambda}}\left(\partial_\lambda g_{\mu \mu} - \partial_{\mu}g_{\mu \lambda} - \partial_{\mu}g_{\lambda \mu}\right)&
+    \Gamma\indices{^\lambda_{\mu\nu}} &= -\frac1{2g_{\lambda\lambda}}\left(\partial_\lambda g_{\mu \nu} - \partial_{\mu}g_{\nu \lambda} - \partial_{\nu}g_{\lambda \mu}\right)\\
+                                      &= -\frac{\partial_{\lambda}g_{\mu\mu}}{2g_{\lambda \lambda}}&
+                                      &= 0
+\end{align*}
+são todos os coeficientes da conexão para o caso de uma métrica diagonal.
