@@ -70,21 +70,21 @@ Assim, os vetores da base são dados por \(\vetor{e}_{\mu'} = \diffp{x^\nu}{x^{\
     \end{cases}.
 \end{equation*}
 
-Utilizando a bilinearidade do tensor métrico temos que suas componentes são dadas por
+Utilizando a bilinearidade do tensor métrico e que \(g(\vetor{e}_\mu, \vetor{e}_\nu) = \eta_{\mu\nu}\), temos que
 \begin{equation*}
     g_{\mu'\nu'} = \begin{pmatrix}
-        1 + \omega^2(x'^2 + y'^2) && -\omega y' && \omega x' && 0\\
+        -1 + \omega^2(x'^2 + y'^2) && -\omega y' && \omega x' && 0\\
         -\omega y' && 1 && 0 && 0\\
         \omega x' && 0 && 1 && 0\\
         0 && 0 && 0 && 1\\
-    \end{pmatrix}_{\mu'\nu'}.
+    \end{pmatrix}_{\mu'\nu'}
 \end{equation*}
-Desse modo, as componentes \(g^{\mu'\nu'}\) são dadas por
+são os componentes da métrica nas coordenadas em rotação. Desse modo, obtemos as componentes da métrica inversa \(g^{\mu'\nu'}\) por escalonamento, resultando em
 \begin{equation*}
-    g_{\mu'\nu'} = \begin{pmatrix}
-        1 && \omega y' && -\omega x' && 0\\
-        \omega y' && 1+\omega^2 y'^2 && -\omega^2x'y' && 0\\
-        -\omega x' && -\omega^2x'y' && 1+\omega^2 x'^2 && 0\\
+    g^{\mu'\nu'} = \begin{pmatrix}
+        -1 && -\omega y' && \omega x' && 0\\
+        -\omega y' && 1-\omega^2 y'^2 && \omega^2x'y' && 0\\
+        \omega x' && \omega^2x'y' && 1-\omega^2 x'^2 && 0\\
         0 && 0 && 0 && 1\\
-    \end{pmatrix}_{\mu'\nu'}.
+    \end{pmatrix}^{\mu'\nu'}.
 \end{equation*}
