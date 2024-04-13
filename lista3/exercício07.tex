@@ -1,1 +1,64 @@
 \section*{Exercício 7}
+Consideremos duas cartas locais de coordenadas locais \((U, x)\) e \((U, x')\), com
+\begin{equation*}
+    \partial_{\alpha} = \diffp{x'^\mu}{x^\alpha} \partial'_{\mu}\quad\text{e}\quad g_{\alpha \beta} = \diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta} g'_{\mu\nu}.
+\end{equation*}
+Pela definição dos coeficientes da conexão de Levi-Civita em uma carta \(\tilde{x}\),
+\begin{equation*}
+    \tilde{\Gamma}\indices{^\lambda_{\rho \sigma}} = \frac12 \tilde{g}^{\lambda \omega}\left(\tilde\partial_\rho\tilde{g}_{\omega \sigma} + \tilde\partial_\sigma\tilde{g}_{\omega\sigma} - \tilde\partial_\omega \tilde{g}_{\rho\sigma}\right),
+\end{equation*}
+podemos obter a transformação destes coeficientes. Temos
+\begin{align*}
+    \partial_{\gamma} g_{\alpha\beta} &= \partial_{\gamma}\left(\diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta} g'_{\mu\nu}\right)\\
+                                      &= \diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta} \partial_{\gamma}g'_{\mu\nu} + g'_{\mu\nu}\partial_{\gamma}\left(\diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}\right)\\
+                                      &= \colorunderline{Pink}{\diffp{x'^\lambda}{x^\gamma} \diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}} \partial'_{\lambda}g'_{\mu\nu} + g'_{\mu\nu}\left(\colorunderline{Lavender}{\diffp{x'^\mu}{x^\gamma,x^\alpha}\diffp{x'^\nu}{x^\beta}} + \colorunderline{Mauve}{\diffp{x'^\mu}{x^\alpha}\diffp{x'^\nu}{x^\gamma,x^\beta}}\right)
+\end{align*}
+portanto, por permutações cíclicas de \(\alpha,\beta,\gamma\) e renomeando alguns índices que estão sendo somados, temos
+\begin{align*}
+    \partial_{\alpha} g_{\beta\gamma} &= \diffp{x'^\lambda}{x^\alpha} \diffp{x'^\mu}{x^\beta} \diffp{x'^\nu}{x^\gamma} \partial'_{\lambda}g'_{\mu\nu} + g'_{\mu\nu}\left(\diffp{x'^\mu}{x^\alpha,x^\beta}\diffp{x'^\nu}{x^\gamma} + \diffp{x'^\mu}{x^\beta}\diffp{x'^\nu}{x^\alpha,x^\gamma}\right)\\
+                                      &=  \diffp{x'^\lambda}{x^\gamma} \diffp{x'^\mu}{x^\alpha}\diffp{x'^\nu}{x^\beta} \partial'_{\mu}g'_{\nu\lambda} + g'_{\nu\mu}\left(\diffp{x'^\nu}{x^\alpha,x^\beta}\diffp{x'^\mu}{x^\gamma} + \diffp{x'^\nu}{x^\beta}\diffp{x'^\mu}{x^\alpha,x^\gamma}\right)\\
+                                      &=\colorunderline{Pink}{\diffp{x'^\lambda}{x^\gamma} \diffp{x'^\mu}{x^\alpha}\diffp{x'^\nu}{x^\beta}}\partial'_{\mu}g'_{\nu\lambda} + g'_{\mu\nu}\left(\colorunderline{Teal}{\diffp{x'^\nu}{x^\alpha,x^\beta}\diffp{x'^\mu}{x^\gamma}} + \colorunderline{Lavender}{\diffp{x'^\nu}{x^\beta}\diffp{x'^\mu}{x^\alpha,x^\gamma}}\right)
+\end{align*}
+e
+\begin{align*}
+    \partial_{\beta} g_{\gamma\alpha} &= \diffp{x'^\lambda}{x^\beta} \diffp{x'^\mu}{x^\gamma} \diffp{x'^\nu}{x^\alpha} \partial'_{\lambda}g'_{\mu\nu} + g'_{\mu\nu}\left(\diffp{x'^\mu}{x^\beta,x^\gamma}\diffp{x'^\nu}{x^\alpha} + \diffp{x'^\mu}{x^\gamma}\diffp{x'^\nu}{x^\beta,x^\alpha}\right)\\
+                                      &=  \diffp{x'^\lambda}{x^\gamma} \diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}\partial'_{\nu}g'_{\lambda\mu} + g'_{\nu\mu}\diffp{x'^\nu}{x^\beta,x^\gamma}\diffp{x'^\mu}{x^\alpha} + g'_{\mu\nu}\diffp{x'^\mu}{x^\gamma}\diffp{x'^\nu}{x^\beta,x^\alpha}\\
+                                      &=  \colorunderline{Pink}{\diffp{x'^\lambda}{x^\gamma} \diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}}\partial'_{\nu}g'_{\lambda\mu} + g'_{\mu\nu}\left(\colorunderline{Mauve}{\diffp{x'^\nu}{x^\beta,x^\gamma}\diffp{x'^\mu}{x^\alpha}} + \colorunderline{Teal}{\diffp{x'^\mu}{x^\gamma}\diffp{x'^\nu}{x^\beta,x^\alpha}}\right),
+\end{align*}
+onde utilizamos que as componentes da métrica são simétricos. Utilizando o guia dos termos sublinhados, obtemos a transformação dos coeficientes da conexão sob mudança de cartas,
+\begin{align*}
+    \Gamma\indices{^{\rho}_{\alpha \beta}} &= \frac12 g^{\rho \gamma} \left(\partial_\alpha g_{\beta \gamma} + \partial_{\beta}g_{\gamma \alpha} - \partial_{\gamma}g_{\alpha \beta}\right)\\
+                                           &= \frac12 \left(\diffp{x^\rho}{x'^\sigma}\diffp{x^\gamma}{x'^\xi}g'^{\sigma\xi}\right)\left[\colorunderline{Pink}{\diffp{x'^\lambda}{x^\gamma} \diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}}\left(\partial'_\mu g'_{\nu \lambda} + \partial'_\nu g'_{\lambda \mu} - \partial'_{\lambda}g'_{\mu \nu}\right) + 2g'_{\mu\nu}\left(\colorunderline{Teal}{\diffp{x'^\mu}{x^\alpha,x^\beta}\diffp{x'^\nu}{x^\gamma}}\right)\right]\\
+                                           &= \diffp{x^\rho}{x'^\sigma}\left[\frac12 \diffp{x^\gamma}{x'^\xi}\diffp{x'^\lambda}{x^\gamma} \diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}g'^{\sigma\xi}\left(\partial'_\mu g'_{\nu \lambda} + \partial'_\nu g'_{\lambda \mu} - \partial'_{\lambda}g'_{\mu \nu}\right) + \diffp{x^\gamma}{x'^\xi}\diffp{x'^\nu}{x^\gamma}g'^{\sigma\xi}g'_{\mu\nu}\left(\diffp{x'^\mu}{x^\alpha,x^\beta}\right)\right]\\
+                                           &= \diffp{x^\rho}{x'^\sigma}\left[\frac12 \diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}\delta\indices{^\lambda_{\xi}} g'^{\sigma\xi}\left(\partial'_\mu g'_{\nu \lambda} + \partial'_\nu g'_{\lambda \mu} - \partial'_{\lambda}g'_{\mu \nu}\right) +\delta\indices{^\nu_\xi}g'^{\sigma\xi}g'_{\mu\nu}\left(\diffp{x'^\mu}{x^\alpha,x^\beta}\right)\right]\\
+                                           &= \diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}\left[\frac12g'^{\sigma\lambda}\left(\partial'_\mu g'_{\nu \lambda} + \partial'_\nu g'_{\lambda \mu} - \partial'_{\lambda}g'_{\mu \nu}\right)\right] +\diffp{x^\rho}{x'^\sigma}g'^{\sigma\nu}g'_{\mu\nu}\left(\diffp{x'^\mu}{x^\alpha,x^\beta}\right)\\
+                                           &= \diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}{\Gamma'}\indices{^\sigma_{\mu\nu}} + \diffp{x^\rho}{x'^\sigma}\diffp{x'^\sigma}{x^\alpha,x^\beta},
+\end{align*}
+então pela presença do termo afim \(\diffp{x^\rho}{x'^\sigma}\diffp{x'^\sigma}{x^\alpha,x^\beta}\) não necessariamente nulo, estes coeficientes não se transformam como tensores.
+
+Para um vetor \(V^\rho\), consideremos o objeto \(\partial_{\alpha}V^\rho\) na carta local de coordenadas \(x\). Em outra carta de coordenadas \(x'\), temos
+\begin{equation*}
+ V^\rho = \diffp{x^\rho}{x'^\nu} V'^\nu,
+\end{equation*}
+de modo que
+\begin{align*}
+    \partial_{\alpha}V^\rho &= \diffp{x'^\mu}{x^\alpha} \partial'_{\mu}\left(\diffp{x^\rho}{x'^\sigma} V'^\sigma\right)\\
+                             &= \diffp{x'^\mu}{x^\alpha} \diffp{x^\rho}{x'^\sigma} \partial'_\mu V'^\sigma + \diffp{x'^\mu}{x^\alpha} \diffp{x^\rho}{x'^\mu,x'^\sigma} V'^\sigma,
+\end{align*}
+e por conta do termo afim \(\diffp{x'^\mu}{x^\alpha} \diffp{x^\rho}{x'^\mu,x'^\sigma} V'^\sigma\) não necessariamente nulo, este objeto não se transforma como um tensor.
+
+Mostremos que \(\nabla_{\alpha} V^\rho = \partial_\alpha V^\rho + \Gamma\indices{^\rho_{\alpha \beta}}V^\beta\) se transforma como um tensor. Notemos que
+\begin{align*}
+    \Gamma\indices{^\rho_{\alpha \beta}}V^\beta &= \left(\diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}{\Gamma'}\indices{^\sigma_{\mu\nu}} + \diffp{x^\rho}{x'^\sigma}\diffp{x'^\sigma}{x^\alpha,x^\beta}\right)V^\beta\\
+                                                &= \diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha} {\Gamma'}\indices{^\sigma_{\mu\nu}}V'^\nu + \diffp{x^\rho}{x'^\sigma}\diffp{x'^\sigma}{x^\alpha,x^\beta}V^\beta
+\end{align*}
+Assim, temos que
+\begin{align*}
+    \nabla_\alpha V^\rho &= \diffp{x'^\mu}{x^\alpha}\diffp{x^\rho}{x'^\sigma}\left(\partial'_\mu V'^\sigma + {\Gamma'}\indices{^\sigma_{\mu\nu}}V'^\nu\right)+ \diffp{x^\rho}{x'^\sigma}\diffp{x'^\sigma}{x^\alpha,x^\beta}V^\beta + \diffp{x'^\mu}{x^\alpha} \diffp{x^\rho}{x'^\mu,x'^\sigma} V'^\sigma\\
+                         &=\diffp{x'^\mu}{x^\alpha}\diffp{x^\rho}{x'^\sigma}\nabla'_\mu V'^\sigma + \left(\diffp{x^\rho}{x'^\sigma}\diffp{x'^\sigma}{x^\alpha,x^\beta} + \diffp{x'^\sigma}{x^\beta}\diffp{x'^\mu}{x^\alpha} \diffp{x^\rho}{x'^\mu,x'^\sigma}\right) V^\beta\\
+                         &=\diffp{x'^\mu}{x^\alpha}\diffp{x^\rho}{x'^\sigma}\nabla'_\mu V'^\sigma + \left(\diffp{x^\rho}{x'^\sigma}\diffp*{}{x^\alpha}\diffp{x'^\sigma}{x^\beta} + \diffp{x'^\sigma}{x^\beta}\diffp*{}{x^\alpha} \diffp{x^\rho}{x'^\sigma}\right) V^\beta\\
+                         &=\diffp{x'^\mu}{x^\alpha}\diffp{x^\rho}{x'^\sigma}\nabla'_\mu V'^\sigma + \diffp*{\left(\diffp{x^\rho}{x'^\sigma} \diffp{x'^\sigma}{x^\beta}\right)}{x^\alpha} V^\beta\\
+                         &=\diffp{x'^\mu}{x^\alpha}\diffp{x^\rho}{x'^\sigma}\nabla'_\mu V'^\sigma + \left(\partial_\alpha \delta\indices{^{\rho}_{\beta}}\right)V^\beta\\
+                         &=\diffp{x'^\mu}{x^\alpha}\diffp{x^\rho}{x'^\sigma}\nabla'_\mu V'^\sigma,
+\end{align*}
+já que o \(\partial_\alpha \delta\indices{^\rho_\beta} = 0\). Segue que este objeto se transforma como um tensor.
