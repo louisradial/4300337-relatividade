@@ -1,6 +1,12 @@
 \section*{Exercício 2}
 Sobre um espaço vetorial \(V\) de dimensão \(n\), tensores de segunda ordem têm um total de \(n^2\) componentes. Um tensor antissimétrico \(A_{\omega\rho}\) deve satisfazer \(A_{\omega\rho} = -A_{\rho\omega}\) para todo par de índices \(\omega,\rho\). Assim, temos que as \(n\) componentes \(A_{\rho \rho}\) são nulas, e a condição das outras \(n^2 - n\) componentes, \(A_{\omega\rho} = - A_{\rho\omega}\) para \(\rho \neq \omega\), reduz o número de componentes independentes para \(\frac{n^2 - n}{2}\). Semelhantemente, um tensor simétrico \(S^{\mu\nu}\) deve satisfazer \(S^{\mu\nu} = S^{\nu\mu}\) para todo par de índices \(\mu, \nu\). Para \(\mu = \nu\), esta condição é trivialmente satisfeita, de modo que o número de componentes independentes é \(\frac{n^2 + n}{2}\). Como exemplo, em um espaço vetorial de dimensão 4, tensores de segunda ordem antissimétricos têm seis componentes independentes e simétricos, dez.
 
+Mostremos que a contração de um tensor simétrico com um tensor antissimétrico tem uma propriedade muito útil, \(S^{\omega \rho}A_{\omega \rho} = 0\). Por antissimetria e simetria temos
 \begin{equation*}
-    S^{\omega\rho}A_{\omega \rho} = - S^{\omega\rho}A_{\rho\omega} = - S^{\rho \omega} A_{\rho \omega} \implies S^{\omega\rho}A_{\omega\rho} = -S^{\omega\rho}A_{\omega\rho} = 0
+    S^{\omega\rho}A_{\omega\rho} = - S^{\omega\rho}A_{\rho \omega} = - S^{\rho\omega}A_{\rho\omega}.
 \end{equation*}
+Como os índices estão sendo somados, podemos renomeá-los. Em particular, podemos renomear na soma à direita \(\omega \to \rho\) e \(\rho \to \omega\), obtendo
+\begin{equation*}
+    S^{\omega\rho}A_{\omega\rho} = -S^{\omega\rho}A_{\omega\rho},
+\end{equation*}
+isto é \(S^{\omega\rho}A_{\omega\rho} = 0\).
