@@ -3,7 +3,7 @@ Utilizando os resultados do exercício anterior, os coeficientes da conexão de 
 \begin{align*}
     \Gamma\indices{^r_{\theta\theta}} &= -r & \Gamma\indices{^r_{\phi\phi}} &= -r\sin^2\theta\\
     \Gamma\indices{^\theta_{\theta r}} &= \frac{1}{r} & \Gamma\indices{^\theta_{\phi\phi}} &= -\sin\theta\cos\theta\\
-    \Gamma\indices{^\phi_{\phi r}} &= \frac{1}{r} & \Gamma\indices{^\phi_{\phi\theta}} &= \frac{1}{r} \cot\theta,
+    \Gamma\indices{^\phi_{\phi r}} &= \frac{1}{r} & \Gamma\indices{^\phi_{\phi\theta}} &=  \cot\theta,
 \end{align*}
 e os outros termos são ou nulos ou obtidos pela simetria da conexão.
 
@@ -33,6 +33,14 @@ para todo \(k\). Assim, de forma explícita, as equações da geodésica são da
     \begin{cases}
         \ddot{r} - r\dot{\theta}^2 -r\dot{\phi}^2 \sin^2\theta = 0\\
         \ddot{\theta} + \frac2r \dot{r}\dot{\theta} - \dot{\phi}^2\sin\theta\cos\theta=0\\
-        \ddot{\phi} + \frac2r \dot{r}\dot{\phi} + \frac2r \dot\phi\dot\theta \cot\theta = 0
-    \end{cases}.
+        \ddot{\phi} + \frac2r \dot{r}\dot{\phi} + 2\dot\phi\dot\theta \cot\theta = 0
+    \end{cases} \implies
+    \begin{cases}
+        \ddot{r} - r\dot{\theta}^2 -r\dot{\phi}^2 \sin^2\theta = 0\\
+        r\ddot{\theta} + 2\dot{r}\dot{\theta} - r\dot{\phi}^2\sin\theta\cos\theta=0\\
+        r\ddot{\phi}\sin\theta + 2\dot{r}\dot{\phi} + 2\dot\phi\dot\theta \cos\theta = 0
+    \end{cases},
 \end{equation*}
+onde \(r = x^r\), \(\theta = x^\theta\) e \(\phi = x^\phi\) e os pontos sobre as variáveis denotam que estas funções componente foram derivadas em relação ao parâmetro afim \(\lambda\).
+
+Em analogia ao movimento de uma partícula em mecânica clássica, sabemos que as equações acima especificam uma partícula se movendo ao longo de uma curva \(\gamma\) com aceleração nula, isto é, cada equação é uma componente da aceleração desta partícula. Desse modo, como o parâmetro \(\lambda\) é afim, uma vez que buscamos uma geodésica, sabemos que o vetor tangente à curva é constante. Integrando mais uma vez, obtemos que a solução deste sistema de equações é uma reta.
