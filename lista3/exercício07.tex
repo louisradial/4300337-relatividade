@@ -50,7 +50,7 @@ e por conta do termo afim \(\diffp{x'^\mu}{x^\alpha} \diffp{x^\rho}{x'^\mu,x'^\s
 Mostremos que \(\nabla_{\alpha} V^\rho = \partial_\alpha V^\rho + \Gamma\indices{^\rho_{\alpha \beta}}V^\beta\) se transforma como um tensor. Notemos que
 \begin{align*}
     \Gamma\indices{^\rho_{\alpha \beta}}V^\beta &= \left(\diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}{\Gamma'}\indices{^\sigma_{\mu\nu}} + \diffp{x^\rho}{x'^\sigma}\diffp{x'^\sigma}{x^\alpha,x^\beta}\right)V^\beta\\
-                                                &= \diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha} {\Gamma'}\indices{^\sigma_{\mu\nu}}V'^\nu + \diffp{x^\rho}{x'^\sigma}\diffp{x'^\sigma}{x^\alpha,x^\beta}V^\beta
+                                                &= \diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha} {\Gamma'}\indices{^\sigma_{\mu\nu}}V'^\nu + \diffp{x^\rho}{x'^\sigma}\diffp{x'^\sigma}{x^\alpha,x^\beta}V^\beta.
 \end{align*}
 Assim, temos que
 \begin{align*}
@@ -62,3 +62,23 @@ Assim, temos que
                          &=\diffp{x'^\mu}{x^\alpha}\diffp{x^\rho}{x'^\sigma}\nabla'_\mu V'^\sigma,
 \end{align*}
 já que o \(\partial_\alpha \delta\indices{^\rho_\beta} = 0\). Segue que este objeto se transforma como um tensor.
+
+Para um tensor \(Q\indices{^\rho_\tau}\), a sua derivada covariante é dada por
+\begin{equation*}
+    \nabla_\alpha Q\indices{^\rho_\tau} = \partial_\alpha Q\indices{^\rho_\tau} + \Gamma\indices{^\rho_{\alpha\beta}}Q\indices{^\beta_\tau} - \Gamma\indices{^\gamma_{\alpha\tau}}Q\indices{^\rho_\gamma}.
+\end{equation*}
+Em relação à carta de coordenadas \(x'\), temos
+\begin{align*}
+    \partial_\alpha Q\indices{^\rho_\tau} &= \diffp{x'^\mu}{x^\alpha}\partial'_\mu\left(\diffp{x^\rho}{x'^\sigma}\diffp{x'^\xi}{x^\tau}{Q'}\indices{^\sigma_\xi}\right)\\
+                                            &= \diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha}\diffp{x'^\xi}{x^\tau}\partial'_\mu {Q'}\indices{^\sigma_\xi} + \diffp{x'^\mu}{x^\alpha}{Q'}\indices{^\sigma_\xi}\partial'_\mu\left(\diffp{x^\rho}{x'^\sigma}\diffp{x'^\xi}{x^\tau}\right)\\
+                                            &= \diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha}\diffp{x'^\xi}{x^\tau}\partial'_\mu {Q'}\indices{^\sigma_\xi} + \diffp{x'^\mu}{x^\alpha}\diffp{x'^\xi}{x^\tau} {Q'}\indices{^\sigma_\xi}\diffp{x^\rho}{x'^\mu,x'^\sigma}+ {Q'}\indices{^\sigma_\xi}\diffp{x^\rho}{x'^\sigma}\diffp{x'^\xi}{x^\alpha,x^\tau}\\
+                                            &= \diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha}\diffp{x'^\xi}{x^\tau}\partial'_\mu {Q'}\indices{^\sigma_\xi} + \diffp{x'^\mu}{x^\alpha}\diffp{x'^\sigma}{x^\rho} \diffp{x^\rho}{x'^\mu,x'^\sigma}{Q}\indices{^\rho_\tau}+ \diffp{x^\tau}{x'^\xi}\diffp{x'^\xi}{x^\alpha,x^\tau}{Q}\indices{^\rho_\tau}\\
+\end{align*}
+\begin{align*}
+    \Gamma\indices{^\rho_{\alpha \beta}}Q\indices{^\beta_\tau} &= \left(\diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha} \diffp{x'^\nu}{x^\beta}{\Gamma'}\indices{^\sigma_{\mu\nu}} + \diffp{x^\rho}{x'^\sigma}\diffp{x'^\sigma}{x^\alpha,x^\beta}\right)Q\indices{^\beta_\tau}\\
+                                                                 &= \diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha} \diffp{x'^\xi}{x^\tau}{\Gamma'}\indices{^\sigma_{\mu\nu}}{Q'}\indices{^\nu_\xi} + \diffp{x^\rho}{x'^\sigma}\diffp{x'^\sigma}{x^\alpha,x^\beta}Q\indices{^\beta_\tau}.
+\end{align*}
+\begin{align*}
+    \Gamma\indices{^\gamma_{\alpha\tau}}Q\indices{^\rho_\gamma} &= \left(\diffp{x^\gamma}{x'^\zeta}\diffp{x'^\mu}{x^\alpha} \diffp{x'^\xi}{x^\tau}{\Gamma'}\indices{^\zeta_{\mu\xi}} + \diffp{x^\gamma}{x'^\zeta}\diffp{x'^\zeta}{x^\alpha,x^\tau} \right)Q\indices{^\rho_\gamma}\\
+                                                                &= \diffp{x^\rho}{x'^\sigma}\diffp{x'^\mu}{x^\alpha} \diffp{x'^\xi}{x^\tau}{\Gamma'}\indices{^\zeta_{\mu\xi}}{Q'}\indices{^\sigma_\zeta} + \diffp{x^\gamma}{x'^\zeta}\diffp{x'^\zeta}{x^\alpha,x^\tau}Q\indices{^\rho_\gamma}\\
+\end{align*}
