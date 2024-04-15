@@ -1,0 +1,494 @@
+\documentclass[12pt,a4paper]{article}
+
+% Language and formatting
+\usepackage{polyglossia}
+\usepackage[strict=false,autostyle=true,english=american]{csquotes} %fvextra to avoid warning?
+\setmainlanguage[variant=brazilian]{portuguese}
+
+\usepackage[backend=biber, style=alphabetic, sorting=ynt]{biblatex}
+\addbibresource{bibliography.bib}
+
+% \setmainfont{Palatino Linotype}
+% \setmathfont{Palatino Linotype}
+\usepackage[a4paper, margin=2cm]{geometry}
+\usepackage{booktabs}
+
+% % title header
+% \usepackage{titleps}% http://ctan.org/pkg/titleps
+% \makeatletter
+% \newpagestyle{main}{% Define page style main
+%     \sethead%
+%     [\textbf\thepage][][\thechapter.\ \chaptertitle]% [<even-left>][<even-center>][<even-right>]
+%     {\thesection.\ \sectiontitle}{}{\textbf\thepage}% {<odd-left>}{<odd-center>}{<odd-right>}
+%     \setfoot{}{}{}% {<left>}{<center>}{<right>}
+% }
+% \pagestyle{main}% Use page style main
+
+% Images
+\usepackage{tikz}
+\usetikzlibrary{cd}
+\usepackage[root-radius=0.1cm,edge-length=0.8cm]{dynkin-diagrams}
+\usepackage{graphicx, caption, subcaption}
+\usepackage{float}
+
+% Math tools
+\usepackage{amsfonts, mathtools, amssymb, amsmath, amsthm, enumitem}
+\usepackage{newpxtext, newpxmath}
+\numberwithin{equation}{section}
+\usepackage[ISO]{diffcoeff}
+\usepackage{tensor}
+\usepackage{siunitx}
+
+% Misc
+\usepackage{luacolor}
+\usepackage[breakable]{tcolorbox}
+
+\difdef{fp}{}{
+    outer-Ldelim = \left.,
+    outer-Rdelim = \right|,
+    sub-nudge=0 mu
+}
+\newcommand\todo[1][!]{{\color{Red} TODO {#1}}}
+\difdef{l}{i}{outer-Rdelim = \,, outer-Ldelim=}
+\NewDocumentCommand\dli{}{\dl.i.}
+\DeclareMathOperator\Riem{Riem}
+\DeclareMathOperator\Orb{Orb}
+\DeclareMathOperator\Stab{Stab}
+\DeclareMathOperator\sgn{sgn}
+\DeclareMathOperator\End{End}
+\DeclareMathOperator\tr{tr}
+\DeclareMathOperator\sech{sech}
+\DeclareMathOperator\hor{hor}
+\DeclareMathOperator\ver{ver}
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}
+\DeclarePairedDelimiter\norm{\lVert}{\rVert}
+\DeclarePairedDelimiterX\inner[2]{\langle}{\rangle}{#1,\mathopen{}#2}
+\DeclarePairedDelimiter\set{\{}{\}}
+
+\newenvironment{smallpmatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
+\newcommand\ract{\mathbin{\vartriangleleft}}
+\newcommand\ractalt{\mathbin{\blacktriangleleft}}
+% \newcommand\ractalt{{\color{Mauve}\mathbin{\blacktriangleleft}}}
+\newcommand\lact{\mathbin{\vartriangleright}}
+\newcommand\lactalt{\mathbin{\blacktriangleright}}
+\newcommand\ad[1]{\operatorname{ad}_{#1}}
+\newcommand\Ad[1]{\operatorname{Ad}_{#1}}
+\newcommand\preim[2]{\operatorname{preim}_{#1}{\left(#2\right)}}
+\newcommand\id[1]{\operatorname{id}_{#1}}
+\newcommand\colorunderline[2]{{\color{#1}\underline{{\color{black}{#2}}}}}
+\newcommand\Hom[2][]{\ensuremath{\operatorname{Hom}_{#1}{\left(#2\right)}}}
+\newcommand\bundle[3]{\ensuremath{#1 \mathrel{\overset{#2}{\to}} #3}}
+\newcommand\smooth[1]{\ensuremath{\mathcal{C}^\infty(#1)}}
+\newcommand\sections[1]{\ensuremath{\Gamma\left(#1\right)}}
+\newcommand\forms[2][]{\ensuremath{\Lambda^{#1}{\left({#2}\right)}}}
+\newcommand\ffamily[3]{\ensuremath{\set*{#1}_{#2}^{#3}}}
+\newcommand\family[2]{\ensuremath{\set*{#1}_{#2}}}
+\newcommand\vetor[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand\linear{\ensuremath{\mathrel{\tilde{\to}}}}
+\newcommand\topology[1]{\ensuremath{\left(#1, \mathcal{O}_{#1}\right)}}
+\newcommand\manifold[1]{\ensuremath{\left(#1, \mathcal{O}_{#1}, \mathscr{A}_{#1}\right)}}
+\newcommand\restrict[2]{\ensuremath{\left.#1\right\rvert_{#2}}}
+\newcommand\bfield[1]{\ensuremath{\diffp*{}{#1}}}
+\newcommand\bvec[3][]{\ensuremath{\diffp*{#1}{#2}[#3]}}
+\newcommand\bset[3]{\ensuremath{\set*{\diffp*{}{{#1}^1}[#3], \dots, \diffp*{}{{#1}^{#2}}[#3]}}}
+\newcommand\pf[2][]{\ensuremath{{#2}_{\ast{#1}}}}
+\newcommand\pb[2][]{\ensuremath{{#2}^{\ast}_{#1}}}
+
+% catppuccin (latte)
+\definecolor{Rosewater}{RGB}{220,138,120}
+\definecolor{Flamingo}{RGB}{221,120,120}
+\definecolor{Pink}{RGB}{234,118,203}
+\definecolor{Mauve}{RGB}{136,57,239}
+\definecolor{Red}{RGB}{210,15,57}
+\definecolor{Maroon}{RGB}{230,69,83}
+\definecolor{Peach}{RGB}{254,100,11}
+\definecolor{Yellow}{RGB}{223,142,29}
+\definecolor{Green}{RGB}{64,160,43}
+\definecolor{Teal}{RGB}{23,146,153}
+\definecolor{Sky}{RGB}{4,165,229}
+\definecolor{Sapphire}{RGB}{32,159,181}
+\definecolor{Blue}{RGB}{30,102,245}
+\definecolor{Lavender}{RGB}{114,135,253}
+\definecolor{Text}{RGB}{76,79,105}
+\definecolor{Subtext1}{RGB}{92,95,119}
+\definecolor{Subtext0}{RGB}{108,111,133}
+\definecolor{Overlay2}{RGB}{124,127,147}
+\definecolor{Overlay1}{RGB}{140,143,161}
+\definecolor{Overlay0}{RGB}{156,160,176}
+\definecolor{Surface2}{RGB}{172,176,190}
+\definecolor{Surface1}{RGB}{188,192,204}
+\definecolor{Surface0}{RGB}{204,208,218}
+\definecolor{Base}{RGB}{239,241,245}
+\definecolor{Mantle}{RGB}{230,233,239}
+\definecolor{Crust}{RGB}{220,224,232}
+
+% References
+\usepackage{hyperref}
+\usepackage[capitalize, nameinlink, noabbrev, brazilian]{cleveref}
+\makeatletter
+\hypersetup{
+    pdftitle=\@title,
+    pdfauthor=\@author,
+    colorlinks=true,
+    linkcolor=Mauve,
+    citecolor=pink,
+    filecolor=red,
+    urlcolor=blue,
+    bookmarksdepth=4
+}
+\makeatother
+
+% tcolorbox environments
+\tcbuselibrary{theorems}
+% theorem
+\newtcbtheorem[auto counter, number within=section, crefname={Teorema}{Teoremas}]{theorem}{Teorema}%
+{breakable,colback=Mauve!5,colframe=Mauve!95!black,fonttitle=\bfseries}{thm}
+
+% definition
+\newtcbtheorem[auto counter, number within=section, crefname={Definição}{Definições}]{definition}{Definição}%
+{breakable, colback=Pink!5,colframe=Pink!95!black,fonttitle=\bfseries}{def}
+
+% exercício
+\newtcbtheorem[auto counter, number within=section, crefname={Exercício}{Exercícios}]{exercício}{Exercício}%
+{breakable,colback=Sky!5,colframe=Sky!95!black,fonttitle=\bfseries}{ex}
+
+% proposition
+\newtcbtheorem[auto counter, number within=section, crefname={Proposição}{Proposições}]{proposition}{Proposição}%
+{breakable,colback=Lavender!5,colframe=Lavender!95!black,fonttitle=\bfseries}{prop}
+
+% lemma
+\newtcbtheorem[auto counter, number within=section, crefname={Lemma}{Lemmas}]{lemma}{Lemma}%
+{breakable,colback=Flamingo!5,colframe=Flamingo!95!black,fonttitle=\bfseries}{lem}
+
+% example
+\newtheorem{example}{Example}[section]
+
+% amsthm environments
+% \newtheorem{definition}{Definition}[section]
+% \newtheorem{theorem}{Theorem}[section]
+% \newtheorem{proposition}{Proposition}[section]
+\newtheorem{remark}{Observação}[section]
+% \newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corolário}[section]
+
+\title{Exercícios de Geometria Diferencial}
+\author{Louis Bergamo Radial}
+
+% \setcounter{chapter}{0}
+
+% \allowdisplaybreaks
+
+\begin{document}
+\maketitle
+
+% \tableofcontents
+
+\section{Espaços topológicos}
+\begin{definition}{Topologia}{topologia}
+    Uma topologia no conjunto \(M\) é uma coleção \(\mathcal{O}_M\) de subconjuntos de \(M\) satisfazendo os axiomas
+    \begin{enumerate}[label=(\alph*)]
+        \item o conjunto vazio e o conjunto \(M\) pertencem a \(\mathcal{O}_M\);
+        \item uma interseção finita de elementos de \(\mathcal{O}_M\) pertence a \(\mathcal{O}_M\); e
+        \item uma união arbitrária de elementos de \(\mathcal{O}_M\) pertence a \(\mathcal{O}_M\).
+    \end{enumerate}
+
+    O par \topology{M} é denominado um \emph{espaço topológico} e subconjuntos de \(M\) que pertencem à topologia \(\mathcal{O}_M\) são chamados \emph{conjuntos abertos}. Se um subconjunto \(U\) é tal que o seu complemento \(M \smallsetminus U\) é aberto, então dizemos que \(U\) é um \emph{conjunto fechado}. Adicionalmente, dado um elemento \(p \in M\), um conjunto aberto \(V\) que contém \(p\) é dito uma \emph{vizinhança} de \(p\).
+\end{definition}
+
+\begin{exercício}{Topologia usual do \(\mathbb{R}^n\)}{std}
+    Definimos a \emph{bola aberta} \(B_r(p) \subset \mathbb{R}^n\) \emph{de raio \(r > 0\) centrado no ponto \(p = (p^1, \dots, p^n) \in \mathbb{R}^n\)} como o conjunto
+    \begin{equation*}
+        B_r(p) = \set*{q = (q^1, \dots, q^n) \in \mathbb{R}^n : \norm{p - q} < r},
+    \end{equation*}
+    onde \(\norm{p - q} = \sqrt{\sum_{i=1}^n\left(p^i - q^i\right)^2}\). Verifique que \(\mathcal{O}_\mathrm{usual}\) é uma topologia para \(\mathbb{R}^n\), onde \(U \in \mathcal{O}_\mathrm{usual}\) se para todo ponto \(x \in U\) existe \(r > 0\) tal que \(B_r(x) \subset U\).
+\end{exercício}
+
+\begin{proposition}{Topologia de subespaço}{subespaço_topológico}
+    Dado um espaço topológico \topology{M} e um subconjunto \(S\subset M\), definimos a \emph{topologia de subespaço} \restrict{\mathcal{O}_M}{S} como
+    \begin{equation*}
+        \restrict{\mathcal{O}_M}{S} = \set{U \cap S : U \in \mathcal{O}_M}.
+    \end{equation*}
+    Então \((S, \restrict{\mathcal{O}_M}{S})\) é um espaço topológico.
+\end{proposition}
+\begin{proof}
+    Devemos mostrar que os axiomas da \cref{def:topologia} são satisfeitos.
+    \begin{enumerate}[label=(\alph*)]
+        \item Como \(S = M \cap S\) e \(\emptyset = \emptyset \cap S\), temos \(S \in \restrict{\mathcal{O}_M}{S}\) e \(\emptyset \in \restrict{\mathcal{O}_M}{S}\).
+        \item Seja \(U, V \in \restrict{\mathcal{O}_M}{S}\). Então, existem \(\tilde{U}, \tilde{V} \in \mathcal{O}_M\) tais que \(U = \tilde{U} \cap S\) e \(V = \tilde{V} \cap S\). Assim, \(U \cap V = (\tilde{U}\cap S) \cap (\tilde{V} \cap S) = (\tilde{U}\cap\tilde{V})\cap S\). Como \(\tilde{U} \cap \tilde{V} \in \mathcal{O}_M\), devemos ter \(U \cap V \in \restrict{\mathcal{O}_M}{S}\).
+        \item Seja \family{U_\alpha}{\alpha \in J} uma família de conjuntos abertos de \(\restrict{\mathcal{O}_M}{S}\). Para cada \(\alpha \in J\), existe \(\tilde{U}_\alpha\in\mathcal{O}_M\) tal que \(U_\alpha = \tilde{U}_\alpha \cap S\). Então
+            \begin{align*}
+                \bigcup_{\alpha \in J} U_\alpha &= \bigcup_{\alpha \in J} \tilde{U}_\alpha \cap S\\
+                                                &= \set{m \in S : \exists \alpha \in J \text{ tal que } m \in \tilde{U}_\alpha}\\
+                                                &= \set{m \in M : \exists \alpha \in J \text{ tal que } m \in \tilde{U}_\alpha} \cap S\\
+                                                &= S\cap\bigcup_{\alpha\in J}\tilde{U}_\alpha.
+            \end{align*}
+        Como a união arbitrária de conjuntos abertos é aberta, segue que \(\bigcup_{\alpha\in J}U_\alpha \in \restrict{\mathcal{O}_M}{S}\).
+    \end{enumerate}
+    Desse modo, \((S, \restrict{\mathcal{O}_M}{S})\) é um espaço topológico.
+\end{proof}
+
+\begin{definition}{Função contínua e homeomorfismos}{continuidade}
+    Sejam \topology{M} e \topology{N} espaços topológicos. Uma aplicação \(f : M \to N\) é \emph{contínua (em relação às topologias \(\mathcal{O}_M\) e \(\mathcal{O}_N\))} se para todo aberto \(V \in \mathcal{O}_N\) a pre-imagem \(\preim{f}{V}\) é um conjunto aberto de \(\mathcal{O}_M\). Ainda, se \(f\) for um isomorfismo contínuo com inversa contínua, então \(f\) é dito um \emph{homeomorfismo} e os espaços topológicos são ditos \emph{homeomorfos}.
+\end{definition}
+\begin{remark}
+    Convença-se que esta definição é equivalente à definição usual de continuidade para funções de variáveis reais a valores reais.
+\end{remark}
+
+\begin{exercício}{Composição de aplicações contínuas}{composição}
+    Sejam \topology{A}, \topology{B} e \topology{C} espaços topológicos e sejam as aplicações contínuas (em relação às topologias apropriadas) \(f : A \to B\) e \(g : B \to C\). Mostre que a composição \(g \circ f: A \to C\) é contínua em relação à \(\mathcal{O}_A\) e \(\mathcal{O}_C\).
+\end{exercício}
+\begin{corollary}
+    \label{col:homeomorfo}
+    A relação \[\topology{A} \sim \topology{B} \iff \text{\topology{A} é homeomorfo a \topology{B}}\] é uma relação de equivalência.
+\end{corollary}
+
+\begin{exercício}{Bola aberta em \(\mathbb{R}^n\) é homeomorfa a \(\mathbb{R}^n\)}{homeomorfismo_bola}
+    Utilize seus conhecimentos de cálculo elementar para mostrar que uma bola aberta qualquer é homeomorfa a \(\mathbb{R}^n\) em relação à topologia de subespaço e à topologia usual. \underline{Sugestão}: mostre que a função
+    \begin{align*}
+        f : B_r(0) \subset \mathbb{R}^n &\to \mathbb{R}^n \\
+                                      x &\mapsto \frac{x}{r - \norm{x}}
+    \end{align*}
+    é uma bijeção.
+\end{exercício}
+
+\begin{definition}{Espaço topológico localmente Euclidiano}{localmente_euclidiano}
+    Um espaço topológico \topology{M} é \emph{localmente Euclidiano de dimensão \(n\)} se para todo \(x \in M\), existe uma vizinhança \(U\) de \(x\) que é homeomorfa a \(\mathbb{R}^n\) em relação à topologia de subespaço e à topologia usual.
+\end{definition}
+\begin{remark}
+    Pelo \cref{ex:homeomorfismo_bola} e pelo \cref{col:homeomorfo} podemos mostrar que as vizinhanças \(U\) são homeomorfas à alguma bola aberta de \(\mathbb{R}^n\).
+\end{remark}
+
+\section{Variedades topológicas e diferenciáveis}
+\begin{definition}{Variedade topológica de dimensão finita}{variedade_topologica}
+    Uma \emph{variedade topológica} é um espaço topológico \topology{M} localmente Euclidiano de dimensão \(n\).
+\end{definition}
+\begin{remark}
+    Por motivos técnicos, é comum requerer que o espaço topológico seja Hausdorff, paracompacto e segundo contável, de modo que alguns casos patológicos sejam removidos da definição.
+\end{remark}
+\begin{definition}{Carta local de coordenadas}{carta}
+    Seja \topology{M} uma variedade topológica de dimensão \(n\). Uma \emph{carta local de coordenadas} é um par \((U,x)\) onde \(U \subset M\) é um aberto e \(x : U \to x(U) \subset \mathbb{R}^n\) é um homeomorfismo. As funções componentes de \(x\), as aplicações \(x^i : U \to \mathbb{R}\) definidas por \(p \mapsto \mathrm{proj}_i(x(p))\), são chamadas de \emph{coordenadas do ponto \(p \in U\) com respeito à carta \((U, x)\)}.
+\end{definition}
+
+\begin{definition}{Atlas de uma variedade}{atlas}
+    Seja \topology{M} uma variedade topológica. O \emph{atlas} \(\mathscr{A} = \family{(U_\alpha, x_\alpha)}{\alpha\in J}\) é uma família de cartas locais da variedade tal que \(\bigcup_{\alpha \in J}U_\alpha = M\), isto é, as cartas cobrem a variedade.
+\end{definition}
+\begin{remark}
+    Sempre existe um atlas para uma variedade topológica?
+\end{remark}
+
+\begin{definition}{Atlas de classe \(\mathcal{C}^k\)}{atlas_ck}
+    Duas cartas \((U,x)\) e \((V, y)\) de uma variedade topológica de dimensão \(n\) são \(\mathcal{C}^k\)-compatíveis se
+    \begin{enumerate}[label=(\alph*)]
+        \item \(U \cap V = \emptyset\); ou
+        \item \(U \cap V \neq \emptyset\) e a função de transição \(y \circ x^{-1} : x(U \cap V) \subset \mathbb{R}^n\to y(U \cap V) \subset \mathbb{R}^n\) é de classe \(\mathcal{C}^k\) como uma função de \(\mathbb{R}^n\) em \(\mathbb{R}^n\).
+    \end{enumerate}
+    Um atlas \(\mathscr{A}\) é de classe \(\mathcal{C}^k\) se suas cartas são par a par \(\mathcal{C}^k\)-compatíveis.
+\end{definition}
+
+\begin{exercício}{Atlas \(\mathcal{C}^0\)-compatível}{atlas_c0}
+    Mostre que todo atlas é de classe \(\mathcal{C}^0\). A partir disso, pense em como utilizar cartas locais para decidir se uma curva \(\gamma : I \subset \mathbb{R} \to M\) e se uma aplicação \(f : M \to N\) são contínuas, onde \(I\) é um intervalo na reta real, \topology{M} e \topology{N} são variedades topológicas.
+\end{exercício}
+\begin{remark}
+    Este resultado mostra que podemos estudar a continuidade de funções entre variedades por coordenadas locais ou pela definição topológica.
+\end{remark}
+
+\begin{definition}{Atlas maximal}{atlas maximal}
+    Um atlas \(\mathscr{A}\) de classe \(\mathcal{C}^k\) é \emph{maximal} se para toda carta local \((U, x) \in \mathscr{A}\) valer
+    \begin{equation*}
+        (U,x)\text{ e }(V, y)\text{ são }\mathcal{C}^k\text{-compatíveis} \implies (V,y) \in \mathscr{A},
+    \end{equation*}
+    isto é, se toda carta compatível com uma de suas cartas já estiver contida no atlas.
+\end{definition}
+
+\begin{definition}{Variedade diferenciável}{variedade_ck}
+    Uma variedade diferenciável de classe \(\mathcal{C}^k\) é uma tripla \manifold{M}, onde \topology{M} é uma variedade topológica e \(\mathscr{A}_M\) é um atlas de classe \(\mathcal{C}^k\) maximal.
+\end{definition}
+\begin{remark}
+    A partir de agora, nos limitaremos ao caso de variedades diferenciáveis de classe \(\mathcal{C}^\infty\), que chamaremos apenas de variedades diferenciáveis.
+\end{remark}
+
+\begin{exercício}{Atlas incompatíveis}{atlas_incompatíveis}
+    Mostre que uma mesma variedade topológica pode ter atlas diferenciáveis que não são compatíveis. Para isso, considere a variedade topológica como a reta real e sua topologia usual e os atlas maximais definidos pelo completamento das cartas \((\mathbb{R}, \id{\mathbb{R}}) \in \mathscr{A}_1\) e \((\mathbb{R},x) \in \mathscr{A}_2\) aos atlas suaves maximais \(\mathscr{A}_1\) e \(\mathscr{A}_2\), onde \(x : \mathbb{R} \to \mathbb{R}\) é a aplicação \(p \mapsto p^{\frac13}\).
+\end{exercício}
+
+\begin{definition}{Aplicação diferenciável}{diferenciável}
+    Seja \(\phi : M \to N\) uma aplicação, onde \manifold{M}, \manifold{N} variedades diferenciáveis de dimensões \(m\) e \(n\), respectivamente.
+
+    \begin{equation*}
+        \begin{tikzcd}[column sep = large, row sep = large]
+            U \subset M\arrow[swap]{d}{x} \arrow{r}{\phi} & V \subset N\arrow{d}{y}\\
+            x(U) \subset \mathbb{R}^m \arrow{r}{y \circ \phi\circ x^{-1}} & y(V) \subset \mathbb{R}^n
+        \end{tikzcd}
+    \end{equation*}
+    A aplicação \(\phi\) é \emph{diferenciável em \(p \in M\)} se existem cartas \((U,x) \in \mathscr{A}_M\) e \((V,y)\in \mathscr{A}_N\), onde \(U\) e \(V\) são vizinhanças de \(p\) e \(\phi(p)\), tais que a \emph{expressão de \(\phi\) em relação a essas cartas}, isto é, a aplicação \(y \circ \phi \circ x^{-1} : x(U) \to y(V)\), é uma função suave de \(\mathbb{R}^m\) em \(\mathbb{R}^n\).
+\end{definition}
+\begin{exercício}{Diferenciabilidade de uma aplicação é bem definida}{diferenciável}
+    Mostre que a diferenciabilidade de uma aplicação entre variedades diferenciáveis \(M\) e \(N\) é bem definida. Isto é, mostre que a diferenciabilidade é independente pela escolha de cartas locais.
+\end{exercício}
+
+\begin{definition}{Difeomorfismo e variedades difeomorfas}{difeomorfismo}
+    Sejam \manifold{M} e \manifold{N} duas variedades diferenciáveis. Uma bijeção \(\phi : M \to N\) é um difeomorfismo se tanto \(\phi\) quanto \(\phi^{-1}\) são diferenciáveis. Se existir um difeomorfismo \(\phi : M \to N\), dizemos que \(M\) e \(N\) são difeomorfas.
+\end{definition}
+
+\begin{exercício}{Composição de aplicações diferenciáveis}{composição_diferenciável}
+    Sejam \manifold{A}, \manifold{B} e \manifold{C} variedades diferenciáveis e sejam as aplicações diferenciáveis \(f : A \to B\) e \(g : B \to C\). Mostre que a composição \(g \circ f : A \to C\) é diferenciável.
+\end{exercício}
+
+\begin{corollary}
+    \label{col:difeomorfo}
+    A relação \[\manifold{A} \sim \manifold{B} \iff \text{\manifold{A} é difeomorfa a \manifold{B}}\] é uma relação de equivalência.
+\end{corollary}
+
+\section{Espaço tangente}
+Consideremos uma variedade diferenciável \manifold{M} de dimensão \(d\).
+
+\begin{definition}{Álgebra}{álgebra}
+    Uma \emph{álgebra} \(\mathcal{A}\) é um espaço vetorial \((\mathcal{A}, \oplus, \odot)\) sobre o corpo \(\mathbb{K}\) munido de uma aplicação bilinear \(\bullet : \mathcal{A} \times \mathcal{A} \to \mathcal{A}\) chamada de produto.
+\end{definition}
+\begin{remark}
+    O produto de uma álgebra é usualmente denotada apenas por justaposição.
+\end{remark}
+
+\begin{exercício}{Álgebra das funções em uma variedade diferenciável}{álgebra_funções}
+    Seja \(M\) uma variedade diferenciável. Convença-se que o conjunto \smooth{M} de funções suaves \(f : M \to \mathbb{R}\) é uma álgebra sobre \(\mathbb{R}\) com as operações definidas por
+    \begin{align*}
+        (f\oplus g)(x) &= f(x) + g(x) &
+        (\lambda \odot f)(x) &= \lambda \cdot f(x) &
+        (f \bullet g)(x) &= f(x) \cdot g(x),
+    \end{align*}
+    para todo \(\lambda \in \mathbb{R}\) e \(x \in M\).
+\end{exercício}
+
+\begin{definition}{Derivação em uma álgebra}{derivação}
+    Uma \emph{derivação} em uma álgebra \(\mathcal{A}\) é uma aplicação linear \(D : \mathcal{A} \to \mathcal{A}\) que satisfaz a regra de Leibniz, isto é
+    \begin{equation*}
+        D(f\bullet g) = (Df) \bullet g + f \bullet (Dg),
+    \end{equation*}
+    para todo \(f,g \in \mathcal{A}.\)
+\end{definition}
+\begin{remark}
+    Para o caso de álgebra de funções a valores reais, definimos \emph{derivações em um ponto}. A aplicação linear \(X : \smooth{M} \to \mathbb{R}\) é uma derivação no ponto \(p \in M\) se
+    \begin{equation*}
+        X(fg) = g(p) Xf + f(p) Xg
+    \end{equation*}
+    para todo \(f,g \in \smooth{M}\).
+\end{remark}
+
+\begin{definition}{Vetor tangente a uma curva em um ponto}{vetor_tangente}
+    Seja \(I = (-\varepsilon, \varepsilon) \subset \mathbb{R}\) um intervalo aberto para algum \(\varepsilon > 0\) e seja \(\gamma : I \to M\) uma curva suave que passa pelo ponto \(p = \gamma(0) \in M\). O \emph{operador de derivada direcional no ponto \(p\) ao longo da curva \(\gamma\)} é a aplicação linear
+    \begin{align*}
+        [\gamma]_p : \smooth{M} &\to \mathbb{R}\\
+                              f &\mapsto (f \circ \gamma)'(0).
+    \end{align*}
+    Em geometria diferencial, o operador \([\gamma]_p\) é chamado de \emph{vetor tangente à curva \(\gamma\) no ponto \(p\)}.
+\end{definition}
+\begin{remark}
+    Note que duas curvas distintas podem ter o mesmo vetor tangente. Por este motivo, denotamos o operador associado à curva com a notação comumente utilizada para classes de equivalência: a relação
+    \begin{equation*}
+        \gamma \sim \eta \iff \text{o vetor tangente em \(p\) ao longo de \(\gamma\) é igual ao vetor tangente em p ao longo de \(\eta\)}
+    \end{equation*}
+    é uma relação de equivalência.
+\end{remark}
+\begin{remark}
+    É fácil verificar que um operador de derivada direcional é uma derivação em um ponto da álgebra \smooth{M} de funções suaves na variedade.
+\end{remark}
+\begin{remark}
+    Intuitivamente, \([\gamma]_p\) é a velocidade de uma curva em um ponto. Dada uma curva \(\gamma : (-\varepsilon,\varepsilon) \to M\), considere uma curva \(\eta : \left(-\frac12 \varepsilon, \frac12 \varepsilon\right) \to M\) dada por \(\eta(\lambda) = \gamma(2 \lambda)\), para \(\abs\lambda < \frac12 \varepsilon\), e obtemos \([\eta]_pf = 2[\gamma]_p f\), para toda função \(f \in \smooth{M}\).
+\end{remark}
+
+\begin{definition}{Espaço tangente em um ponto}{espaço_tangente}
+    O \emph{espaço tangente em um ponto \(p \in M\)} é o conjunto \(T_pM\) de todos os operadores de derivada direcional no ponto \(p\) ao longo de curvas suaves, munido das operações de adição
+    \begin{align*}
+        + : T_pM \times T_pM &\to T_pM\\
+                       (X,Y) &\mapsto X + Y
+    \end{align*}
+    e multiplicação por escalar
+    \begin{align*}
+        \cdot : \mathbb{R} \times T_pM &\to T_pM\\
+                           (\lambda,X) &\mapsto \lambda X
+    \end{align*}
+    definidas ponto a ponto, isto é,
+    \begin{equation*}
+        (X + Y)f = Xf + Yf\quad\text{e}\quad(\lambda X)f = \lambda\cdot(Xf)
+    \end{equation*}
+    para todo \(f \in \smooth{M}\).
+\end{definition}
+
+\begin{exercício}{As operações com vetores tangentes são fechadas no espaço tangente.}{operações_vetores}
+    A definição anterior afirma que as operações definidas produzem elementos do espaço tangente. Entretanto, isso não é claro de imediato, portanto precisamos verificar que as operações são de fato fechadas no espaço tangente. Seja \(I = (-\varepsilon, \varepsilon) \subset \mathbb{R}\) um intervalo aberto e sejam \(\gamma, \eta : I \to M\) curvas suaves passando por \(p = \gamma(0) = \eta(0)\). Sejam \(X, Y \in T_pM\) os operadores de derivada direcional em \(p\) ao longo das curvas \(\gamma\) e \(\eta\) respectivamente. Mostre que existem curvas suaves \(\phi : I_\phi \to M\) e \(\psi : I_\psi \to M\), onde \(I_\phi\) e \(I_\psi\) são intervalos abertos da reta real, com \(\phi(0) = \psi(0) = p\), tal que \(X + Y\) e \(\lambda X\) são os vetores tangentes em \(p\) ao longo de \(\phi\) e \(\psi\), respectivamente. Isto é, \(X + Y \in T_pM\) e \(\lambda X \in T_pM\).
+\end{exercício}
+\begin{remark}
+    Convença-se que \(T_pM\) é um espaço vetorial sobre \(\mathbb{R}\).
+\end{remark}
+
+\begin{exercício}{Funções componentes são suaves}{componentes}
+    Seja \manifold{M} uma variedade diferenciável de dimensão \(d\) e seja \((U, x) \in \mathscr{A}_M\) uma carta local. Pelas definições de cartas locais e de atlas, é exigido que a aplicação \(x : U \to x(U)\) seja um homeomorfismo e que as aplicações \(y \circ x^{-1} : x(U) \to y(U)\) e \(x \circ y^{-1} : y(U) \to x(U)\) sejam suaves, onde \((U, y) \in \mathscr{A}_M\) é uma outra carta local. Note que nada é dito sobre a classe de diferenciabilidade da aplicação \(x\) ou suas funções componentes \(x^i\). Mostre que as funções componentes \(x^i : U \to \mathbb{R}\) são suaves.
+\end{exercício}
+\begin{remark}
+    Este resultado justifica uma importante construção do espaço tangente, que será utilizada na demonstração do \cref{thm:dimensão} para definir uma base para o espaço tangente \(T_pM\).
+\end{remark}
+
+\begin{theorem}{Dimensão do espaço tangente}{dimensão}
+    Seja \(M\) uma variedade diferenciável de dimensão \(d\). Então \(\dim{T_pM} = d\) para todo ponto \(p \in M\).
+\end{theorem}
+\begin{proof}
+    Seja \((U, x) \in \mathscr{A}_M\) carta em que \(p \in U\). Consideremos a família de \emph{curvas coordenadas} \ffamily{\gamma_{(i)} : I \to U}{i=1}{d}, onde \(I \subset \mathbb{R}\) é um intervalo aberto, com expressões locais que satisfazem
+    \begin{equation*}
+        (x^j \circ \gamma_{(i)})(\lambda) = x(p) + \delta^j_i \lambda\quad\text{e}\quad \gamma_{(i)}(0) = p
+    \end{equation*}
+    para todo \(\lambda \in I\) e \(i, j \in \set{1,\dots,d}\). Intuitivamente, cada curva é a imagem de uma reta em \(x(U) \subset \mathbb{R}^d\) sob a aplicação \(x^{-1}\), onde estas retas são paralelas a um dos eixos de \(\mathbb{R}^d\).
+
+    Seja \(e_i \in T_pM\) o vetor tangente em \(p\) ao longo de \(\gamma_{(i)}\), isto é, \(e_i = [\gamma_{(i)}]_p\).
+    \begin{exercício}{Derivada direcional ao longo de uma curva coordenada}{derivada_curva_coordenada}
+        Para uma função suave \(f \in \smooth{M}\), utilize a regra da cadeia para mostrar que
+        \begin{equation*}
+            e_i f = \partial_i(f \circ x^{-1})(x(p)),
+        \end{equation*}
+        onde \(\partial_i\) denota a derivada parcial em relação à \(i\)-ésima variável de uma função. \underline{Dica}: considere as aplicações \(f \circ x^{-1} : x(U) \subset \mathbb{R}^d \to \mathbb{R}\) e \(x \circ \gamma_{(i)} : \mathbb{R} \to x(U) \subset \mathbb{R}^d\).
+    \end{exercício}
+    Escrevemos
+    \begin{equation*}
+        e_i f = \bvec[f]{x^i}{p}
+    \end{equation*}
+    para denotar o resultado obtido no \cref{ex:derivada_curva_coordenada}, de forma que \(e_i = \bvec{x^i}{p}\). Assim, tornemos nossa atenção ao conjunto
+    \begin{equation*}
+        \mathcal{B} = \bset{x}{d}{p}
+    \end{equation*}
+    dos operadores de derivada direcional em \(p\) ao longo das curvas \(\gamma_{(i)}\) induzidas pela carta.
+
+    \begin{exercício}{Os vetores tangentes induzidos pela carta geram o espaço tangente}{gerador}
+        Considere uma curva \(\eta : I \to M\) por \(\eta(0) = p\) com vetor tangente \(X \in T_pM\) em \(p\) e calcule \(Xf\) para uma função suave \(f \in \smooth{M}\). Com isso, obtenha as componentes \(X^i\) tais que \(X = X^i\bvec{x^i}{p}\).
+    \end{exercício}
+
+    \begin{exercício}{Os vetores tangentes induzidos pela carta são linearmente independentes}{li}
+        Prove que \(\mathcal{B}\) é linearmente independente. \underline{Dica}: use o \cref{ex:componentes}.
+    \end{exercício}
+
+    Pelos \cref{ex:gerador,ex:li}, segue que \(\mathcal{B}\) é uma base de \(T_pM\) com \(d\) elementos, isto é, \(\dim{T_pM} = d\).
+\end{proof}
+
+\begin{exercício}{Jacobiano e mudança de bases}{jacobiano}
+    Sejam \((U, x), (V, \tilde{x}) \in \mathscr{A}_M\) cartas locais de coordenadas em \(M\), onde \(U\) e \(V\) são vizinhanças de \(p\). Pela construção feita no \cref{thm:dimensão}, sejam
+    \begin{equation*}
+        \mathcal{B}_x=\bset{x}{d}{p}\quad\text{e}\quad\mathcal{B}_{\tilde{x}}=\bset{\tilde{x}}{d}{p}
+    \end{equation*}
+    as bases de \(T_pM\) induzidas pelas coordenadas \(x\) e \(\tilde{x}\), respectivamente. Mostre que
+    \begin{equation*}
+        \bvec{x^i}{p} = \diffp{\tilde{x}^j}{x^i}[p]\bvec{\tilde{x}^j}{p},
+    \end{equation*}
+    onde as componentes do isomorfismo linear de mudança de bases, chamado de \emph{jacobiano no ponto \(p\)}, são dadas por \(\diffp{\tilde{x}^j}{x^i}[p] = \bvec[\tilde{x}^j]{x^i}{p}\).
+\end{exercício}
+
+\begin{exercício}{Transformação das componentes de um vetor tangente}{transformação como um vetor}
+    Sob as mesmas hipóteses do exercício anterior, considere uma curva suave \(\eta : I \to M\) com \(\eta(0) = p\) cujo vetor tangente em \(p\) é \(X \in T_pM\). Com os resultados dos \cref{ex:gerador,ex:jacobiano}, mostre que
+    \begin{equation*}
+        X^i = \diffp{x^i}{\tilde{x}^j} \tilde{X}^j,
+    \end{equation*}
+    onde \(X^a\) e \(\tilde{X}^a\) são as componentes de \(X\) nas bases induzidas pelas cartas \(x\) e \(\tilde{x}\), respectivamente. Reflita sobre a diferença para as regras de transformação das componentes de um vetor e dos vetores da base.
+\end{exercício}
+
+\section{Espaço cotangente}
+
+\section{Fibrado tangente}
+
+\end{document}
