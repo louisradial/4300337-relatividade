@@ -1,1 +1,29 @@
 \section*{Exercício 8}
+% Consideremos a transformação da métrica e da 1-forma \(\dl{x}^\sigma\) entre cartas locais \(x\) e \(x'\),
+% \begin{equation*}
+%     g_{\mu\nu} = \diffp{x'^\alpha}{x^\mu}\diffp{x'^\beta}{x^\nu} g'_{\alpha\beta}\quad\text{e}\quad\dl{x}^\sigma = \diffp{x^\sigma}{x'^\rho}\dl{x'}^\rho.
+% \end{equation*}
+Consideremos a \(D\)-forma \(\dl{x}^0 \wedge \dots \wedge \dl{x}^{D-1}\), então em outra carta de coordenadas \(x'\), temos
+\begin{align*}
+    \dl{x}^0 \wedge \dots \wedge \dl{x}^{D-1} &= \left(\diffp{x^0}{x'^{\mu_0}} \dl{x'}^{\mu_0}\right) \wedge \dots \wedge \left(\diffp{x^{D-1}}{x'^{\mu_{D-1}}}\dl{x'}^{\mu_{D-1}}\right)\\
+                                              &= \epsilon^{\mu_0\dots\mu_{D-1}} \left(\diffp{x^0}{x'^\mu_0}\dots\diffp{x^{D-1}}{x'^{\mu_{D-1}}}\right) \dl{x'}^0\wedge\dots \wedge\dl{x'}^{D-1}\\
+                                              &= J \dl{x'}^0\wedge\dots \wedge\dl{x'}^{D-1},
+\end{align*}
+onde \(J\) é o determinante do jacobiano \(\diffp{x^\alpha}{x'^\beta}\), isto é, \(J = \epsilon^{\mu_0\dots\mu_{D-1}}\diffp{x^0}{x'^{\mu_0}} \dots \diffp{x^{D-1}}{x'^{\mu_{D-1}}}\).
+
+Consideremos agora a transformação da métrica \(g_{\mu\nu}\) das coordenadas \(x\) para as coordenadas \(x'\)
+\begin{equation*}
+    g_{\mu\nu} = \diffp{x'^\alpha}{x^\mu}\diffp{x'^\beta}{x^\nu}g'_{\alpha\beta}.
+\end{equation*}
+Notemos que podemos arranjar esta última equação como uma multiplicação matricial
+\begin{equation*}
+    (g_{\mu\nu}) = \left(\diffp{x'^\alpha}{x^\mu}\right)^\top(g_{\alpha\beta})\left(\diffp{x'^\beta}{x^\nu}\right),
+\end{equation*}
+donde segue que
+\begin{equation*}
+    g = J^{-2} g',
+\end{equation*}
+onde \(g\) e \(g'\) são os determinantes das matrizes que representam a métrica nas cartas de coordenadas locais \(x\) e \(x'\). Desse modo, o objeto \(\sqrt{g}\) se transforma de forma inversa à \(D\)-forma considerada e obtemos
+\begin{equation*}
+    \sqrt{g} \dl{x}^0 \wedge \dots \wedge \dl{x}^{D-1} = \sqrt{g'} \dl{x'}^0 \wedge \dots \wedge \dl{x'}^{D-1}.
+\end{equation*}
