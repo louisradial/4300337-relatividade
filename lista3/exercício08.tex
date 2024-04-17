@@ -17,13 +17,23 @@ Consideremos agora a transformação da métrica \(g_{\mu\nu}\) das coordenadas 
 \end{equation*}
 Notemos que podemos arranjar esta última equação como uma multiplicação matricial
 \begin{equation*}
-    (g_{\mu\nu}) = \left(\diffp{x'^\alpha}{x^\mu}\right)^\top(g_{\alpha\beta})\left(\diffp{x'^\beta}{x^\nu}\right),
+    (g_{\mu\nu}) = \left(\diffp{x'^\alpha}{x^\mu}\right)^\top(g'_{\alpha\beta})\left(\diffp{x'^\beta}{x^\nu}\right),
 \end{equation*}
 donde segue que
 \begin{equation*}
     g = J^{-2} g',
 \end{equation*}
-onde \(g\) e \(g'\) são os determinantes das matrizes que representam a métrica nas cartas de coordenadas locais \(x\) e \(x'\). Desse modo, o objeto \(\sqrt{g}\) se transforma de forma inversa à \(D\)-forma considerada e obtemos
+onde \(g\) e \(g'\) são os valores absolutos dos determinantes das matrizes que representam a métrica nas cartas de coordenadas locais \(x\) e \(x'\). Desse modo, o objeto \(\sqrt{g}\) se transforma de forma inversa à \(D\)-forma considerada. Nesse caso, obtemos a regra de transformação
 \begin{equation*}
-    \sqrt{g} \dl{x}^0 \wedge \dots \wedge \dl{x}^{D-1} = \sqrt{g'} \dl{x'}^0 \wedge \dots \wedge \dl{x'}^{D-1}.
+    \sqrt{g} \dl{x}^0 \wedge \dots \wedge \dl{x}^{D-1} = \sqrt{g'} \dl{x'}^0 \wedge \dots \wedge \dl{x'}^{D-1},
 \end{equation*}
+isto é,\(\sqrt{g} \dl{x}^0 \wedge \dots \wedge{x}^{D-1}\) se transforma como um escalar, então podemos utilizar este objeto como uma medida invariante para integrais em uma variedade.
+
+Por exemplo, consideremos o círculo unitário submerso no plano Euclidiano \(S^1 \subset \mathbb{R}^2\) e a carta
+\begin{align*}
+    \psi : S^1 \smallsetminus \set{(1,0)} \subset \mathbb{R}^2 &\to (0, 2\pi)\\
+    (\cos\theta,\sin\theta)&\mapsto \theta.
+\end{align*}
+Então o vetor da base induzida por esta carta é \(\vetor{e}_\theta = (-\sin\theta, \cos\theta)\), que é unitário em relação à métrica Euclidiana. Isto é, a métrica induzida em \(S^1\) é dada por seu único elemento \(g_{\theta\theta} = 1\), e cujo determinante é \(g = 1\). Desse modo, o elemento de linha para o círculo unitário é \(\dl{s} = \sqrt{g}\dl{\theta} = \dl{\theta},\) como esperado.
+
+Com a medida invariante podemos também determinar volumes invariantes \todo[preciso entender o enunciado melhor.]
