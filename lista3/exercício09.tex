@@ -66,9 +66,28 @@ Podemos utilizar estas identidades para encontrar as expressões para o divergen
     \dl[2]{s} = \dl[2]{r} + r^2\dl[2]\theta + r^2 \sin^2\theta\dl[2]\varphi,
 \end{equation*}
 onde a métrica tem determinante dado por \(g = r^4 \sin^2\theta.\)
-Para um campo de vetores \(W = W^r \vetor{e}_r + rW^\theta \frac{\vetor{e}_\theta}{r} + r\sin\theta W^\varphi \vetor{e}_\varphi\), temos
+Para um campo de vetores
+\begin{equation*}
+    W = W^r \vetor{e}_r + W^\theta \frac{\vetor{e}_\theta}{r} + W^\varphi \frac{\vetor{e}_\varphi}{r\sin\theta},
+\end{equation*}
+isto é, cujas componentes na base ortonormal \(\set*{\vetor{e}_r, \frac{1}{r}\vetor{e}_\theta, \frac{1}{r\sin\theta}\vetor{e}_\varphi}\) são dadas por \(W^r, W^\theta, W^\varphi\), temos
 \begin{align*}
     \mathrm{div}(W) &= \frac1{r^2 \sin\theta}\partial_\mu\left(r^2\sin\theta W^\mu\right)\\
-                    &= \frac{1}{r^2\sin\theta}\partial_r\left(r^2 \sin\theta W^r\right) +\frac{1}{r^2\sin\theta}\partial_\theta\left(r^2 \sin\theta W^\theta\right) +\frac{1}{r^2\sin\theta}\partial_\varphi\left(r^2 \sin\theta W^\varphi\right)\\
-                    &= \frac{1}{r^2}\partial_r \left(r^2 W^r\right) + \frac{1}{\sin\theta}\partial_\theta\left(\sin\theta W^\theta\right) + \partial_\varphi W^\varphi
+                    &= \frac{1}{r^2\sin\theta}\partial_r\left(r^2 \sin\theta W^r\right) + \frac{1}{r^2\sin\theta}\partial_\theta\left(r^2 \sin\theta \frac{W^\theta}{r}\right) +\frac{1}{r^2\sin\theta}\partial_\varphi\left(r^2 \sin\theta \frac{W^\varphi}{r\sin\theta}\right)\\
+                    &= \frac{1}{r^2}\partial_r \left(r^2 W^r\right) + \frac{1}{r \sin\theta}\partial_\theta\left(W^\theta\sin\theta \right) + \frac{1}{r\sin\theta}\partial_\varphi W^\varphi.
+\end{align*}
+
+O gradiente de um campo escalar \(\psi\) é dado por
+\begin{equation*}
+    (\mathrm{grad}\psi)^\mu = g^{\mu\nu}\partial_\nu \psi,
+\end{equation*}
+portanto em coordenadas esféricas temos
+\begin{align*}
+    \mathrm{grad}\psi &= \diffp{\psi}{r} \vetor{e}_r + \frac{1}{r^2} \diffp{\psi}{\theta}\vetor{e}_\theta + \frac{1}{r^2\sin^2\theta}\diffp{\psi}{\varphi} \vetor{e}_\varphi\\
+                      &= \diffp{\psi}{r} \vetor{e}_r + \frac{1}{r}\diffp{\psi}{\theta} \frac{\vetor{e}_\theta}{r} + \frac{1}{r\sin\theta}\diffp{\psi}{\varphi}\frac{\vetor{e}_\varphi}{r\sin\theta}.
+\end{align*}
+Portanto, tomando \(W^r = \diffp{\psi}{r}\), \(W^\theta = \frac1r \diffp{\psi}{\theta}\) e \(W^\varphi = \frac1{r\sin\theta}\diffp{\psi}{\varphi}\), temos pelo resultado anterior que
+\begin{align*}
+    \nabla^2\psi &= \frac{1}{r^2}\partial_r \left(r^2 \diffp{\psi}{r}\right) + \frac{1}{r \sin\theta}\partial_\theta\left(\frac1r\diffp{\psi}{\theta}\sin\theta \right) + \frac{1}{r\sin\theta}\partial_\varphi\left(\frac{1}{r\sin\theta}\diffp{\psi}{\varphi}\right)\\
+                 &= \frac1{r^2}\diffp*{\left(r\diffp{\psi}{r}\right)}{r} + \frac{1}{r^2\sin\theta}\diffp*{\left(\diffp{\psi}{\theta}\sin\theta\right)}{\theta} + \frac{1}{r^2\sin^2\theta}\diffp[2]{\psi}{\varphi}.
 \end{align*}
