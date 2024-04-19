@@ -25,17 +25,39 @@ e
 
 Com os vetores da base desse sistema de coordenadas, podemos obter os coeficientes da métrica por
 \begin{equation*}
-    g'_{ij} = g(\vetor{e}_i', \vetor{e}_j'),
+    g'_{ij} = g(\vetor{e}_i', \vetor{e}_j')
 \end{equation*}
-utilizando os valores do tensor métrico na base de coordenadas cartesianas, dados por
+e utilizando os valores do tensor métrico na base de coordenadas cartesianas, dados por
 \begin{equation*}
     g(\vetor{e}_x, \vetor{e}_x) = g(\vetor{e}_y, \vetor{e}_y) = g(\vetor{e}_z, \vetor{e}_z) = 1
 \end{equation*}
-e os demais são iguais a zero. Assim, os coeficientes da métrica Euclidiana nas coordenadas esféricas são dados por
+e os demais são iguais a zero. Assim, os coeficientes da métrica Euclidiana nas coordenadas esféricas são obtidas por
+\begin{align*}
+    g'_{rr} &= g(\vetor{e}_r, \vetor{e}_r) &
+    g'_{r\theta} &= g(\vetor{e}_r, \vetor{e}_\theta) \\
+                 &= \sin^2\theta\cos^2\phi + \sin^2\theta\sin^2\phi + \cos^2\theta&
+                 &= r \sin\theta\cos\theta\cos^2\phi + r\sin\theta\cos\theta\sin^2\phi -r\sin\theta\cos\theta\\
+                 &= 1, & &= 0,
+\end{align*}
+\begin{align*}
+    g'_{r\phi} &= g(\vetor{e}_r, \vetor{e}_\phi) &
+    g'_{\theta\theta} &= g(\vetor{e}_\theta, \vetor{e}_\theta)\\
+                      &= -r\sin^2\theta\cos\phi\sin\phi + r\sin^2\theta\cos\phi\sin\phi&
+                      &= r^2\cos^\theta\cos^2\phi + r^2\cos^\theta \sin^2\phi + r^2\sin^2\theta\\
+                      &= 0, & &= r^2,
+\end{align*}
+\begin{align*}
+    g'_{\theta\phi} &= g(\vetor{e}_\theta, \vetor{e}_\phi) &
+    g'_{\phi\phi} &= g(\vetor{e}_\phi, \vetor{e}_\phi)\\
+                  &= -r^2\cos\theta\sin\theta\cos\phi\sin\phi + r^2 \cos\theta\sin\theta\cos\phi\sin\phi&
+                      &= r^2\sin^2\theta\sin^2\phi + r^2\sin^2\theta\cos^2\phi\\
+                      &= 0, & &= r^2\sin^2\theta,
+\end{align*}
+e os outros por simetria do tensor métrico. Brevemente, obtemos a métrica dada por
 \begin{equation*}
-    g'_{rr} = 1, \quad g'_{\theta\theta} = r^2, \quad\text{e}\quad g'_{\phi\phi} = r^2\sin^2\theta,
+    \dl[2]{s} = \dl[2]{r} + r^2\dl[2]\theta + r^2 \sin^2 \theta \dl[2]\phi
 \end{equation*}
-e as outras componentes nulas.
+do espaço Eucliadiano em coordenadas esféricas.
 
 \subsection*{Coordenadas em rotação no espaço-tempo de Minkowski}
 Consideremos agora a métrica da relatividade restrita \(\eta_{\mu\nu}\) e as coordenadas em rotação
@@ -70,16 +92,22 @@ Assim, os vetores da base são dados por \(\vetor{e}_{\mu'} = \diffp{x^\nu}{x^{\
     \end{cases}.
 \end{equation*}
 
-Utilizando a bilinearidade do tensor métrico e que \(g(\vetor{e}_\mu, \vetor{e}_\nu) = \eta_{\mu\nu}\), temos que
+Utilizando a bilinearidade do tensor métrico e que \(g(\vetor{e}_\mu, \vetor{e}_\nu) = \eta_{\mu\nu}\), temos que \(g_{\mu'\nu'} = \diffp{x^\alpha}{x'^{\mu'}}\diffp{x^\beta}{x'^{\nu'}}\eta_{\alpha\beta}\). Calculemos explicitamente a componente \(0'0'\):
+\begin{align*}
+    g_{0'0'} &= g(\vetor{e}_{0'}, \vetor{e}_{0'}) = g(\vetor{e}_{0'},\vetor{e}_0 - \omega(x' \sin{\omega t'} + y' \cos{\omega t'})\vetor{e}_1 + \omega(x' \cos{\omega t'} - y'\cos{\omega t'})\vetor{e}_2)\\
+             &= -1 + \omega^2\left(x' \sin \omega t' + y' \cos\omega t'\right)^2 + \omega^2\left(x'\cos\omega t' - y' \cos\omega t'\right)^2\\
+             &= -1 + \omega^2\left(x'^2 + y'^2\right).
+\end{align*}
+Repetindo o mesmo procedimento para as outras componentes, obtemos as componentes da métrica nas coordenadas em rotação
 \begin{equation*}
     g_{\mu'\nu'} = \begin{pmatrix}
         -1 + \omega^2(x'^2 + y'^2) && -\omega y' && \omega x' && 0\\
         -\omega y' && 1 && 0 && 0\\
         \omega x' && 0 && 1 && 0\\
         0 && 0 && 0 && 1\\
-    \end{pmatrix}_{\mu'\nu'}
+    \end{pmatrix}_{\mu'\nu'}.
 \end{equation*}
-são os componentes da métrica nas coordenadas em rotação. Desse modo, obtemos as componentes da métrica inversa \(g^{\mu'\nu'}\) por escalonamento, resultando em
+Desse modo, obtemos as componentes da métrica inversa \(g^{\mu'\nu'}\) por escalonamento, resultando em
 \begin{equation*}
     g^{\mu'\nu'} = \begin{pmatrix}
         -1 && -\omega y' && \omega x' && 0\\
