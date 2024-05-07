@@ -1,0 +1,69 @@
+\section*{Exercício 1}
+Em uma variedade de dimensão \(n\) dotada de métrica e uma conexão de Levi-Civita, o tensor de curvatura tem \(n^4\) componentes. Contraindo o tensor de curvatura com o tensor métrico, temos as simetrias dadas por
+\begin{equation*}
+    R_{\alpha \rho \mu \nu} = - R_{\alpha \rho \nu \mu} = - R_{\rho \alpha \mu \nu} = R_{\mu\nu\alpha\rho},
+\end{equation*}
+além da identidade de Jacobi,
+\begin{equation*}
+    R_{\alpha \rho \mu \nu} + R_{\alpha \mu \nu \rho} + R_{\alpha \nu \rho \mu} = 0.
+\end{equation*}
+
+Como o tensor é antissimétrico no primeiro e no último par de índices, temos que cada par pode assumir \(m = \binom{n}{2}\) valores diferentes. Desse modo, como podemos trocar os pares de índices, segue que o tensor tem no máximo \(\frac{m(m+1)}{2}\) componentes independentes. Na identidade de Jacobi, todos os índices devem ser distintos para que a equação não seja reduzida às condições de antissimetria, portanto temos \(\binom{n}{4}\) outros vínculos para as componentes do tensor de curvatura. Assim, o número de componentes independentes do tensor de Riemann é dado por
+\begin{equation*}
+    \frac{m(m+1)}{2} - \binom{n}{4} = \frac{n(n-1)}{8}\left(3n^2 - 3n + 6 - (n-2)(n-3)\right) = \frac{n^2(n^2 - 1)}{12}.
+\end{equation*}
+Notemos que o tensor de Ricci é um tensor simétrico, portanto um limite superior para o número de suas componentes independentes é dado por \(\frac{n(n+1)}{2}\). Desse modo, temos que em \(n = 3\) o número de componentes independentes do tensor de Ricci e do tensor de Riemann são iguals!
+
+Já vimos que as componentes do tensor de Riemann são dadas por
+\begin{equation*}
+    R_{\mu \nu \alpha \beta} = g_{\mu \sigma}R\indices{^\sigma_{\nu \alpha \beta}} = g_{\mu \sigma} \left( \partial_{\alpha}\Gamma\indices{^{\sigma}_{\beta\nu}}- \partial_{\beta}\Gamma\indices{^{\sigma}_{\alpha\nu}} + \Gamma\indices{^\sigma_{\alpha\rho}} \Gamma\indices{^\rho_{\beta\nu}} - \Gamma\indices{^\sigma_{\beta\rho}} \Gamma\indices{^\rho_{\alpha\nu}} \right)
+\end{equation*}
+em qualquer sistema de coordenadas. Em coordenadas normais de Riemann, as primeiras derivadas da métrica e os coeficientes da conexão se anulam, de modo que
+\begin{align*}
+    R_{\mu\nu \alpha \beta} &= \frac12g_{\mu \sigma} \left[ \partial_\alpha\left(g^{\sigma \rho}(\partial_\beta g_{\rho \nu} + \partial_\nu g_{\rho \beta} - \partial_{\rho} g_{\beta \nu} )\right) - \partial_\beta\left(g^{\sigma \rho}(\partial_\alpha g_{\rho \nu} + \partial_\nu g_{\rho \alpha} - \partial_{\rho} g_{\alpha \nu} )\right)\right]\\
+                            &= \frac12g_{\mu \sigma} g^{\sigma \rho} \left[\partial_\alpha\left(\partial_\beta g_{\rho \nu} + \partial_\nu g_{\rho \beta} - \partial_{\rho} g_{\beta \nu}\right) - \partial_\beta\left(\partial_\alpha g_{\rho \nu} + \partial_\nu g_{\rho \alpha} - \partial_{\rho} g_{\alpha \nu}\right)\right]\\
+                            &= \frac12 \delta\indices{^\rho_\mu} \left(\partial_\alpha\partial_\beta g_{\rho \nu} + \partial_\alpha\partial_\nu g_{\rho \beta} - \partial_\alpha\partial_{\rho} g_{\beta \nu} - \partial_\beta\partial_\alpha g_{\rho \nu} - \partial_\beta\partial_\nu g_{\rho \alpha} + \partial_\beta\partial_{\rho} g_{\alpha \nu}\right)\\
+                            &= \frac12 \left(\partial_\alpha\partial_\nu g_{\mu \beta} - \partial_\alpha\partial_{\mu} g_{\beta \nu} - \partial_\beta\partial_\nu g_{\mu \alpha} + \partial_\beta\partial_{\mu} g_{\alpha \nu}\right),
+\end{align*}
+onde utilizamos que \(\partial_\alpha \partial_\beta = \partial_\beta \partial_\alpha\). Assim, ainda nas coordenadas normais de Riemann, temos
+\begin{equation*}
+    \nabla_{\lambda} R_{\mu\nu \alpha\beta} = \frac12 \left(\colorunderline{Mauve}{\partial_{\lambda}\partial_\alpha\partial_\nu g_{\mu \beta}} - \colorunderline{Yellow}{\partial_\lambda\partial_\alpha\partial_{\mu} g_{\beta \nu}} - \colorunderline{Red}{\partial_\lambda\partial_\beta\partial_\nu g_{\mu \alpha}} + \colorunderline{Sky}{\partial_\lambda\partial_\beta\partial_{\mu} g_{\alpha \nu}}\right),
+\end{equation*}
+então ao permutar ciclicamente \((\alpha,\beta, \lambda)\), obtemos
+\begin{equation*}
+    \nabla_{\alpha} R_{\mu\nu \beta\lambda} = \frac12 \left(\colorunderline{Peach}{\partial_{\alpha}\partial_\beta\partial_\nu g_{\mu \lambda}} - \colorunderline{Teal}{\partial_\alpha\partial_\beta\partial_{\mu} g_{\lambda \nu}} - \colorunderline{Mauve}{\partial_\alpha\partial_\lambda\partial_\nu g_{\mu \beta}} + \colorunderline{Yellow}{\partial_\alpha\partial_\lambda\partial_{\mu} g_{\beta \nu}}\right)
+\end{equation*}
+e
+\begin{equation*}
+    \nabla_{\beta} R_{\mu\nu \lambda\alpha} = \frac12 \left(\colorunderline{Red}{\partial_{\beta}\partial_\lambda\partial_\nu g_{\mu \alpha}} - \colorunderline{Sky}{\partial_\beta\partial_\lambda\partial_{\mu} g_{\alpha \nu}} - \colorunderline{Peach}{\partial_\beta\partial_\alpha\partial_\nu g_{\mu \lambda}} + \colorunderline{Teal}{\partial_\beta\partial_\alpha\partial_{\mu} g_{\lambda \nu}}\right),
+\end{equation*}
+portanto ao somar as três equações obtemos
+\begin{equation*}
+    \nabla_{\lambda} R_{\mu\nu \alpha\beta}+ \nabla_{\alpha} R_{\mu\nu \beta\lambda}+ \nabla_{\beta} R_{\mu\nu \lambda\alpha} = 0.
+\end{equation*}
+Deste modo, em qualquer outro sistema de coordenadas vale a segunda identidade de Bianchi, expressa acima.
+
+Tornemos nossa atenção para o caso particular bidimensional e consideremos o tensor \(X_{\mu\nu\alpha\beta} = g_{\mu\alpha} g_{\nu\beta} - g_{\mu\beta}g_{\nu\alpha}\). Notemos que
+\begin{align*}
+    X_{\nu\mu\alpha\beta} &= g_{\nu\alpha} g_{\mu\beta} - g_{\nu\beta}g_{\mu\alpha} &
+    X_{\mu\nu\beta\alpha} &= g_{\mu\beta} g_{\nu\alpha} - g_{\mu\alpha}g_{\nu\beta} &
+    X_{\alpha\beta\mu\nu} &= g_{\alpha\mu} g_{\beta\nu} - g_{\alpha\nu}g_{\beta\mu}\\
+                          &= -(g_{\mu\alpha} g_{\nu\beta} - g_{\mu\beta}g_{\nu\alpha})&
+                          &= -(g_{\mu\alpha} g_{\nu\beta} - g_{\mu\beta}g_{\nu\alpha})&
+                          &= g_{\mu\alpha} g_{\nu\beta} - g_{\mu\beta}g_{\nu\alpha}\\
+                          &= -X_{\mu\nu\alpha\beta}&
+                          &= -X_{\mu\nu\alpha\beta}&
+                          &= X_{\mu\nu\alpha\beta},
+\end{align*}
+isto é, o tensor \(X_{\mu\nu\alpha\beta}\) tem as simetrias do tensor de Riemann. Nesta dimensão há apenas uma componente independente para estes tensores, portanto \(R_{\mu\nu\alpha\beta} = KX_{\mu\nu\alpha\beta}\) para alguma constante \(K\). Podemos obter a relação desta constante com o escalar de curvatura \(R = g^{\mu\alpha}g^{\nu\beta}R_{\mu\nu\alpha\beta}\) de forma a escrever o tensor de Riemann em termos do tensor métrico e do escalar de curvatura,
+\begin{align*}
+    R &= K g^{\mu\alpha}g^{\nu\beta} X_{\mu\nu\alpha\beta}\\
+      &= K g^{\mu\alpha}g^{\nu\beta} \left(g_{\mu\alpha} g_{\nu\beta} - g_{\mu\beta}g_{\nu\alpha}\right)\\
+      &= K g^{\mu\alpha} \left(2g_{\mu\alpha} - g_{\mu\alpha}\right)\\
+      &= 2K,
+\end{align*}
+portanto,
+\begin{equation*}
+    R_{\mu\nu\alpha\beta} = \frac{R}{2} \left(g_{\mu\alpha} g_{\nu\beta} - g_{\mu\beta}g_{\nu\alpha}\right).
+\end{equation*}
+É interessante notar que a constante \(K = \frac{R}{2}\) é a chamada curvatura Gaussiana de uma superfície da teoria clássica de geometria diferencial. O tratamento original feito por Gauss foi inicialmente de modo extrínseco, estudando superfícies imersas no espaço Euclidiano \(\mathbb{R}^3\) e induzindo uma métrica nesta superfície a partir da métrica Euclidiana, chamada de primeira forma fundamental. Utilizando a abordagem intrínseca obtivemos o mesmo resultado, fato esse relacionado com o teorema de Whitney, que diz sobre a capacidade de imersão de qualquer variedade diferenciável de dimensão \(n\) em algum \(\mathbb{R}^d\) com \(d \geq n\).
