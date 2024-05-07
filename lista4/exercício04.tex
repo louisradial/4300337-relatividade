@@ -1,0 +1,67 @@
+\section*{Exercício 4}
+Consideremos a ação de Einstein-Hilbert com uma constante cosmológica \(\Lambda\),
+\begin{equation*}
+    S_{\mathrm{EH}} = \kappa_G \int_M\dln4x\sqrt{-g}\left(R - 2\Lambda\right),
+\end{equation*}
+onde \(\kappa_G = \frac{1}{16\pi G}\). A variação da ação devido à variação \(g^{\mu\nu} \to g^{\mu\nu} + \delta g^{\mu\nu}\) é dada por
+\begin{align*}
+    \delta S_\mathrm{EH} &= \kappa_G \int_M\dln4x\left[(R-2\Lambda)\delta\sqrt{-g} + \sqrt{-g}\delta R\right]\\
+                         &= \kappa_G \int_M\dln4x\sqrt{-g}\left[\left(\frac12 R-\Lambda\right)\frac{\delta{g}}{g} + R_{\mu\nu}\delta g^{\mu\nu} + g^{\mu\nu}\delta R_{\mu\nu}\right],
+\end{align*}
+portanto precisamos determinar as variações \(\delta g\) e \(\delta R_{\mu\nu}\).
+
+Em uma carta de coordenadas \(g_{\mu\nu}\) pode ser considerada como uma matriz invertível, de modo que pela fórmula de Jacobi\footnote{Para uma matriz quadrada invertível \(M\), vale \(\delta(\det{M}) = (\det{M})\tr\left(A^{-1}\delta M\right)\).} temos
+\begin{equation*}
+    \delta g = g g^{\mu\nu}\delta g_{\mu\nu} = - g g_{\mu\nu} \delta g^{\mu\nu}.
+\end{equation*}
+Assim, temos
+\begin{equation*}
+    \delta S_\mathrm{EH} = \kappa_G \int_M \dln4x \sqrt{-g} \left(R_{\mu\nu} - \frac12 Rg_{\mu\nu} + \Lambda g_{\mu\nu}\right)\delta g^{\mu\nu} + \kappa_G \int_M\dln4x \sqrt{-g}g^{\mu\nu} \delta R_{\mu\nu},
+\end{equation*}
+e nos resta mostrar que a segunda integral se anula.
+
+Como consideramos conexões de Levi-Civita, a variação da métrica acarreta uma variação dos coeficientes da conexão \(\Gamma\indices{^\sigma_{\nu\mu}} \to \Gamma\indices{^\sigma_{\nu\mu}} + \delta \Gamma\indices{^\sigma_{\nu\mu}}\). Como \(\delta\Gamma\indices{^\sigma_{\nu\mu}}\) é uma componente do \textbf{tensor} dado pela diferença entre duas conexões, podemos escrever a sua derivada covariante por
+\begin{equation*}
+    \nabla_{\rho} \delta \Gamma\indices{^\sigma_{\nu \mu}} = \partial_\rho \delta \Gamma\indices{^\sigma_{\nu \mu}} + \Gamma\indices{^\sigma_{\rho \lambda}}\delta \Gamma\indices{^\lambda_{\nu\mu}} - \Gamma\indices{^\lambda_{\rho\nu}}\delta \Gamma\indices{^\sigma_{\lambda\mu}} - \Gamma\indices{^\lambda_{\rho\mu}}\delta \Gamma\indices{^\sigma_{\nu \lambda}},
+\end{equation*}
+em relação à conexão de coeficientes \(\Gamma\indices{^\sigma_{\nu \mu}}\). Como o tensor de curvatura é definido a partir da conexão, isto é,
+\begin{equation*}
+    R\indices{^\sigma_{\mu \rho \nu}} = \partial_{\rho}\Gamma\indices{^{\sigma}_{\nu\mu}}- \partial_{\nu}\Gamma\indices{^{\sigma}_{\rho\mu}} + \Gamma\indices{^\sigma_{\rho\lambda}} \Gamma\indices{^\lambda_{\nu\mu}} - \Gamma\indices{^\sigma_{\nu\lambda}} \Gamma\indices{^\lambda_{\rho\mu}},
+\end{equation*}
+sua variação é dada por
+\begin{align*}
+    \delta R\indices{^\sigma_{\mu \rho \nu}} &=
+    \partial_{\rho}\delta\Gamma\indices{^{\sigma}_{\nu\mu}}
+    - \partial_{\nu}\delta\Gamma\indices{^{\sigma}_{\rho\mu}}
+    + \delta\Gamma\indices{^\sigma_{\rho\lambda}} \Gamma\indices{^\lambda_{\nu\mu}}
+    + \Gamma\indices{^\sigma_{\rho\lambda}}\delta \Gamma\indices{^\lambda_{\nu\mu}}
+    - \delta\Gamma\indices{^\sigma_{\nu\lambda}} \Gamma\indices{^\lambda_{\rho\mu}}
+    - \Gamma\indices{^\sigma_{\nu\lambda}}\delta \Gamma\indices{^\lambda_{\rho\mu}}\\
+                                                 &= \left( \partial_{\rho}\delta\Gamma\indices{^{\sigma}_{\nu\mu}} +\Gamma\indices{^\sigma_{\rho\lambda}}\delta \Gamma\indices{^\lambda_{\nu\mu}} - \delta\Gamma\indices{^\sigma_{\nu\lambda}} \Gamma\indices{^\lambda_{\rho\mu}} \right) - \left( \partial_{\nu}\delta\Gamma\indices{^{\sigma}_{\rho\mu}}+ \Gamma\indices{^\sigma_{\nu\lambda}}\delta \Gamma\indices{^\lambda_{\rho\mu}}  - \delta\Gamma\indices{^\sigma_{\rho\lambda}} \Gamma\indices{^\lambda_{\nu\mu}} \right)\\
+                                                 &= \left(\nabla_{\rho}\delta \Gamma\indices{^\sigma_{\nu\mu}} + \Gamma\indices{^\lambda_{\rho \nu}}\delta \Gamma\indices{^\sigma_{\lambda \mu}}\right) - \left(\nabla_{\nu}\delta \Gamma\indices{^\sigma_{\rho\mu}} + \Gamma\indices{^\lambda_{\nu \rho}}\delta \Gamma\indices{^\sigma_{\lambda \mu}}\right)\\
+                                                 &= \nabla_{\rho}\delta \Gamma\indices{^\sigma_{\nu \mu}} - \nabla_{\nu}\delta \Gamma\indices{^\sigma_{\rho \mu}}.
+\end{align*}
+Assim, contraindo \(\sigma\) e \(\rho\), obtemos a variação do tensor de Ricci,
+\begin{equation*}
+    \delta R_{\mu\nu} = \nabla_{\sigma} \delta \Gamma\indices{^\sigma_{\nu \mu}} - \nabla_{\nu}\delta \Gamma\indices{^\sigma_{\sigma \mu}},
+\end{equation*}
+conhecida como a identidade de Palatini. Desse modo, temos
+\begin{align*}
+    g^{\mu\nu}\delta R_{\mu\nu} &= g^{\mu\nu}\nabla_{\sigma} \delta \Gamma\indices{^\sigma_{\nu \mu}} - g^{\mu\nu}\nabla_{\nu}\delta \Gamma\indices{^\sigma_{\sigma \mu}}\\
+                                &= \nabla_{\sigma}\left(g^{\mu\nu}\delta \Gamma\indices{^\sigma_{\nu\mu}}\right)- \nabla_{\nu}\left(g^{\mu\nu}\delta \Gamma\indices{^\sigma_{\sigma \mu}}\right)\\
+                                &= \nabla_{\sigma}\left(g^{\mu\nu}\delta \Gamma\indices{^\sigma_{\nu\mu}}- g^{\mu\sigma}\delta \Gamma\indices{^\nu_{\nu \mu}}\right),
+\end{align*}
+onde utilizamos a propriedade de que a conexão de Levi-Civita é uma conexão métrica e permutamos os índices \(\nu \) e \(\sigma\) no segundo termo. Por fim, temos
+\begin{equation*}
+    \kappa_G \int_M \dln4x \sqrt{-g} g^{\mu\nu}\delta R_{\mu\nu} = \kappa_G \int_M \dln4x\sqrt{-g} \nabla_{\sigma}\left(g^{\mu\nu}\delta \Gamma\indices{^\sigma_{\nu\mu}}- g^{\mu\sigma}\delta \Gamma\indices{^\nu_{\nu \mu}}\right),
+\end{equation*}
+que se anula ao impormos que a variação na borda \(\partial M\) é nula, pelo teorema de Stokes.
+
+Por fim, obtemos a variação da ação com uma constante cosmológica, dada por
+\begin{equation*}
+    \delta S_\mathrm{EH} = \kappa_G \int_M \dln4x \sqrt{-g} \left(R_{\mu\nu} - \frac12Rg_{\mu\nu} + \Lambda g_{\mu\nu}\right) \delta g^{\mu\nu}.
+\end{equation*}
+Assim, pelo lema fundamental do cálculo de variações, se \(\delta S_\mathrm{EH} = 0\), devemos ter
+\begin{equation*}
+    R_{\mu\nu} - \frac12 R g_{\mu\nu} + \Lambda g_{\mu\nu} = 0.
+\end{equation*}
