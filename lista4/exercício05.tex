@@ -1,1 +1,18 @@
 \section*{Exercício 5}
+
+Consideremos a ação
+\begin{equation*}
+    S_\mathrm{M} = \int_M \dln4x\sqrt{-g}\mathcal{L}_\mathrm{M},
+\end{equation*}
+para uma densidade de lagrangiana \(\mathcal{L}_\mathrm{M}\) que depende da métrica. Assim, a variação dessa ação para uma variação do tensor métrico \(g^{\mu\nu} \to g^{\mu\nu} + \delta g^{\mu\nu}\) é dada por
+\begin{equation*}
+    \delta S_\mathrm{M} = \int_M \dln4x \diffp{(\sqrt{-g}\mathcal{L}_\mathrm{M})}{g^{\mu\nu}}\delta g^{\mu\nu},
+\end{equation*}
+em que o possível termo em relação às derivadas de \(g^{\mu\nu}\) foi ignorado por estarmos considerando teorias com uma conexão de Levi-Civita, isto é, a lagrangiana \(\mathcal{L}_\mathrm{M}\) não pode depender da conexão. Definindo o tensor de energia e momento por
+\begin{equation*}
+    T^{\mu\nu} = \frac{-2}{\sqrt{-g}}\diffp{(\sqrt{-g}\mathcal{L}_\mathrm{M})}{g^{\mu\nu}},
+\end{equation*}
+temos
+\begin{equation*}
+    \delta S_\mathrm{M} = -\frac12\int_M\dln4x \sqrt{-g}T^{\mu\nu}.
+\end{equation*}
