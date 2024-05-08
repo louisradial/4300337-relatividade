@@ -1,1 +1,66 @@
 \section*{Exercício 7}
+Consideremos um campo gravitacional fraco, em que podemos tomar a métrica como uma perturbação da métrica de Minkowski \(g_{\mu\nu} = \eta_{\mu\nu} + h_{\mu\nu}\), onde \(h_{\mu\nu}\) é \enquote{pequeno}, isto é, consideraremos efeitos dessa perturbação em até primeira ordem. Por exemplo, os isomorfismos musicais são feitos em relação à métrica de Minkowski e tomaremos
+\begin{equation*}
+    g^{\mu\nu} = \eta^{\mu\nu} - h^{\mu\nu},
+\end{equation*}
+com \(h^{\mu\nu} = \eta^{\mu \alpha}\eta^{\nu \beta}h_{\alpha \beta}\), de modo que \(g_{\mu\nu}g^{\nu \lambda} = \delta\indices{^\lambda_\mu} + O(h^2)\). É importante ressaltar que, como \(g_{\mu\nu}\) e \(\eta_{\mu\nu}\) são simétricos, \(h_{\mu\nu}\) também o deve ser.
+
+Os coeficientes da conexão de Levi-Civita para essa métrica são dados por
+\begin{align*}
+    \Gamma\indices{^\sigma_{\nu\mu}} &= \frac12 g^{\sigma \lambda}\left(\partial_{\nu}g_{\lambda \mu} + \partial_{\mu}g_{\lambda\nu} - \partial_{\lambda}g_{\nu\mu}\right)\\
+                                     &= \frac12 \eta^{\sigma \lambda}\left(\partial_{\nu}h_{\lambda \mu} + \partial_{\mu}h_{\lambda\nu} - \partial_{\lambda}h_{\nu\mu}\right) + O(h^2),
+\end{align*}
+de modo que o tensor de Riemann é dado por
+\begin{align*}
+    R\indices{^\sigma_{\mu \rho \nu}} &= \partial_{\rho}\Gamma\indices{^{\sigma}_{\mu\nu}}- \partial_{\mu}\Gamma\indices{^{\sigma}_{\rho\nu}} + \Gamma\indices{^\sigma_{\rho\lambda}} \Gamma\indices{^\lambda_{\mu\nu}} - \Gamma\indices{^\sigma_{\mu\lambda}} \Gamma\indices{^\lambda_{\rho\nu}}\\
+                                      &=\partial_{\rho}\Gamma\indices{^{\sigma}_{\mu\nu}}- \partial_{\mu}\Gamma\indices{^{\sigma}_{\rho\nu}} + O(h^2)\\
+                                     &= \frac12 \eta^{\sigma \lambda}\left(\partial_\rho\partial_{\mu}h_{\lambda \nu} + \partial_\rho\partial_{\nu}h_{\lambda\mu} - \partial_\rho\partial_{\lambda}h_{\mu\nu}\right) - \frac12 \eta^{\sigma \lambda}\left(\partial_\mu\partial_{\rho}h_{\lambda \nu} + \partial_\mu\partial_{\nu}h_{\lambda\rho} - \partial_\mu\partial_{\lambda}h_{\rho\nu}\right)\\
+                                     &= \frac12 \eta^{\sigma \lambda}\left(\partial_\rho\partial_{\nu}h_{\lambda\mu} - \partial_\rho\partial_{\lambda}h_{\mu\nu} - \partial_\mu\partial_{\nu}h_{\lambda\rho} + \partial_\mu\partial_{\lambda}h_{\rho\nu}\right).
+\end{align*}
+
+Definindo o traço \(h = h\indices{^\sigma_\sigma} = \eta^{\alpha\beta}h_{\alpha\beta}\) e \(\bar{h}_{\alpha\beta} = h_{\alpha \beta} - \frac12 \eta_{\alpha \beta}h\), temos que o tensor de Ricci é dado por
+\begin{align*}
+    R_{\mu\nu} = R\indices{^\sigma_{\mu\sigma\nu}} &= \frac12 \eta^{\sigma \lambda}\left(\partial_\sigma\partial_{\nu}h_{\lambda\mu} - \partial_\sigma\partial_{\lambda}h_{\mu\nu} - \partial_\mu\partial_{\nu}h_{\lambda\sigma} + \partial_\mu\partial_{\lambda}h_{\sigma\nu}\right)\\
+                                                   &= \frac12 \left(\partial_\sigma\partial_\nu h\indices{^\sigma_\mu} - \partial^\sigma\partial_\sigma h_{\mu\nu} - \partial_\mu\partial_\nu h + \partial_\mu \partial^\sigma h_{\sigma \nu}\right)\\
+                                                   &= \frac12 \left(\colorunderline{Pink}{\partial^\sigma\partial_\nu h_{\mu\sigma}} + \colorunderline{Mauve}{\partial^\sigma \partial_\mu h_{\nu\sigma}} - \partial^\sigma\partial_\sigma h_{\mu\nu} - \partial_\mu\partial_\nu h\right)\\
+                                                   &= \frac12 \left(\colorunderline{Pink}{\partial^\sigma\partial_\nu \bar{h}_{\mu\sigma} + \frac12\eta_{\mu \sigma}\partial^\sigma\partial_\nu h} + \colorunderline{Mauve}{\partial^\sigma \partial_\mu \bar{h}_{\nu\sigma}+\frac12 \eta_{\nu\sigma}\partial^\sigma\partial_\nu h} - \partial^\sigma\partial_\sigma h_{\mu\nu} - \partial_\mu\partial_\nu h\right)\\
+                                                   &= \frac12 \left(\partial^\sigma\partial_\nu \bar{h}_{\mu\sigma} + \partial^\sigma\partial_\mu \bar{h}_{\nu\sigma} - \partial^\sigma \partial_\sigma h_{\mu\nu}\right)
+\end{align*}
+e o escalar de curvatura por
+\begin{align*}
+    R = g^{\mu\nu}R_{\mu\nu} &= \eta^{\mu\nu}R_{\mu\nu} + O(h^2)\\
+                             &= \frac12 \left(\partial^\sigma\partial^\mu \bar{h}_{\mu\sigma} + \partial^\sigma\partial^\mu \bar{h}_{\mu\sigma} - \partial^\sigma \partial_\sigma \eta^{\mu\nu}h_{\mu\nu}\right)\\
+                             &= \partial^\sigma\partial^\mu \bar{h}_{\mu\sigma} - \frac12 \partial^\sigma \partial_\sigma h.
+\end{align*}
+Desse modo, obtemos a linearização do tensor de Einstein, dada por
+\begin{align*}
+    G_{\mu\nu} &= R_{\mu\nu} - \frac12 Rg_{\mu\nu} = R_{\mu\nu} - \frac12 R \eta_{\mu\nu} + O(h^2)\\
+               &= \frac12 \left(\partial^\sigma\partial_\nu \bar{h}_{\mu\sigma} + \partial^\sigma\partial_\mu \bar{h}_{\nu\sigma} - \colorunderline{Peach}{\partial^\sigma \partial_\sigma h_{\mu\nu}} -  \eta_{\mu\nu} \partial^\sigma\partial^\rho \bar{h}_{\rho\sigma} + \colorunderline{Peach}{\frac12 \eta_{\mu\nu}\partial^\sigma \partial_\sigma h}\right)\\
+               &= \frac12 \left(\partial^\sigma\partial_\nu \bar{h}_{\mu\sigma} + \partial^\sigma\partial_\mu \bar{h}_{\nu\sigma} - \colorunderline{Peach}{\partial^\sigma \partial_\sigma \bar{h}_{\mu\nu}} -\eta_{\mu\nu} \partial^\sigma\partial^\rho \bar{h}_{\rho\sigma} \right).
+\end{align*}
+
+Pela simetria por difeomorfismos, temos liberdade de escolha de calibre para \(g_{\mu\nu}\), de forma que podemos escolher o calibre \(\partial^\nu h_{\mu\nu} = 0\), de forma que o tensor de Einstein se torna apenas \(G_{\mu\nu} = - \frac12 \partial^\sigma \partial_\sigma \bar{h}_{\mu\nu}\). Neste caso, as equações de Einstein são dadas por
+\begin{equation*}
+    \partial^\sigma\partial_\sigma \bar{h}_{\mu\nu} = - 16\pi GT_{\mu\nu}.
+\end{equation*}
+
+Consideremos o caso quase-estático em que o tensor de energia e momento pode ser tomado em primeira aproximação como identicamente nulo exceto por sua componente \(T_{00} = \rho\) que só depende das coordenadas espaciais. Neste caso temos
+\begin{equation*}
+    \nabla^2 \bar{h}_{00} = -16 \pi G \rho,
+\end{equation*}
+portanto em paralelo com a equação de Poisson, \(\nabla^2\Phi = 4\pi G \rho\), escolhemos \(\bar{h}_{00} = -4\Phi\). Além disso, como as outras componentes do tensor de energia e momento são nulas, podemos tomar \(\bar{h}_{\mu\nu} = 0\) para todos \(\mu\) e \(\nu\), exceto para \(\mu = \nu = 0\). Deste modo o traço de \(\bar{h}_{\mu\nu}\) é
+\begin{equation*}
+    \bar{h} = g^{\mu\nu}\bar{h}_{\mu\nu} = 4\Phi + O(h^2),
+\end{equation*}
+e podemos relacioná-lo com o traço de \(h_{\mu\nu}\) ao tomar o traço da definição do tensor \(\bar{h}_{\mu\nu},\)
+\begin{align*}
+    h = g^{\mu\nu}h_{\mu\nu} &= \eta^{\mu\nu}\left(\bar{h}_{\mu\nu} + \frac12 h\eta_{\mu\nu}\right) + O(h^2) = \bar{h} + 2h \implies h = -\bar{h} = -4\Phi.
+\end{align*}
+Assim, obtemos \(h_{\mu\nu}\),
+\begin{equation*}
+    h_{\mu\nu} = \bar{h}_{\mu\nu} + \frac12 h \eta_{\mu\nu} = -4\Phi \delta\indices{^0_\mu}\delta\indices{^0_\nu} - 2 \Phi \eta_{\mu\nu} \implies h_{00} = -2\Phi,\quad h_{ij} = -2 \Phi \delta_{ij},\quad\text{e}\quad h_{0j} = 0 ,
+\end{equation*}
+e, portanto, a métrica do campo gravitacional fraco é dada por
+\begin{equation*}
+    \dl[2]s = -(1 + 2 \Phi)\dl[2]t + (1 - 2 \Phi)\left(\dl[2]x + \dl[2]y + \dl[2]z\right).
+\end{equation*}
