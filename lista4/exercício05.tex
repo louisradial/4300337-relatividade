@@ -4,19 +4,16 @@ Consideremos a ação
 \begin{equation*}
     S_\mathrm{M} = \int_M \dln4x\sqrt{-g}\mathcal{L}_\mathrm{M},
 \end{equation*}
-para uma densidade de lagrangiana \(\mathcal{L}_\mathrm{M}\) que depende da métrica. Assim, a variação dessa ação para uma variação do tensor métrico \(g^{\mu\nu} \to g^{\mu\nu} + \delta g^{\mu\nu}\) é dada por
-\begin{equation*}
-    \delta S_\mathrm{M} = \int_M \dln4x \diffp{(\sqrt{-g}\mathcal{L}_\mathrm{M})}{g^{\mu\nu}}\delta g^{\mu\nu}.
-\end{equation*}
-% em que o possível termo em relação às derivadas de \(g^{\mu\nu}\) foi ignorado por estarmos considerando teorias com uma conexão de Levi-Civita, isto é, a lagrangiana \(\mathcal{L}_\mathrm{M}\) não pode depender da conexão.
+para uma densidade de lagrangiana \(\mathcal{L}_\mathrm{M}\) que depende da métrica.
 Definindo o tensor de energia e momento por
 \begin{equation*}
     T_{\mu\nu} = \frac{-2}{\sqrt{-g}}\diffp{(\sqrt{-g}\mathcal{L}_\mathrm{M})}{g^{\mu\nu}},
 \end{equation*}
-temos
+a variação da ação para uma variação do tensor métrico \(g^{\mu\nu} \to g^{\mu\nu} + \delta g^{\mu\nu}\) é dada por
 \begin{equation*}
-    \delta S_\mathrm{M} = -\frac12\int_M\dln4x \sqrt{-g}T_{\mu\nu} \delta g^{\mu\nu}.
+    \delta S_\mathrm{M} = \int_M \dln4x \diffp{(\sqrt{-g}\mathcal{L}_\mathrm{M})}{g^{\mu\nu}}\delta g^{\mu\nu} =-\frac12\int_M\dln4x \sqrt{-g}T_{\mu\nu} \delta g^{\mu\nu}.
 \end{equation*}
+% em que o possível termo em relação às derivadas de \(g^{\mu\nu}\) foi ignorado por estarmos considerando teorias com uma conexão de Levi-Civita, isto é, a lagrangiana \(\mathcal{L}_\mathrm{M}\) não pode depender da conexão.
 
 Consideremos o caso particular do eletromagnetismo, com a ação dada por
 \begin{equation*}
@@ -40,4 +37,27 @@ ou então, com índices contravariantes,
                                                           &= F\indices{^\mu_\kappa}F^{\nu\kappa} - \frac14g^{\mu\nu}F_{\rho\sigma}F^{\rho\sigma}.
 \end{align*}
 
-Consideremos as coordenadas normais de Riemann, em que podemos tomar os resultados conhecidos da Relatividade Restrita.
+Consideremos as coordenadas normais de Riemann, em que podemos tomar os resultados conhecidos da Relatividade Restrita. Isto é, nesta carta temos
+\begin{equation*}
+    F^{0i} = E^{i}\quad\text{e}\quad F^{ij} = \epsilon^{ijk}B_k,
+\end{equation*}
+com as demais componentes dadas pela antissimetria do tensor. A fim de calcular as componentes \(T^{00}\) e \(T^{i0}\) do tensor de energia e momento, determinamos
+\begin{align*}
+    F_{\rho \sigma} F^{\rho\sigma} &= F_{0\sigma}F^{0\sigma} + F_{i\sigma}F^{i\sigma}&
+    F\indices{^0_\kappa}F\indices{^{0\kappa}} &= F\indices{^0_k}F\indices{^{0k}}&
+    F\indices{^i_\kappa}F\indices{^{0\kappa}} &= F\indices{^i_k}F^{0k}\\
+                                              &= F_{0i}F^{0i} + F_{i0}F^{i0} + F_{ij}F^{ij}&
+                                              &= \eta_{jk}F^{0j}E^k&
+                                              &= \eta_{jk}F^{ij}E^k\\
+                                              &= -2E_i E^i + \epsilon_{ij\ell}B^\ell\epsilon^{ijk}B_k&
+                                              &= E_kE^k&
+                                              &= \epsilon^{ij\ell}E_jB_\ell\\
+                                              &= -2\norm{\vetor{E}}^2 + 2\norm{\vetor{B}}^2,&
+                                              &= \norm{\vetor{E}}^2,&
+                                              &= (\vetor{E}\times\vetor{B})^i.
+\end{align*}
+Assim, obtemos as componentes desejadas,
+\begin{equation*}
+    T^{00} = \norm{\vetor{E}}^2 + \frac{2\norm{\vetor{B}}^2 - 2\norm{\vetor{E}}}4 = \frac{\norm{\vetor{E}}^2 + \norm{\vetor{B}}^2}{2}\quad\text{e}\quad T^{i0} = (\vetor{E}\times\vetor{B})^i,
+\end{equation*}
+isto é, \(T^{00}\) é a densidade de energia do campo eletromagnético e \(T^{i0}\) é a componente \(i\) do vetor de Poynting.
