@@ -1,1 +1,101 @@
 \section*{Exercício 8}
+Relembremos o resultado obtido para os coeficientes da conexão de Levi-Civita no caso de uma métrica diagonal
+\begin{align*}
+    \Gamma\indices{^\lambda_{\lambda\lambda}} &=\frac{\partial_{\lambda}g_{\lambda \lambda}}{2g_{\lambda \lambda}},&
+    \Gamma\indices{^\lambda_{\mu\lambda}} &= \frac{\partial_{\mu}g_{\lambda \lambda}}{2g_{\lambda \lambda}},&
+    \Gamma\indices{^\lambda_{\mu\mu}} &= -\frac{\partial_{\lambda}g_{\mu\mu}}{2g_{\lambda \lambda}},&
+    \Gamma\indices{^\lambda_{\mu\nu}} &= 0,
+\end{align*}
+em que não utilizamos a convenção de soma de Einstein, portanto não há nenhuma soma nos termos acima.
+
+Deste modo, para uma métrica Lorentziana estática e com simetria esférica, podemos escrever
+\begin{align*}
+    g_{tt} &= -e^{b(r)} &
+    g_{rr} &= e^{a(r)}&
+    g_{\theta\theta} &= r^2&
+    g_{\phi\phi} &= r^2\sin^2\theta,
+\end{align*}
+com as outras componentes nulas. Utilizando as expressões para os coeficientes da conexão, vemos que os termos \(\Gamma\indices{^\lambda_{t \lambda}} = \Gamma\indices{^\lambda_{\phi \lambda}} = \Gamma\indices{^t_{\mu\mu}} = \Gamma\indices{^\phi_{\mu\mu}} = 0\), visto que estes termos envolvem derivadas em relação a \(t\) ou a \(\phi\) e que as componentes da métrica não têm dependência com essas variáveis. Temos também que os termos \(\Gamma\indices{^\theta_{\nu\nu}} = \Gamma\indices{^\theta_{\mu\theta}} = 0\) se anulam para \(\nu \neq \phi\) e \(\mu \neq r\). Obtemos os demais coeficientes computando diretamente com as fórmulas acima,
+\begin{align*}
+    \Gamma\indices{^t_{tr}} &= \frac12 b'&
+    \Gamma\indices{^r_{tt}} &= \frac12 b' e^{b - a} &
+    \Gamma\indices{^r_{rr}} &= \frac12 a'\\
+    \Gamma\indices{^r_{\theta\theta}} &= -r e^{-a}&
+    \Gamma\indices{^r_{\phi\phi}} &= -r \sin^2\theta e^{-a}&
+    \Gamma\indices{^\theta_{r\theta}} &= \frac1r\\
+    \Gamma\indices{^\theta_{\phi\phi}} &= -\sin\theta\cos\theta&
+    \Gamma\indices{^\phi_{r\phi}} &= \frac1r&
+    \Gamma\indices{^\phi_{\theta\phi}} &= \cot\theta,
+\end{align*}
+com \(a = a(r), b = b(r), a' = \diff{a}{r}\) e \(b' = \diff{b}{r}\).
+
+Computemos as componentes \(R_{tt}, R_{rr}, R_{\theta\theta}\) e \(R_{\phi\phi}\) do tensor de Ricci, dado por
+\begin{equation*}
+    R_{\mu \nu} = R\indices{^\sigma_{\mu \sigma \nu}} = \partial_{\sigma}\Gamma\indices{^{\sigma}_{\nu\mu}}- \partial_{\nu}\Gamma\indices{^{\sigma}_{\sigma\mu}} + \Gamma\indices{^\sigma_{\sigma\lambda}} \Gamma\indices{^\lambda_{\nu\mu}} - \Gamma\indices{^\sigma_{\nu\lambda}} \Gamma\indices{^\lambda_{\sigma\mu}}.
+\end{equation*}
+Utilizando os coeficientes da conexão encontrados, temos
+\begin{align*}
+    R_{tt} &= \partial_{\sigma}\Gamma\indices{^{\sigma}_{ t  t }}- \partial_{ t }\Gamma\indices{^{\sigma}_{\sigma t }} + \Gamma\indices{^\sigma_{\sigma\lambda}} \Gamma\indices{^\lambda_{ t  t }} - \Gamma\indices{^\sigma_{ t \lambda}} \Gamma\indices{^\lambda_{\sigma t }}\\
+           &= \partial_r \Gamma\indices{^r_{tt}} + \Gamma\indices{^\sigma_{\sigma r}}\Gamma\indices{^r_{tt}} - \left(\Gamma\indices{^\sigma_{tt}}\Gamma\indices{^t_{\sigma t}} + \Gamma\indices{^\sigma_{tr}}\Gamma\indices{^r_{\sigma t}}\right)\\
+           &= \partial_r \Gamma\indices{^r_{tt}} + \Gamma\indices{^\sigma_{\sigma r}}\Gamma\indices{^r_{tt}} - \left(\Gamma\indices{^r_{tt}}\Gamma\indices{^t_{r t}} + \Gamma\indices{^t_{tr}}\Gamma\indices{^r_{tt}} \right)\\
+           &= \partial_r \Gamma\indices{^r_{tt}} + \left(-\Gamma\indices{^t_{rt}} + \Gamma\indices{^r_{rr}} + \Gamma\indices{^\theta_{\theta r}} + \Gamma\indices{^\phi_{\phi r}}\right)\Gamma\indices{^r_{tt}}\\
+           &= \frac12 e^{b-a}\left(b'' + b'(b'-a') - \frac12 b' (b' - a') + \frac2rb'\right)\\
+           &= \frac12 e^{b-a}\left(b'' + \frac12b'(b'-a') + \frac2rb'\right),
+\end{align*}
+e fazendo cálculos análogos para as outras componentes,
+\begin{align*}
+    R_{rr} &= \frac12\left(-b'' + \frac12b'(a'-b') + \frac2ra'\right) & R_{\theta\theta} &= 1 - e^{-a} - \frac{r}2(b' - a')e^{-a} & R_{\phi\phi} &= \sin^2\theta R_{\theta\theta}.
+\end{align*}
+
+Se o tensor de Einstein é identicamente nulo, então o tensor de Ricci e o escalar de curvatura são nulos. De fato, temos
+\begin{align*}
+    G_{\mu\nu} = 0 &\implies g^{\mu\nu} G_{\mu\nu} = 0\\
+                   &\implies g^{\mu\nu}\left(R_{\mu\nu} - \frac12R g_{\mu\nu}\right) = 0\\
+                   &\implies R = 0,
+\end{align*}
+portanto \(R_{\mu\nu} = G_{\mu\nu} = 0.\) Dessa forma, no vácuo o tensor de Ricci se anula, portanto temos o sistema de equações diferenciais
+\begin{equation*}
+    \begin{cases}
+    \frac12 e^{b-a}\left(b'' + \frac12b'(b'-a') + \frac2rb'\right) = 0\\
+    \frac12\left(-b'' + \frac12b'(a'-b') + \frac2ra'\right) = 0\\
+    1 - e^{-a} - \frac{r}2(b' - a')e^{-a} = 0\\
+    \sin^2\theta R_{\theta\theta} = 0.
+    \end{cases}
+\end{equation*}
+
+Para \(b = -a\), este sistema se torna
+\begin{equation*}
+    \begin{cases}
+    \frac12 e^{2b}\left(b'' + (b')^2 + \frac2rb'\right) = 0\\
+    \frac12\left(-b'' - (b')^2 - \frac2rb'\right) = 0\\
+    1 - e^{b} - rb'e^{b} = 0,
+    \end{cases}
+\end{equation*}
+onde a última equação foi removida por ser redundante. Notemos ainda que a primeira equação é igual à segunda exceto por um fator de \(-e^{2b}\), portanto a única equação relevante é
+\begin{equation*}
+    e^b + rb' e^b = 1 \implies \frac{\dl{r}}{r} = \frac{\dl{b}}{e^{-b} - 1}.
+\end{equation*}
+Com a substituição de variáveis \(\xi = e^{-b} - 1\), temos \(\dl{b} = - \frac{\dl{\xi}}{1+\xi}\), portanto
+\begin{equation*}
+    -\frac{\dl{r}}{r} = \frac{\dl\xi}{\xi^2 + \xi} \implies \ln\left(\frac{r_0}{r}\right) = \ln{\xi} - \ln{(\xi + 1)},
+\end{equation*}
+para alguma constante de integração \(r_0\). Assim, obtemos
+\begin{align*}
+    \frac{r_0}{r} = \frac{\xi}{\xi + 1} &\implies \xi = \frac{r_0}{r-r_0}\\
+                                        &\implies e^{-b} = e^{a} = \frac{r}{r-r_0}\\
+                                        &\implies e^{b} = 1 - \frac{r_0}{r},
+\end{align*}
+portanto encontramos a métrica
+\begin{equation*}
+    \dl[2]s = -\left(1 - \frac{r_0}{r}\right)\dl[2]t + \left(1 - \frac{r_0}{r}\right)^{-1}\dl[2]r + r^2 \dl[2]\Omega.
+\end{equation*}
+
+Para encontrar o valor da constante de integração, comparamos a métrica encontrada com a métrica do campo gravitacional fraco, obtendo
+\begin{equation*}
+    \frac{r_0}{r} = 2 \Phi = \frac{2GM}{r} \implies r_0 = 2GM,
+\end{equation*}
+isto é,
+\begin{equation*}
+    \dl[2]s = -\left(1 - \frac{2GM}{r}\right)\dl[2]t + \left(1 - \frac{2GM}{r}\right)^{-1}\dl[2]r + r^2 \dl[2]\Omega,
+\end{equation*}
+que é a métrica de Schwarzschild.
