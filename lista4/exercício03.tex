@@ -1,1 +1,37 @@
 \section*{Exercício 3}
+
+Consideremos uma variedade diferenciável \(M\) munida de um tensor métrico \(g\) e conexão de Levi-Civita. Para uma carta de coordenadas \(x\) e um ponto \(p \in M\), temos a expansão
+\begin{equation*}
+    g_{\mu\nu}(x) \simeq g_{\mu\nu}(0) + A_{\mu\nu,\lambda}x^\lambda + B_{\mu\nu, \lambda\sigma}x^\lambda x^\sigma + O(x^3),
+\end{equation*}
+onde \(A_{\mu\nu,\lambda} = \partial_\lambda g_{\mu\nu}(0)\) e \(B_{\mu\nu,\lambda\sigma} = \frac12\partial_\lambda \partial_\sigma g_{\mu\nu}(0)\) e \(x(p) = 0\). Ainda, para uma outra carta de coordenadas \(x'\) com \(x'(p) = 0\), temos a expansão
+\begin{equation*}
+    x^\mu = K\indices{^\mu_\nu}x'^\nu + L\indices{^\mu_{\nu\lambda}}x'^\nu x'^\lambda + M\indices{^\mu_{\nu\lambda\sigma}}x'^\nu x'^\lambda x'^\sigma + O(x^4),
+\end{equation*}
+de modo que o jacobiano da transformação de coordenadas é dado por
+\begin{equation*}
+    \Lambda\indices{^\mu_\alpha}(x') = \diffp{x^\mu}{x'^\alpha} = K\indices{^\mu_\alpha} + 2L\indices{^\mu_{(\alpha\lambda)}}x'^\lambda + O(x'^2),
+\end{equation*}
+onde \(L\indices{^\mu_{(\alpha\lambda)}} = \frac12 \left(L\indices{^\mu_{\alpha\lambda}} + L\indices{^\mu_{\lambda\alpha}}\right)\) e a métrica por
+\begin{align*}
+    g'_{\alpha\beta}(x') &= \diffp{x^\mu}{x'^\alpha}\diffp{x^\nu}{x'^\beta}g_{\mu\nu}(x) \\
+                         &= \left[K\indices{^\mu_\alpha}K\indices{^\nu_\beta} + 2\left(K\indices{^\mu_\alpha}L\indices{^\nu_{(\beta\lambda)}} + K\indices{^\nu_\beta}L\indices{^\mu_{(\alpha\lambda)}}\right)x'^\lambda + O(x'^2)\right]g_{\mu\nu}(x)\\
+                         %\left(g_{\mu\nu}(0) + A_{\mu\nu,\sigma}x^\sigma + B_{\mu\nu,\sigma\rho}x^\sigma x^\rho\right) + O(x^2)
+                         &= K\indices{^\mu_\alpha}K\indices{^\nu_\beta}g_{\mu\nu}(0) + \left[K\indices{^\mu_\alpha}K\indices{^\nu_\beta}A_{\mu\nu,\lambda} + 2\left(K\indices{^\mu_\alpha}L\indices{^\nu_{(\beta\lambda)}} + K\indices{^\nu_\beta}L\indices{^\mu_{(\alpha\lambda)}}\right)g_{\mu\nu}(0)\right]x'^\lambda + O(x^2)
+\end{align*}
+Portanto nessa outra carta de coordenadas, a métrica em \(p\) é dada por
+\begin{equation*}
+    g'_{\alpha \beta}(0) = \Lambda\indices{^\mu_\alpha}(0)\Lambda\indices{^\nu_\beta}(0)g_{\mu\nu}(0) = K\indices{^\mu_\alpha}K\indices{^\nu_\beta}g_{\mu\nu}(0).
+\end{equation*}
+Notemos que como \(g_{\mu\nu}(0)\) é simétrica, podemos tomar \(K\indices{^\mu_\nu}\) tal que \(g'_{\alpha\beta}(0)\) seja uma matriz diagonal. Ainda, podemos multiplicar cada coordenada por um fator \(\frac{1}{\sqrt{g_{\mu\mu}(0)}}\), de modo que a matriz diagonalizada se torna a matriz da métrica de Minkowski, isto é, podemos encontrar coordenadas tais que, em \(p\), vale
+\begin{equation*}
+    g'_{\alpha\beta}(0) = \eta_{\alpha\beta},
+\end{equation*}
+portanto
+\begin{equation*}
+    g'_{\alpha \beta}(x') = \eta_{\alpha \beta} + O(x^2),
+\end{equation*}
+se tomarmos \(L\indices{^\kappa_{\sigma\rho}}\) tal que
+\begin{equation*}
+    K\indices{^\mu_\alpha}K\indices{^\nu_\beta}A_{\mu\nu,\lambda} + 2\left(K\indices{^\mu_\alpha}L\indices{^\nu_{(\beta\lambda)}} + K\indices{^\nu_\beta}L\indices{^\mu_{(\alpha\lambda)}}\right)g_{\mu\nu}(0) = 0.
+\end{equation*}
