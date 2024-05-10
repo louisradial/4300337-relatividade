@@ -1,1 +1,67 @@
 \section*{Exercício 2}
+No exercício 1, vimos que em duas dimensões temos
+\begin{equation*}
+    R_{\mu\nu\alpha\beta} = \frac{R}{2}\left(g_{\mu\alpha}g_{\nu\beta} - g_{\mu\beta}g_{\nu\alpha}\right),
+\end{equation*}
+portanto
+\begin{equation*}
+    R_{2121} = \frac{R}{2}(g_{22}g_{11} - g_{21}g_{12}) = \frac{R}{2}g,
+\end{equation*}
+de modo que \(R_{2121}\) se anula se e somente se o escalar de curvatura \(R\) se anula, uma vez que o tensor métrico é não degenerado. Como consequência, se \(R_{2121} = 0\), segue que \(R_{\mu\nu\alpha\beta} = 0\), isto é, a variedade é plana.
+
+Consideremos a métrica de uma variedade bidimensional dada por
+\begin{equation*}
+    g_{11} = 1+u^2,\quad g_{12} = 2v - u,\quad g_{21} = 2v - u, \quad\text{e}\quad g_{22} = 1 + \kappa v^2,
+\end{equation*}
+para um parâmetro \(\kappa > 0\). Notando que \(g = 1 + 4 uv + \kappa u^2 v^2 + (\kappa-4)v^2\), temos
+\begin{equation*}
+    g^{11} = \frac{1 + \kappa v^2}{g},\quad g^{12} = \frac{u-2v}{g},\quad g^{21} = \frac{u-2v}{g},\quad\text{e}\quad g^{22} = \frac{1+u^2}{g}.
+\end{equation*}
+Podemos agora calcular os coeficientes da conexão de Levi-Civita, dados por
+\begin{align*}
+    \Gamma\indices{^1_{11}} &= \frac12g^{1m}\left(\partial_1 g_{1m} + \partial_1 g_{1m} - \partial_m g_{11}\right)&
+    \Gamma\indices{^1_{12}} &= \frac12g^{1m}\left(\partial_1 g_{2m} + \partial_2 g_{1m} - \partial_m g_{12}\right)\\
+                            &= g^{1m} \partial_1 g_{1m} - \frac12 g^{11} \partial_1 g_{11}&
+                            &= \frac12 g^{11}\left(\partial_1 g_{21} + \partial_2 g_{11} - \partial_1 g_{12}\right) + \frac12g^{12}\left(\partial_1g_{22} + \partial_2 g_{12} - \partial_2 g_{12}\right)\\
+                            &= \frac12 g^{11}\partial_1 g_{11} + g^{12}\partial_1 g_{12}&
+                            &= \frac12 g^{11}\partial_2 g_{11} + \frac12 g^{12}\partial_1g_{22}\\
+                            &= \frac{\kappa u v^2 + 2 v}{g}, &
+                            &= 0,
+\end{align*}
+\begin{align*}
+    \Gamma\indices{^1_{22}} &= \frac12 g^{1m}\left(\partial_2 g_{2m} + \partial_2 g_{2m} - \partial_m g_{22}\right)&
+    \Gamma\indices{^2_{11}} &= \frac12 g^{2m}\left(\partial_1 g_{1m} + \partial_1 g_{1m} - \partial_m g_{11}\right)\\
+                            &= g^{1m} \partial_2 g_{2m} - \frac12 g^{12} \partial_2 g_{22}&
+                            &= g^{2m} \partial_1 g_{1m} - \frac12 g^{21} \partial_1 g_{11}\\
+                            &= g^{11} \partial_2 g_{21} + \frac12 g^{12} \partial_2 g_{22}&
+                            &= \frac12g^{21}\partial_1 g_{11} + g^{22} \partial_1 g_{12}\\
+                            &=\frac{2 + \kappa u v}{g},&
+                            &=\frac{-1-2uv}{g},
+\end{align*}
+\begin{align*}
+    \Gamma\indices{^2_{12}} &= \frac12g^{2m}\left(\partial_1 g_{2m} + \partial_2 g_{1m} - \partial_m g_{12}\right)&
+    \Gamma\indices{^2_{22}} &= \frac12g^{2m}\left(\partial_2 g_{2m} + \partial_2 g_{2m} - \partial_m g_{22}\right)\\
+                            &= \frac12 g^{21}\left(\partial_1 g_{21} + \partial_2 g_{11} - \partial_1 g_{12}\right) + \frac12g^{22}\left(\partial_1g_{22} + \partial_2 g_{12} - \partial_2 g_{12}\right)&
+                            &= g^{2m} \partial_2 g_{2m} - \frac12 g^{22} \partial_2 g_{22}\\
+                            &= \frac12 g^{21}\partial_2 g_{11} + \frac12 g^{22}\partial_1g_{22}&
+                            &= g^{21}\partial_2 g_{21} + \frac12g^{22}\partial_2 g_{22}\\
+                            &= 0,&
+                            &= \frac{2u + (\kappa - 4)v + \kappa u^2v}{g}.
+\end{align*}
+Com isso, podemos calcular a componente \(R_{2121}\) do tensor de Riemann por
+\begin{align*}
+    R_{2 1 2 1} = g_{2 s}R\indices{^s_{1 2 1}} &= g_{2 s} \left( \partial_{2}\Gamma\indices{^{s}_{11}}- \partial_{1}\Gamma\indices{^{s}_{21}} + \Gamma\indices{^s_{2r}} \Gamma\indices{^r_{11}} - \Gamma\indices{^s_{1r}} \Gamma\indices{^r_{21}} \right)\\
+                                               &= g_{2 s} \left( \partial_{2}\Gamma\indices{^{s}_{11}} + \Gamma\indices{^s_{22}} \Gamma\indices{^2_{11}}\right)\\
+                                               &= g_{2 1} \left( \partial_{2}\Gamma\indices{^{1}_{11}} + \Gamma\indices{^1_{22}} \Gamma\indices{^2_{11}}\right) + g_{2 2} \left( \partial_{2}\Gamma\indices{^{2}_{11}} + \Gamma\indices{^2_{22}} \Gamma\indices{^2_{11}}\right)\\
+                                               &= g_{21}\frac{(\kappa-4)(uv - 2v^2)}{g^2} + g_{22} \frac{(\kappa - 4)u^2v}{g^2}\\
+                                               &= (\kappa-4)v\frac{\kappa u^2 v^2 + 4 uv - 4v^2}{g^2},
+\end{align*}
+com os detalhes omitidos\footnote{Com rascunho disponível no \href{https://github.com/louisradial/4300337-relatividade/blob/main/lista4/rascunho_exercício_2.pdf}{repositório}.} por simplicidade. Deste modo, vemos que \(R_{2121}\) é identicamente nulo se e somente se \(\kappa = 4\), portanto a variedade cuja métrica é dada por
+\begin{equation*}
+    \dl[2]s = (1+u^2)\dl[2]u + (1+4v^2)\dl[2]v + 2(2v-u)\dl{u}\dl{v}
+\end{equation*}
+tem tensor de curvatura identicamente nulo, enquanto que variedade cuja métrica é dada por
+\begin{equation*}
+    \dl[2]s = (1+u^2)\dl[2]u + (1+2v^2)\dl[2]v + 2(2v-u)\dl{u}\dl{v}
+\end{equation*}
+tem tensor de curvatura não nulo.
