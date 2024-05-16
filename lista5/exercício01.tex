@@ -1,0 +1,94 @@
+\section*{Exercício 1}
+Relembremos o resultado obtido para os coeficientes da conexão de Levi-Civita no caso de uma métrica diagonal
+\begin{align*}
+    \Gamma\indices{^\lambda_{\lambda\lambda}} &=\frac{\partial_{\lambda}g_{\lambda \lambda}}{2g_{\lambda \lambda}},&
+    \Gamma\indices{^\lambda_{\mu\lambda}} &= \frac{\partial_{\mu}g_{\lambda \lambda}}{2g_{\lambda \lambda}},&
+    \Gamma\indices{^\lambda_{\mu\mu}} &= -\frac{\partial_{\lambda}g_{\mu\mu}}{2g_{\lambda \lambda}},&
+    \Gamma\indices{^\lambda_{\mu\nu}} &= 0,
+\end{align*}
+em que não utilizamos a convenção de soma de Einstein, portanto não há nenhuma soma nos termos acima.
+
+A métrica de Schwarzschild é dada por
+\begin{align*}
+    g_{tt} &= -\left(1 - \frac{2GM}{r}\right)&
+    g_{rr} &= \left(1 - \frac{2GM}{r}\right)^{-1}&
+    g_{\theta\theta} &= r^2&
+    g_{\phi\phi} &= r^2\sin^2\theta,
+\end{align*}
+com as outras componentes nulas. Utilizando as expressões para os coeficientes da conexão, vemos que os termos \(\Gamma\indices{^\lambda_{t \lambda}} = \Gamma\indices{^\lambda_{\phi \lambda}} = \Gamma\indices{^t_{\mu\mu}} = \Gamma\indices{^\phi_{\mu\mu}} = 0\), visto que estes termos envolvem derivadas em relação a \(t\) ou a \(\phi\) e que as componentes da métrica não têm dependência com essas variáveis. Temos também que os termos \(\Gamma\indices{^\theta_{\nu\nu}} = \Gamma\indices{^\theta_{\mu\theta}} = 0\) se anulam para \(\nu \neq \phi\) e \(\mu \neq r\).
+
+% Obtemos os demais coeficientes computando diretamente com as fórmulas acima,
+% \begin{align*}
+%     \Gamma\indices{^t_{tr}} &= \frac{GM}{r^2}\left(1 - \frac{2GM}{r}\right)^{-1}&
+%     \Gamma\indices{^r_{tt}} &= \frac{GM}{r^2}\left(1 - \frac{2GM}{r}\right)&
+%     \Gamma\indices{^r_{rr}} &= -\frac{GM}{r^2}\left(1 - \frac{2GM}{r}\right)^{-1}\\
+%     \Gamma\indices{^r_{\theta\theta}} &= -r\left(1 - \frac{2GM}{r}\right)&
+%     \Gamma\indices{^r_{\phi\phi}} &= -r \sin^2\theta \left(1 - \frac{2GM}{r}\right)&
+%     \Gamma\indices{^\theta_{r\theta}} &= \frac1r\\
+%     \Gamma\indices{^\theta_{\phi\phi}} &= -\sin\theta\cos\theta&
+%     \Gamma\indices{^\phi_{r\phi}} &= \frac1r&
+%     \Gamma\indices{^\phi_{\theta\phi}} &= \cot\theta.
+% \end{align*}
+
+% Para um parâmetro afim \(\lambda\), a equação da geodésica é dada por
+% \begin{equation*}
+%     \diff[2]{x^\mu}{\lambda} + \Gamma\indices{^\mu_{\alpha\beta}} \diff{x^\alpha}{\lambda}\diff{x^\beta}{\lambda} = 0.
+% \end{equation*}
+Consideremos a componente \(t\) da equação da geodésica,
+\begin{align*}
+    \diff[2]{t}{\lambda} + \Gamma\indices{^t_{\alpha \beta}} \diff{x^\alpha}{\lambda}\diff{x^\beta}{\lambda} = 0
+    &\implies \diff[2]{t}{\lambda} + 2 \Gamma\indices{^t_{tr}} \diff{t}{\lambda}\diff{r}{\lambda} = 0\\
+    &\implies \diff[2]{t}{\lambda} + \frac{\partial_r g_{tt}}{g_{tt}} \diff{t}{\lambda}\diff{r}{\lambda} = 0\\
+    &\implies \frac{1}{g_{tt}}\left(g_{tt}\diff[2]{t}{\lambda} + \diff{g_{tt}}{\lambda} \diff{t}{\lambda}\right) = 0\\
+    &\implies \frac{1}{g_{tt}} \diff*{\left(g_{tt}\diff{t}{\lambda}\right)}{\lambda} = 0.
+\end{align*}
+Como \(g_{tt} \neq 0\), temos a seguinte lei de conservação
+\begin{equation*}
+    \diff*{\left[\diff{t}{\lambda}\left(1 - \frac{2GM}{r}\right)\right]}{\lambda} = 0,
+\end{equation*}
+pela componente temporal da equação da geodésica.
+
+Analogamente, para a componente \(\phi\), temos
+\begin{align*}
+    \diff[2]{\phi}{\lambda} + \Gamma\indices{^\phi_{\alpha \beta}} \diff{x^\alpha}{\lambda}\diff{x^\beta}{\lambda} = 0
+    &\implies \diff[2]{\phi}{\lambda} + 2 \Gamma\indices{^\phi_{r\phi}} \diff{\phi}{\lambda}\diff{r}{\lambda} + 2 \Gamma\indices{^\phi_{\theta\phi}} \diff{\phi}{\lambda} \diff{\theta}{\lambda}= 0\\
+    &\implies \diff[2]{\phi}{\lambda} + \frac{\partial_r g_{\phi\phi}}{g_{\phi\phi}} \diff{\phi}{\lambda}\diff{r}{\lambda} + \frac{\partial_\theta g_{\phi\phi}}{g_{\phi\phi}} \diff{\phi}{\lambda}\diff{\theta}{\lambda}= 0\\
+    &\implies \frac1{g_{\phi\phi}}\left[g_{\phi\phi}\diff[2]{\phi}{\lambda} + \left(\diffp{g_{\phi\phi}}{r}\diff{r}{\lambda} + \diffp{g_{\phi\phi}}{\theta}\diff{\theta}{\lambda}\right)\diff{\phi}{\lambda}\right] = 0\\
+    &\implies \frac{1}{g_{\phi\phi}}\diff*{\left[g_{\phi\phi}\diff{\phi}{\lambda}\right]}{\lambda} = 0.
+\end{align*}
+Como \(g_{\phi\phi} \neq 0\), temos a lei de conservação
+\begin{equation*}
+    \diff*{\left(r^2 \diff{\phi}{\lambda}\sin^2\theta\right)}{\lambda} = 0,
+\end{equation*}
+pela componente azimutal da equação da geodésica.
+
+Notemos que as quantidades conservadas
+\begin{equation*}
+    \epsilon = \left(1 - \frac{2GM}{r}\right)\diff{t}{\lambda}\quad\text{e}\quad \ell = r^2\sin^2\theta \diff{\phi}{\lambda}
+\end{equation*}
+estão relacionadas à energia e ao momento angular da partícula na trajetória geodésica. Para uma partícula de massa \(m\), \(m \epsilon\) e \( m \ell\) são a sua energia e seu momento angular, enquanto que \(\hbar \epsilon\) e \(\hbar \ell\) são a energia e o momento angular de um fóton. A expressão \(\ell\) é familiar, enquanto que precisamos motivar a relação de \(\epsilon\) com a energia. Tomemos uma partícula massiva muito distante do centro de atração, isto é, \(r \to \infty\), onde temos
+\begin{equation*}
+    \lim_{r\to\infty} m\epsilon = m \lim_{r\to \infty} \diff{t}{\tau} = m \gamma = E,
+\end{equation*}
+onde utilizamos as expressões conhecidas da Relatividade Restrita, visto que à grandes distâncias do centro atrativo, a métrica de Schwarzschild se reduz à métrica de Minkowski.
+
+A simetria azimutal da métrica é refletida na conservação do momento angular, portanto podemos considerar uma partícula se movendo em um plano de ângulo polar constante, por exemplo \(\theta = \frac{\pi}{2}\). Neste caso, como a trajetória se dá numa geodésica, temos que a \enquote{norma} do vetor tangente à trajetória é constante, uma vez que este é paralelo ao longo da geodésica, isto é
+\begin{equation*}
+    g_{\mu\nu}\diff{x^\mu}{\lambda} \diff{x^\nu}{\lambda} = -\kappa,
+\end{equation*}
+para a constante \(\kappa\) dada por \(\kappa = 1\) no caso de uma partícula massiva e o parâmetro afim dado pelo tempo próprio, ou \(\kappa = 0\) para uma partícula de massa nula. De forma explícita, temos
+\begin{equation*}
+    -\kappa = -\left(1 - \frac{2GM}{r}\right)\left(\diff{t}{\lambda}\right)^2 + \left(1 - \frac{2GM}{r}\right)^{-1}\left(\diff{r}{\lambda}\right)^2 + r^2\left(\diff{\phi}{\lambda}\right)^2,
+\end{equation*}
+portanto ao multiplicar por \(1 - \frac{2GM}{r}\) e utilizar as integrais de movimento, temos
+\begin{equation*}
+    -\kappa\left(1 - \frac{2GM}{r}\right) = - \epsilon^2 + \left(\diff{r}{\lambda}\right)^2 + \left(1 - \frac{2GM}{r}\right)\frac{\ell^2}{r^2}.
+\end{equation*}
+Assim, obtemos a equação
+\begin{equation*}
+    \frac12\left(\diff{r}{\lambda}\right)^2 - \kappa \frac{GM}{r} + \frac{\ell^2}{2r^2} - \frac{GM\ell^2}{r^3} = \frac12 \left(\epsilon^2 - \kappa\right)
+\end{equation*}
+a qual podemos analisar como o movimento unidimensional de uma partícula de massa unitária  e energia \(\frac12 \left(\epsilon^2 - \kappa\right)\), sob a ação de um potencial efetivo clássico \(V_\mathrm{ef}\) dado por
+\begin{equation*}
+    V_\mathrm{ef}(r) = - \kappa \frac{GM}{r} + \frac{\ell^2}{2r^2} - \frac{GM\ell^2}{r^3}.
+\end{equation*}
