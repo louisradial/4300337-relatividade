@@ -1,0 +1,52 @@
+\section*{Exercício 2}
+Como obtido no exercício anterior, o potencial efetivo é dado por
+\begin{equation*}
+    V_\mathrm{ef}(r) = - \kappa \frac{GM}{r} + \frac{\ell^2}{2r^2} - \frac{GM\ell^2}{r^3},
+\end{equation*}
+cujo possível gráfico é apresentado na \cref{fig:exercício2}, a depender das relações entre os parâmetros \(M\) e \(\ell\).
+
+\begin{figure}[ht]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.8\linewidth,
+            height=0.3\textheight,
+            xmin=0, xmax=24,
+            ymin=-0.1,ymax=0.6,
+            domain=0.5:24,
+            samples=500,
+            axis lines=middle,
+            xlabel={$r$},
+            ylabel={$V_\mathrm{ef}$},
+            legend pos=north east,
+            ytick=\empty,
+            xtick=\empty
+        ]
+            \addplot[thick, Mauve] {-1/(2*x) + 25/(8*x^2) - 25/(8*x^3)};
+            \addlegendentry{\(\kappa = 1\)}
+
+            \addplot[thick, Teal] {25/(8*x^2) - 25/(8*x^3)};
+            \addlegendentry{\(\kappa = 0\)}
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Potencial efetivo radial}
+    \label{fig:exercício2}
+\end{figure}
+
+Determinemos os pontos críticos do potencial efetivo. Temos
+\begin{equation*}
+    \diff{V_\mathrm{ef}}{r} = \frac{\kappa GM r^2 - \ell^2 r + 3 GM\ell^2}{r^4}\quad\text{e}\quad\diff[2]{V_\mathrm{ef}}{r} = -\frac{2 \kappa GM  r^2 - 3\ell^2r + 12 GM \ell^2}{r^5},
+\end{equation*}
+portanto um ponto crítico do potencial efetivo satisfaz a equação polinomial
+\begin{equation*}
+    \kappa GM r^2 - \ell^2r + 3 GM\ell^2 = 0.
+\end{equation*}
+Para partículas massivas, temos as raízes
+\begin{equation*}
+    2GM r_{\pm} = \ell^2 \pm \ell^2\sqrt{1 - 3 \left(\frac{2GM}{\ell}\right)^2},
+\end{equation*}
+para \(\abs{\ell} \geq 2\sqrt{3} GM\) e nenhuma raiz real caso contrário. Substituindo essas raízes na segunda derivada do potencial efetivo, obtemos
+\begin{equation*}
+    \diff[2]{V_\mathrm{ef}}{r}[r_{\pm}] = \pm16\left(\frac{GM}{r_{\pm}}\right)^4\ell^2\sqrt{1 - 3\left(\frac{2GM}{\ell}\right)^2},
+\end{equation*}
+isto é, se \(\abs{\ell} = 2\sqrt{3}GM,\) há apenas um ponto de inflexão em \(r = \frac{\ell^2}{2GM}\) e se \(\abs{\ell} > 2\sqrt{3}GM\), há um máximo em \(r_\mathrm{max} = r_-\) e um mínimo em \(r_\mathrm{min}=r_+\).
