@@ -10,7 +10,7 @@ cujo possível gráfico é apresentado na \cref{fig:exercício2}, a depender das
     \begin{tikzpicture}
         \begin{axis}[
             width=0.8\linewidth,
-            height=0.3\textheight,
+            height=0.25\textheight,
             xmin=0, xmax=24,
             ymin=-0.1,ymax=0.6,
             domain=0.5:24,
@@ -35,18 +35,46 @@ cujo possível gráfico é apresentado na \cref{fig:exercício2}, a depender das
 
 Determinemos os pontos críticos do potencial efetivo. Temos
 \begin{equation*}
-    \diff{V_\mathrm{ef}}{r} = \frac{\kappa GM r^2 - \ell^2 r + 3 GM\ell^2}{r^4}\quad\text{e}\quad\diff[2]{V_\mathrm{ef}}{r} = -\frac{2 \kappa GM  r^2 - 3\ell^2r + 12 GM \ell^2}{r^5},
+    \diff{V_\mathrm{ef}}{r} = \frac{\kappa GM r^2 - \ell^2 r + 3 GM\ell^2}{r^4},
+    %\quad\text{e}\quad\diff[2]{V_\mathrm{ef}}{r} = -\frac{2 \kappa GM  r^2 - 3\ell^2r + 12 GM \ell^2}{r^5},
 \end{equation*}
 portanto um ponto crítico do potencial efetivo satisfaz a equação polinomial
 \begin{equation*}
     \kappa GM r^2 - \ell^2r + 3 GM\ell^2 = 0.
 \end{equation*}
+
 Para partículas massivas, temos as raízes
 \begin{equation*}
     2GM r_{\pm} = \ell^2 \pm \ell^2\sqrt{1 - 3 \left(\frac{2GM}{\ell}\right)^2},
 \end{equation*}
-para \(\abs{\ell} \geq 2\sqrt{3} GM\) e nenhuma raiz real caso contrário. Substituindo essas raízes na segunda derivada do potencial efetivo, obtemos
+para \(\abs{\ell} \geq 2\sqrt{3} GM\) e nenhuma raiz real caso contrário. Isto é, podemos escrever
 \begin{equation*}
-    \diff[2]{V_\mathrm{ef}}{r}[r_{\pm}] = \pm16\left(\frac{GM}{r_{\pm}}\right)^4\ell^2\sqrt{1 - 3\left(\frac{2GM}{\ell}\right)^2},
+    \diff{V_\mathrm{ef}}{r} = \frac{GM (r - r_-)(r-r_+)}{r^4},
 \end{equation*}
-isto é, se \(\abs{\ell} = 2\sqrt{3}GM,\) há apenas um ponto de inflexão em \(r = \frac{\ell^2}{2GM}\) e se \(\abs{\ell} > 2\sqrt{3}GM\), há um máximo em \(r_\mathrm{max} = r_-\) e um mínimo em \(r_\mathrm{min}=r_+\).
+evidenciando que
+\begin{align*}
+    0 < r < r_- &\implies \diff{V_\mathrm{ef}}{r} > 0& r_- < r < r_+ &\implies \diff{V_\mathrm{ef}}{r} < 0 & r_+ < r &\implies \diff{V_\mathrm{ef}}{r} > 0,
+\end{align*}
+isto é, se \(r_- \neq r_+\), o potencial efetivo é crescente antes de \(r_-\) e depois de \(r_+\), e decrescente entre \(r_-\) e \(r_+\). Dessa forma, como o potencial efetivo é suave para \(0 < r < \infty\), segue que \(r_-\) e \(r_+\) são pontos de máximo e de mínimo, respectivamente, a não ser que se igualem, caso em que são um ponto de inflexão. Ou seja, para \(\abs{\ell} > 2\sqrt{3}GM\) temos as órbitas circulares em
+\begin{equation*}
+    r_\mathrm{min} = \frac{\ell^2}{2GM}\left[1 - \sqrt{1 - 3\left(\frac{2GM}{\ell}\right)^2}\right]\quad\text{e}\quad
+    r_\mathrm{max} = \frac{\ell^2}{2GM}\left[1 + \sqrt{1 - 3\left(\frac{2GM}{\ell}\right)^2}\right],
+\end{equation*}
+que são instável e estável, respectivamente. Sejam \(V_\mathrm{min} = V_\mathrm{ef}(r_\mathrm{max})\) e \(V_\mathrm{min} = V_\mathrm{ef}(r_\mathrm{max})\) os potenciais efetivos das órbitas circulares, então para \(V_\mathrm{min} < \frac{\epsilon^2 - 1}{2} < 0\) temos órbitas limitadas não circulares, enquanto que para \(0 \leq \frac{\epsilon^2 - 1}{2} < V_\mathrm{max}\) e para \(\frac{\epsilon^2 - 1}{2} > V_\mathrm{max}\) temos órbitas abertas. Notemos que para o limite \(\ell \to 2\sqrt{3}GM\), temos
+\begin{equation*}
+    \lim_{\ell \to 2\sqrt{3}GM} r_\mathrm{max} = \frac{\ell^2}{2GM} = 6GM,
+\end{equation*}
+portanto o raio da órbita circular mais interna \(r_\mathrm{ISCO}\) é igual a três vezes o raio de Schwarzschild.
+
+Para partículas de massa nula, temos a única raiz \(r_0 = 3GM\). Escrevemos
+\begin{equation*}
+    \diff{U_\mathrm{ef}}{r} = \frac{2}{\ell^2}\diff{V_\mathrm{ef}}{r} = -2\frac{r - r_0}{r^4},
+\end{equation*}
+portanto temos que \(U_\mathrm{ef}\) cresce em \(0 < r < r_0\) e decresce em \(r > r_0\), isto é, \(r_0\) é um ponto de máximo local. Assim, fótons podem percorrer órbitas circulares instáveis de raio igual a três meios do raio de Schwarzschild. Nesta órbita, temos \(U_\mathrm{ef}(r_0) = \frac{1}{27 G^2M^2}\), portanto o parâmetro de impacto deve ser tal que \(\frac1{b^2} = \frac{1}{27G^2M^2}\). Para parâmetros de impacto que não satisfazem esta relação, temos órbitas abertas, com \(r < r_0\) tendendo à origem e com \(r > r_0\) tendendo ao infinito.
+
+
+% Substituindo essas raízes na segunda derivada do potencial efetivo, obtemos
+% \begin{equation*}
+%     \diff[2]{V_\mathrm{ef}}{r}[r_{\pm}] = \pm16\left(\frac{GM}{r_{\pm}}\right)^4\ell^2\sqrt{1 - 3\left(\frac{2GM}{\ell}\right)^2},
+% \end{equation*}
+% isto é, se \(\abs{\ell} = 2\sqrt{3}GM,\) há apenas um ponto de inflexão em \(r = \frac{\ell^2}{2GM}\) e se \(\abs{\ell} > 2\sqrt{3}GM\), há um máximo em \(r_\mathrm{max} = r_-\) e um mínimo em \(r_\mathrm{min}=r_+\).
