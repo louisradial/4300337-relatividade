@@ -1,3 +1,30 @@
 \section*{Exercício 4}
-
-
+Utilizando o potencial efetivo encontrado para partículas massivas,
+\begin{equation*}
+    V_\mathrm{ef}(r) = - \frac{GM}{r} + \frac{\ell^2}{2r^2} - \frac{GM\ell^2}{r^3},
+\end{equation*}
+segue que
+\begin{equation*}
+    \left(\diff{r}{\tau}\right)^2 - \frac{GM}{r} = - \frac{GM}{r_0}
+\end{equation*}
+para uma partícula que parte do repouso de uma posição \(r_0\) e cai radialmente em direção à origem. Desse modo, temos a equação separável
+\begin{equation*}
+    \frac{\dl{r}}{\sqrt{\frac1r - \frac1{r_0}}} = \pm\sqrt{2GM} \dl{\tau}.
+\end{equation*}
+Como a partícula cai em direção à origem, podemos escolher o sinal negativo e integrar da posição inicial \(r_0\) até a origem, obtendo
+\begin{equation*}
+    \sqrt{2GM} \Delta\tau = \int_{0}^{r_0} \frac{\dl{r}}{\sqrt{\frac1r - \frac1{r_0}}} = \sqrt{r_0} \int_{0}^{r_0} \frac{\dl{r}}{\sqrt{\frac{r_0}{r} - 1}}.
+\end{equation*}
+Com a substituição de variáveis \(\rho = \frac{r_0}{r}\), temos
+\begin{equation*}
+    \frac{\Delta\tau}{r_0}\sqrt{\frac{2GM}{r_0}} = \int_1^\infty\frac{\dl\rho}{\rho^2\sqrt{\rho - 1}}.
+\end{equation*}
+Tomando \(\sqrt{\rho - 1} = \tan\psi\), temos \(\rho = \sec^2\psi\), portanto
+\begin{equation*}
+    \frac{\Delta\tau}{2r_0}\sqrt{\frac{2GM}{r_0}} = \int_{0}^\frac\pi2 \frac{\sec^2\psi\dl{\psi}}{\sec^4\psi} = \int_{0}^{\frac\pi2} \dli{\psi}\cos^2\psi = \frac{\pi}{4}.
+\end{equation*}
+Isto é, o tempo próprio desde a posição \(r_0\) até a singularidade é
+\begin{equation*}
+    \Delta \tau = \frac{\pi r_0}{2}\sqrt{\frac{r_0}{2GM}}.
+\end{equation*}
+Por exemplo, para \(r_0 = 10GM\), temos \(\Delta\tau = 5\pi\sqrt{5}GM\).
