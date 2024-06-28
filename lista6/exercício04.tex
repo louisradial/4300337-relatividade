@@ -1,0 +1,103 @@
+\section*{Exercício 4}
+
+Relembremos o resultado obtido para os coeficientes da conexão de Levi-Civita no caso de uma métrica diagonal
+\begin{align*}
+    \Gamma\indices{^\lambda_{\lambda\lambda}} &=\frac{\partial_{\lambda}g_{\lambda \lambda}}{2g_{\lambda \lambda}},&
+    \Gamma\indices{^\lambda_{\mu\lambda}} &= \frac{\partial_{\mu}g_{\lambda \lambda}}{2g_{\lambda \lambda}},&
+    \Gamma\indices{^\lambda_{\mu\mu}} &= -\frac{\partial_{\lambda}g_{\mu\mu}}{2g_{\lambda \lambda}},&
+    \Gamma\indices{^\lambda_{\mu\nu}} &= 0,
+\end{align*}
+em que não utilizamos a convenção de soma de Einstein, portanto não há nenhuma soma nos termos acima. Recordemos também que, utilizando a convenção de soma, vale
+\begin{equation*}
+    \Gamma\indices{^\mu_{\mu\nu}} = \frac{\partial_\nu \sqrt{-g}}{\sqrt{-g}},
+\end{equation*}
+onde \(g\) é o determinante da métrica.
+
+Consideremos a métrica dada por \(\dl[2]s = -\dl[2]t + a^2(t) \dl{x}^i \dl{x}_i\), com \(-g = a^6(t)\). Utilizando as expressões para os coeficientes da conexão, vemos que os termos \(\Gamma\indices{^0_{0 \lambda}} = \Gamma\indices{^\lambda_{\lambda \lambda}} = \Gamma\indices{^i_{\lambda \lambda}} = \Gamma\indices{^i_{ij}} = 0\), visto que estes termos envolvem derivadas em relação às coordenadas espaciais e que as componentes da métrica não têm dependência com essas variáveis. Resta apenas os coeficientes dados por
+\begin{equation*}
+    \Gamma\indices{^0_{ij}} = a \dot{a} \delta_{ij}\quad\text{e}\quad
+    \Gamma\indices{^i_{j0}} = \frac{\dot{a}}{a} \delta^i_j,
+\end{equation*}
+onde \(\dot{a} = \diff{a}{t}\). Da expressão para o tensor de curvatura de Riemann em coordenadas locais,
+\begin{equation*}
+    R\indices{^\sigma_{\mu\rho\nu}} = \partial_\rho\Gamma\indices{^\sigma_{\nu\mu}} - \partial_\nu\Gamma\indices{^\sigma_{\rho\mu}} + \Gamma\indices{^\sigma_{\rho \lambda}} \Gamma\indices{^\lambda_{\nu\mu}} - \Gamma\indices{^\sigma_{\nu \lambda}} \Gamma\indices{^\lambda_{\rho\mu}},
+\end{equation*}
+e das simetrias encontradas para os coeficientes da conexão, segue que o tensor de Ricci é
+\begin{align*}
+    R_{\mu\nu} &= R\indices{^\sigma_{\mu\sigma\nu}} = \partial_\sigma\Gamma\indices{^\sigma_{\nu\mu}} - \partial_\nu\Gamma\indices{^\sigma_{\sigma\mu}} + \Gamma\indices{^\sigma_{\sigma \lambda}} \Gamma\indices{^\lambda_{\nu\mu}} - \Gamma\indices{^\sigma_{\nu \lambda}} \Gamma\indices{^\lambda_{\sigma\mu}}\\
+               &= \partial_t \Gamma\indices{^0_{\nu\mu}}
+               - \delta^0_\nu\partial_t\left(\frac{\partial_\mu\sqrt{-g}}{\sqrt{-g}}\right)
+               + \frac{\partial_{\lambda}\sqrt{-g}}{\sqrt{-g}} \Gamma\indices{^\lambda_{\nu\mu}}
+               - \Gamma\indices{^0_{\nu \lambda}} \Gamma\indices{^\lambda_{0\mu}}
+               - \Gamma\indices{^i_{\nu \lambda}} \Gamma\indices{^\lambda_{i\mu}}\\
+               &= \delta^m_\mu\delta^n_\nu \delta_{mn}\diff*{\left(a\dot{a}\right)}{t}
+               - \delta^0_\mu\delta^0_\nu\diff*{\left(\frac{3\dot{a}}{a}\right)}{t}
+               + \frac{3\dot{a}}{a} \delta^m_\mu \delta^n_\nu \delta_{mn} a\dot{a}
+               - \Gamma\indices{^0_{\nu j}} \Gamma\indices{^j_{0\mu}}
+               - \Gamma\indices{^i_{\nu 0}} \Gamma\indices{^0_{i\mu}}
+               - \Gamma\indices{^i_{\nu j}} \Gamma\indices{^j_{i\mu}}\\
+               &= \delta^m_\mu\delta^n_\nu \delta_{mn}\left(4\dot{a}^2 + a\ddot{a}\right)
+               - \delta^0_\mu\delta^0_\nu\left(\frac{3\ddot{a}}{a} - \frac{3\dot{a}^2}{a^2}\right)
+               - \delta^n_\nu\delta^m_\mu \delta_{mn} \dot{a}^2
+               - \delta^n_\nu \delta^m_\mu \delta_{mn} \dot{a}^2
+               - \delta^0_\nu\delta^0_\mu \frac{3\dot{a}^2}{a^2}\\
+               &= \delta^m_\mu\delta^n_\nu \delta_{mn}\left(2\dot{a}^2 + a\ddot{a}\right)
+               - \delta^0_\mu\delta^0_\nu\left(\frac{3\ddot{a}}{a}\right),
+\end{align*}
+isto é
+\begin{equation*}
+    R_{00} = - \frac{3\ddot{a}}{a},\quad\text{e}\quad R_{ii} = a\ddot{a} + 2\dot{a}^2,
+\end{equation*}
+e todas as outras componentes nulas. Assim, o escalar de Ricci é dado por
+\begin{align*}
+    R &= g^{\mu\nu}R_{\mu\nu} = \frac{3\ddot{a}}{a} + 3 \frac{a\ddot{a} + 2 \dot{a}^2}{a^2}\\
+      &= 6 \left(\frac{\ddot{a}}{a} + \frac{\dot{a}^2}{a^2}\right),
+\end{align*}
+logo o tensor de Einstein, \(G_{\mu\nu} = R_{\mu\nu} - \frac12 Rg_{\mu\nu}\), tem suas componentes não nulas dadas por
+\begin{equation*}
+    G_{00} = 3\frac{\dot{a}^2}{a^2}\quad\text{e}\quad G_{ii} = -2a \ddot{a} - \dot{a}^2.
+\end{equation*}
+
+Consideremos as equações de Einstein no vácuo com uma constante cosmológica positiva \(\Lambda\),
+\begin{equation*}
+    G_{\mu\nu} + \Lambda g_{\mu\nu} = 0 \implies 3\frac{\dot{a}^2}{a^2} - \Lambda = 0\quad\text{e}\quad -2a\ddot{a} - \dot{a}^2 + \Lambda a^2 = 0.
+\end{equation*}
+Utilizando a primeira equação para eliminar o termo \(\dot{a}^2\) na segunda equação, obtemos
+\begin{equation*}
+    -2a\left(\ddot{a} - \frac\Lambda3a\right) = 0.
+\end{equation*}
+Como \(a \neq 0\) para que a métrica não seja singular, devemos ter que
+\begin{equation*}
+    a(t) = A \exp{\left(H t\right)} + B \exp{\left(-H t\right)},
+\end{equation*}
+onde \(H = \sqrt{\frac\Lambda3}\) e \(A,B \in \mathbb{R}\) são constantes não todas nulas. No caso particular de \(B = 0\), a métrica seria, portanto,
+\begin{equation*}
+    \dl[2]{s} = -\dl[2]t + A^2e^{2H t} \dl{x}^i\dl{x}_i,
+\end{equation*}
+representando um Universo em expansão.
+
+Neste caso, definimos o tempo conforme \(\eta = - \frac{\exp\left(-H t\right)}{H}\), que satisfaz \(\dot{\eta} = -H \eta\), isto é,
+\begin{equation*}
+    \dl{t} = -\frac{\dl{\eta}}{H \eta} \implies \dl[2]{t} = \frac{\dl[2]{\eta}}{H^2 \eta^2}.
+\end{equation*}
+Deste modo, como \(\exp{\left(2 H t\right)} = \left(H \eta\right)^{-2}\), temos
+\begin{equation*}
+    \dl[2]s = \frac{-\dl[2]{\eta} + \dl{x}^i\dl{x}_i}{H^2 \eta^2},
+\end{equation*}
+se tomarmos \(A = 1\).
+
+Interpretando \(- \frac{\Lambda}{\kappa} g_{\mu\nu}\) como o tensor de energia e momento \(T_{\mu\nu}\) das equações de Einstein sem constante cosmológica, temos de
+\begin{equation*}
+    T\indices{^\mu_\nu} = (\rho + p) U^\mu U_\nu + p \delta\indices{^\mu_\nu},
+\end{equation*}
+com \(U^0 = H \eta\) e \(U^i = 0\), que
+\begin{align*}
+    \left(p + \frac{\Lambda}{\kappa}\right) \delta\indices{^\mu_\nu} &= -(\rho + p) U^\mu U_\nu\\
+                                                                     &= (\rho + p) \delta^\mu_0 \delta^0_\nu.
+\end{align*}
+Recordando que \(\Lambda = 3H^2\), obtemos
+\begin{equation*}
+    \rho = \frac{3 H^2}{\kappa}\quad\text{e}\quad
+    p = -\frac{3H^2}{\kappa},
+\end{equation*}
+isto é, uma constante cosmológica positiva pode ser interpretada como um fluido com pressão negativa.
