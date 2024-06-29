@@ -1,0 +1,103 @@
+\section*{Exercício 5}
+Para a métrica de Friedmann-Lemaître-Robertson-Walker,
+\begin{equation*}
+    \dl[2]{s} = -\dl[2]{t} + a^2(t) \gamma_{ij} \dl{x}^i\dl{x}^j\text{, com }\gamma_{ij} = \frac{\delta_{ij}}{1 + \frac{\kappa}4(x^2 + y^2 + z^2)},
+\end{equation*}
+onde \(\kappa\) é a curvatura da seção espacial, o tensor de Einstein é dado por
+\begin{equation*}
+    G_{00} = 3\frac{\dot{a}^2}{a^2} + 3\frac{\kappa}{a^2},\quad
+    G_{0i} = 0,\quad\text{e}\quad
+    G_{ij} = - \left(2 \frac{\ddot{a}}{a} + \frac{\dot{a}^2}{a^2} + \frac{\kappa}{a^2}\right)g_{ij},
+\end{equation*}
+e os coeficientes da conexão de Levi-Civita por
+\begin{equation*}
+    \Gamma\indices{^0_{ij}} = a\dot{a} \gamma_{ij},\quad
+    \Gamma\indices{^i_{0j}} = \frac{\dot{a}}{a} \delta\indices{^i_j},\quad\text{e}\quad
+    \Gamma\indices{^k_{ij}} = 2\kappa \frac{\delta_{ij}x^k - \delta_{ik}x^j - \delta_{jk}x^i}{4 + \kappa(x^2 + y^2 + z^2)},
+\end{equation*}
+com os outros coeficientes ou nulos ou dados pela simetria da conexão. Consideremos um tensor de energia e momento homogêneo e isotrópico
+\begin{equation*}
+    T\indices{^\mu_\nu} = \left[\rho(t) + p(t)\right] U^\mu U_\nu + p(t) \delta\indices{^\mu_\nu},
+\end{equation*}
+com \(U^0 = 1\) e \(U_0 = 0\), e calculemos a divergência \(\nabla_\mu T\indices{^\mu_\nu}\) explicitamente. Notemos que
+\begin{equation*}
+    \nabla_\mu U^\mu = \frac{\partial_\mu (\sqrt{-g}U^\mu)}{\sqrt{-g}} = \frac{\partial_t\sqrt{-g}}{\sqrt{-g}} = 3\frac{\dot{a}}{a}
+\end{equation*}
+e que
+\begin{equation*}
+    U^\mu \nabla_\mu U_\nu = U^\mu \Gamma\indices{^\sigma_{\mu\nu}} U_\sigma = - \Gamma\indices{^0_{0\nu}} = 0,
+\end{equation*}
+logo a divergência procurada é dada por
+\begin{align*}
+    \nabla_\mu T\indices{^\mu_\nu} &= (\dot{\rho} + \dot{p})U_\nu + (\rho + p) \left(U_\nu \nabla_\mu U^\mu + U^\mu \nabla_\mu U_\nu\right) + \dot{p}\delta\indices{^0_\nu}\\
+                                   &= \left[\dot\rho + \dot{p} + 3\frac{\dot{a}}{a}(\rho + p)\right]U_\nu + \dot{p} \delta\indices{^0_\nu}.
+\end{align*}
+Da conservação do tensor de energia e momento, \(\nabla_\mu T\indices{^\mu_\nu} = 0\), temos
+\begin{equation*}
+    \dot{\rho} + 3\frac{\dot{a}}{a}(\rho + p) = 0,
+\end{equation*}
+equação a qual nos referiremos por equação de continuidade.
+
+
+
+Considerando as equações de Einstein com constante cosmológica, \(G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}\), obtemos as equações de Friedmann,
+\begin{equation*}
+    3\frac{\dot{a}^2}{a^2} + 3\frac{\kappa}{a^2} - \Lambda = 8 \pi G \rho\quad\text{e}\quad -2\frac{\ddot{a}}{a} - \frac{\dot{a}^2}{a^2} - \frac{\kappa}{a^2} + \Lambda = 8\pi G p.
+\end{equation*}
+Somando a primeira equação dividida por três à segunda equação, obtemos
+\begin{equation*}
+    \frac{\ddot{a}}{a} = \frac{\Lambda}{3}-\frac{4\pi G}{3} (\rho + 3p),
+\end{equation*}
+que podemos substituir de volta na segunda equação, resultando em
+\begin{align*}
+    \left(\frac{\dot{a}}{a}\right)^2 &= \Lambda - \frac{\kappa}{a^2} - 8\pi G p - 2\left[\frac{\Lambda}{3}-\frac{4\pi G}{3} (\rho + 3p)\right]\\
+                                     &= \frac{\Lambda}{3} - \frac{\kappa}{a^2} + \frac{8\pi G }{3} \rho.
+\end{align*}
+Definindo \(\rho_{\Lambda} = \frac{\Lambda}{8\pi G}\) e \(\rho_{\kappa} = -\frac{3 \kappa}{8\pi G} a^{-2}\) e utilizando o parâmetro de Hubble, \(H = \frac{\dot{a}}{a}\), podemos escrever esta última equação como
+\begin{equation*}
+    H^2 = \frac{8\pi G}{3} \left(\rho_{\Lambda} + \rho_{\kappa} + \rho\right).
+\end{equation*}
+Nesta forma, podemos interpretar o efeito da constante cosmológica e da curvatura da seção espacial como densidades de energia fictícias.
+
+Utilizando a equação de continuidade e a equação obtida a partir das equações de Friedmann, podemos obter a evolução do fator de escala para diferentes cenários de constante cosmológica, curvatura, e densidade de energia. Para um universo com apenas matéria fria, isto é, cuja pressão é desprezível, temos da equação de continuidade que
+\begin{equation*}
+    \dot{\rho} + 3\frac{\dot{a}}{a} \rho = 0 \implies \rho = \rho_0 a^{-3}
+\end{equation*}
+portanto
+\begin{equation*}
+    \left(\frac{\dot{a}}{a}\right)^2 = \frac{8\pi G\rho_0}{3a^3} \implies \dot{a} = \sqrt{\frac{8\pi G \rho_0}{3a}} \implies a(t) \implies a(t) = \left[\frac32 \left(a_0 + t\sqrt{\frac{8\pi G\rho_0}{3}}\right)\right]^{\frac23},
+\end{equation*}
+onde \(a_0\) e \(\rho_0\) são constantes de integração, logo a evolução do fator de escala é da ordem de \(t^{\frac23}\). Para um universo com apenas radiação, temos pela isotropia e homogeneidade que \(p = \frac13 \rho\), portanto
+\begin{equation*}
+    \dot\rho + 4 \frac{\dot{a}}{a}\rho = 0 \implies \rho = \rho_0 a^{-4},
+\end{equation*}
+então
+\begin{equation*}
+    \left(\frac{\dot{a}}{a}\right)^2 = \frac{8\pi G\rho_0}{3a^4} \implies \dot{a} = \sqrt{\frac{8\pi G \rho_0}{3}}a^{-1} \implies a(t) \implies a(t) = \sqrt{2\left(a_0 + t\sqrt{\frac{8\pi G\rho_0}{3}}\right)},
+\end{equation*}
+isto é, o fator de escala evolui como \(t^{\frac12}\). Para um universo com apenas constante cosmológica e/ou apenas curvatura espacial, segue da equação de continuidade que \(\rho(t) = \rho_0\). Para um universo com apenas curvatura, temos
+\begin{equation*}
+    \dot{a} = \sqrt{- \kappa} \implies a(t) = t\sqrt{- \kappa} + a_0,
+\end{equation*}
+isto é, o fator de escala muda linearmente, e a curvatura espacial deve ser negativa. Para um universo com apenas constante cosmológica, vimos no exercício 4 que o fator de escala muda exponencialmente.
+
+Para um universo com geometria plana com as abundâncias de matéria \(\Omega_m = 0.3\) e energia escura \(\Omega_{\Lambda} = 0.7\), a equação para o parâmetro de Hubble é
+\begin{equation*}
+    H^2 = H_0^2\left(\Omega_{\Lambda} + \Omega_m a^{-3}\right)
+\end{equation*}
+onde \(H_0 \approx \SI{70}{\kilo\meter\per\second\per\mega\parsec}\) é o parâmetro de Hubble atual. Notemos que
+\begin{equation*}
+    H = \frac{\dot{a}}{a} \implies \frac{\dl{a}}{aH} = \dl{t},
+\end{equation*}
+então integrando em \([0,1]\) em \(a\) e em \([0,T]\) em \(t\), temos a expressão para a idade do universo \(T\),
+\begin{equation*}
+    T = \frac{1}{H_0\sqrt{\Omega_m}}\int_{0}^{1} \frac{\dl{a}}{a\sqrt{\frac{\Omega_{\Lambda}}{\Omega_m} + a^{-3}}}.
+\end{equation*}
+Para calcular esta integral, consideremos a mudança de variáveis
+\begin{equation*}
+    \frac{\Omega_{m}}{\Omega_{\Lambda}}\xi^2 = a^3 \implies \frac{\dl{a}}{a} = \frac{2\dl{\xi}}{3\xi},
+\end{equation*}
+de modo que
+\begin{equation*}
+    T = \frac{2}{3H_0 \sqrt{\Omega_\Lambda}} \int_0^{\sqrt{\frac{\Omega_{\Lambda}}{\Omega_m}}}\frac{\dl{\xi}}{\sqrt{\xi^2 + 1}} = \frac{2}{3H_0 \sqrt{\Omega_\Lambda}} \arsinh{\left(\sqrt{\frac{\Omega_{\Lambda}}{\Omega_m}}\right)} \approx \SI{13.467E9}{anos}.
+\end{equation*}
