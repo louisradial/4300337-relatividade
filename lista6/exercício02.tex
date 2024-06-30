@@ -3,7 +3,11 @@ Consideremos um sistema binário com massas \(m_1\) e \(m_2\) nas posições \(\
 \begin{equation*}
     \vetor{r}_1 = \frac{\mu}{m_1}\vetor{r}\quad\text{e}\quad \vetor{r}_2 =-\frac{\mu}{m_2}\vetor{r},
 \end{equation*}
-onde \(\mu = \frac{m_1m_2}{M}\) é a massa reduzida do sistema, com \(M = m_1 + m_2\) a massa total. Em primeira aproximação, tomamos a trajetória da posição relativa como uma órbita circular ao redor do centro de massa com frequência angular constante \(\omega\),
+onde
+\begin{equation*}
+    \mu = \frac{m_1m_2}{M} \iff \frac{1}\mu = \frac{1}{m_1} + \frac{1}{m_2}
+\end{equation*}
+é a massa reduzida do sistema, com \(M = m_1 + m_2\) a massa total. Em primeira aproximação, tomamos a trajetória da posição relativa como uma órbita circular ao redor do centro de massa com frequência angular constante \(\omega\),
 \begin{equation*}
     \vetor{r} = r \left[\cos(\omega t) \vetor{e}_x + \sin(\omega t)\vetor{e}_y\right],
 \end{equation*}
@@ -51,6 +55,19 @@ e podemos ver que a frequência da onda gravitacional é \(f_\mathrm{GW} = \frac
 \begin{equation*}
     h_+ = \sqrt{\left\langle h_{11}^2\right\rangle} = \frac{2\sqrt{2}G\mu r^2\omega^2}{Rc^4}\quad\text{e}\quad
     h_\times = \sqrt{\left\langle h_{12}^2\right\rangle} = \frac{2\sqrt{2}G\mu r^2\omega^2}{Rc^4}\implies h = \frac{\sqrt{h_+^2 + h_\times^2}}{2} = \frac{2G\mu r^2 \omega^2}{Rc^4}.
+\end{equation*}
+
+O momento de quadrupolo reduzido é dado por
+\begin{equation*}
+    Q_{ij} = q_{ij} - \frac13 \delta_{ij} \delta^{k\ell}q_{k\ell} = q_{ij} + \frac16 \mu c^2 r^2 \delta_{ij},
+\end{equation*}
+de modo que
+\begin{equation*}
+    \dddot{Q}_{ij} \dddot{Q}^{ij} = \dddot{q}_{ij} \dddot{q}^{ij} = 2\left(\dddot{q}_{11}^2 + \dddot{q}_{12}^2\right) = 32 \mu^2 c^4 r^4 \omega^6 \left[\sin^2(2 \omega t) + \cos^2(2 \omega t)\right] = 32 \mu^2 c^4 r^4 \omega^6.
+\end{equation*}
+Desse modo, a potência irradiada pela onda gravitacional é
+\begin{equation*}
+    P = \frac{G}{5c^9}\left\langle \dddot{Q}_{ij}\dddot{Q}^{ij}\right\rangle = \frac{32 G \mu^2 r^4 \omega^6}{5c^5}.
 \end{equation*}
 
 Levando em conta que a energia orbital do sistema binário é
