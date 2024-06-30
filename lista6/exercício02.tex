@@ -1,0 +1,84 @@
+\section*{Exercício 2}
+Consideremos um sistema binário com massas \(m_1\) e \(m_2\) nas posições \(\vetor{r}_1\) e \(\vetor{r}_2\) em relação ao centro de massa do sistema. Seja \(\vetor{r} = \vetor{r}_1 - \vetor{r}_22\) o vetor de posição relativa, então
+\begin{equation*}
+    \vetor{r}_1 = \frac{\mu}{m_1}\vetor{r}\quad\text{e}\quad \vetor{r}_2 =-\frac{\mu}{m_2}\vetor{r},
+\end{equation*}
+onde \(\mu = \frac{m_1m_2}{M}\) é a massa reduzida do sistema. Em primeira aproximação, tomamos a trajetória da posição relativa como uma órbita circular com frequência angular constante \(\omega\),
+\begin{equation*}
+    \vetor{r} = r \left[\cos(\omega t) \vetor{e}_x + \sin(\omega t)\vetor{e}_y\right],
+\end{equation*}
+satisfazendo a terceira lei de Kepler,
+\begin{equation*}
+    r^3 = \frac{GM}{\omega^2}.
+\end{equation*}
+Desta forma, a densidade de energia é
+\begin{align*}
+    \rho(t, \vetor{x}) &= m_1c^2\delta\left(\vetor{x} - r_1\left[\cos(\omega t) \vetor{e}_x + \sin(\omega t)\vetor{e}_y\right]\right) + m_2c^2 \delta\left(\vetor{x} + r_2\left[\cos(\omega t) \vetor{e}_x + \sin(\omega t)\vetor{e}_y\right]\right)\\
+                       &= \left[m_1c^2 \delta(x - r_1 \cos\omega t)\delta(y - r_1\sin\omega t) + m_2c^2 \delta(x + r_2 \cos\omega t)\delta(y + r_2 \sin\omega t)\right]\delta(z),
+\end{align*}
+com \(r_1 = \norm{\vetor{r}_1}\) e \(r_2 = \norm{\vetor{r}_2}\). Os componentes do quadrupolo físico \(q_{ij}(t)\) são dados por
+\begin{equation*}
+    q_{ij}(t) = \int_{\Sigma} \dln3x\left(x_ix_j - \frac12 \delta_{ij}\norm{\vetor{x}}^2\right)\rho(t, \vetor{x}),
+\end{equation*}
+portanto \(q_{i3} = 0\), exceto para \(i = 3\). Determinemos os componentes restantes \(q_{11}, q_{12}, q_{22},\) e \(q_{33}\),
+\begin{align*}
+    q_{11}(t) &= \frac12 \int_{\Sigma}\dln3x (x^2 - y^2 - z^2) \rho(t, \vetor{x})&
+    q_{12}(t) &= \int_{\Sigma}\dln3x xy \rho(t, \vetor{x})\\
+              &= \frac12\left[m_1c^2 r_1^2 + m_2 c^2r_2^2\right] \left(\cos^2\omega t - \sin^2 \omega t\right)&
+              &= \left[m_1 c^2 r_1^2 + m_2 c^2 r_2^2\right] \cos(\omega t)\sin(\omega t)\\
+              &= \frac12 \left[m_1 \left(\frac{\mu r}{m_1}\right)^2 + m_2\left(\frac{\mu r}{m_2}\right)^2\right] c^2\cos(2\omega t)&
+              &= \frac12\left[m_1\left(\frac{\mu r}{m_1}\right)^2 + m_2\left(\frac{\mu r}{m_2}\right)^2\right]c^2\sin(2\omega t)\\
+              &= \frac12 \mu c^2 r^2\cos(2\omega t)&
+              &= \frac12 \mu c^2 r^2 \sin(2\omega t),
+\end{align*}
+\begin{align*}
+    q_{22}(t) &= \frac12 \int_{\Sigma}\dln3x (y^2 - x^2 - z^2) \rho(t, \vetor{x})&
+    q_{33}(t) &= \frac12 \int_{\Sigma}\dln3x (z^2 - x^2 - y^2) \rho(t, \vetor{x})\\
+              &= \frac12\left[m_1c^2 r_1^2 + m_2 c^2r_2^2\right] \left(\sin^2\omega t - \cos^2 \omega t\right)&
+              &= -\frac12 m_1c^2r_1^2  - \frac12 m_2c^2r_2^2\\
+              &= - q_{11}(t),&
+              &= - \frac12 \mu c^2 r^2.
+\end{align*}
+Assim, na aproximação de zona de radiação \(R \gg r\), a perturbação da métrica é dada por
+\begin{equation*}
+    h_{ij}(t, \vetor{x}) = \frac{2G}{Rc^6}\ddot{q}_{ij}(t_R),\text{ com}\quad t_R = t - \frac{R}{c},
+\end{equation*}
+de forma que
+\begin{equation*}
+    h_{11} = -\frac{4G\mu r^2\omega^2}{Rc^4}\cos(2\omega t_R)\quad\text{e}\quad h_{12} = -\frac{4G\mu r^2\omega^2}{Rc^4}\sin(2\omega t_R)
+\end{equation*}
+e podemos ver que a frequência da onda gravitacional é \(f_\mathrm{GW} = \frac{\omega}{\pi}\). Tomando a raiz do valor quadrático médio destas componentes, obtemos as deformações induzidas \(h_+\), \(h_\times\) e o estresse \(h\)
+\begin{equation*}
+    h_+ = \sqrt{\left\langle h_{11}^2\right\rangle} = \frac{2\sqrt{2}G\mu r^2\omega^2}{Rc^4}\quad\text{e}\quad
+    h_\times = \sqrt{\left\langle h_{12}^2\right\rangle} = \frac{2\sqrt{2}G\mu r^2\omega^2}{Rc^4}\implies h = \frac{\sqrt{h_+^2 + h_\times^2}}{2} = \frac{2G\mu r^2 \omega^2}{Rc^4}.
+\end{equation*}
+
+Levando em conta que a energia orbital do sistema binário é
+\begin{equation*}
+    E_\mathrm{orb} = - \frac{GM \mu}{2r}
+\end{equation*}
+e que sua variação deve ser por conta da potência irradiada pelas ondas gravitacionais, devemos ter
+\begin{align*}
+    \diff{E_\mathrm{orb}}{t} = - P &\implies \frac{GM\mu}{2r^2}\dot{r} = -\frac{32 G \mu^2r^4 \omega^6}{5c^5}\\
+                                   &\implies 3r^2 \dot{r} = - \frac{192\mu r^8 \omega^6}{5Mc^5}.
+\end{align*}
+Derivando a terceira lei de Kepler, obtemos
+\begin{align*}
+    r^3 = \frac{GM}{\omega^2} &\implies - \frac{2GM}{\omega^3}\dot\omega = - \frac{192\mu \omega^6}{5Mc^5}\left(\frac{GM}{\omega^2}\right)^{\frac83}\\
+                              &\implies \dot\omega = \frac{96 G^{\frac53}}{5c^5} \mu M^\frac23 \omega^\frac{11}{3}.
+\end{align*}
+Como vimos, a frequência da onda gravitacional é \(f_\mathrm{GW} = \frac{\omega}{\pi}\), então
+\begin{align*}
+    \dot{f}_\mathrm{GW} &= \frac{96 G^\frac53 \pi^\frac83}{5c^5} \mu M^\frac23 f_\mathrm{GW}^\frac{11}{3}\\
+                        &= \alpha \mathcal{M}^\frac53 f_\mathrm{GW}^\frac{11}{3},
+\end{align*}
+onde a constante proporcionalidade \(\alpha\) e a \emph{chirp mass} \(\mathcal{M}\) são dadas por
+\begin{equation*}
+    \alpha = \frac{96G^\frac53 \pi^\frac83}{5c^5}\quad\text{e}\quad
+    \mathcal{M} = \mu^\frac35 M^\frac25 = \frac{(m_1m_2)^\frac35}{(m_1 + m_2)^\frac15}.
+\end{equation*}
+Podemos utilizar a \emph{chirp mass} para reescrever o estresse \(h\) obtido,
+\begin{equation*}
+    h = \frac{2G\mu \omega^2}{Rc^4}\left(\frac{GM}{\omega^2}\right)^\frac23 = \frac{2G}{Rc^2}\left(\frac{\pi G}{c^3}f_\mathrm{GW}\right)^\frac23 \mathcal{M}^{\frac53} = \frac{2G\mathcal{M}}{Rc^2}\left(\frac{\pi G}{c^3} \mathcal{M} f_\mathrm{GW}\right)^\frac{23}.
+\end{equation*}
+
