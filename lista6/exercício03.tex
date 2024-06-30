@@ -1,1 +1,53 @@
 \section*{Exercício 3}
+Considerando a covariância entre a \emph{chirp mass} e a frequência, assim como as demais incertezas como muito menores do que a incerteza \(\sigma_h\) no estresse \(h\), temos do exercício anterior que
+\begin{equation*}
+    \diffp{R}{h} = - \frac{2G \mathcal{M}}{h^2 c^2}\left(\frac{\pi G}{c^3} \mathcal{M} f_\mathrm{GW}\right)^\frac23 = - \frac{R}{h},
+\end{equation*}
+portanto a incerteza \(\sigma_R\) na distância \(R\) é dada por
+\begin{equation*}
+    \sigma_R = \abs*{\diffp{R}{h}}\sigma_h + O(\sigma_f) \implies \frac{\sigma_R}{R} = \frac{\sigma_h}{h}.
+\end{equation*}
+Para velocidades e distâncias suficientemente pequenas, temos \(zc = H_0 R\), portanto
+\begin{equation*}
+    \diffp{H_0}{R} = -\frac{H_0}{R} \implies \frac{\sigma_{H_0}}{H_0} = \frac{\sigma_R}{R} = \frac{\sigma_h}{h}.
+\end{equation*}
+Nesta aproximação de que a incerteza relativa do estresse é muito maior do que as outras incertezas e covariâncias, se há uma incerteza de 10\% no estresse, então há uma incerteza de 10\% no valor da constante de Hubble \(H_0\) inferido por esta observação.
+
+Como as frequências medidas \(f_\mathrm{obs}\) são afetadas pelo desvio para o vermelho, temos
+\begin{equation*}
+    f_\mathrm{e} = (1 + z) f_\mathrm{obs}
+\end{equation*}
+como o valor da frequência emitida \(f_\mathrm{e}\). Ainda, a relação entre os intervalos de tempo observados e emitidos é dada por
+\begin{equation*}
+    \diff{t_e}{t_\mathrm{obs}} = \frac{1}{1+z},
+\end{equation*}
+de modo que
+\begin{equation*}
+    \diff{f_\mathrm{obs}}{t_{\mathrm{obs}}} = \frac{1}{1+z}\diff{f_\mathrm{e}}{t_\mathrm{e}} \diff{t_\mathrm{e}}{t_\mathrm{obs}} = \frac{1}{(1+z^2)} \diff{f_\mathrm{e}}{t_\mathrm{e}}.
+\end{equation*}
+Da definição de \emph{chirp mass}, segue que
+\begin{align*}
+    \diff{f_\mathrm{obs}}{t_{\mathrm{obs}}} = \alpha \mathcal{M}_\mathrm{obs}^\frac53 f_\mathrm{obs}^\frac{11}{3} &\implies \frac{1}{(z+1)^2} \diff{f_\mathrm{e}}{t_\mathrm{e}} = \alpha \mathcal{M}_\mathrm{obs}^\frac53 (1 + z)^{-\frac{11}{3}} f_\mathrm{e}^{\frac{11}{3}}\\ &\implies\diff{f_\mathrm{e}}{t_\mathrm{e}} = \alpha \left(\frac{\mathcal{M}_\mathrm{obs}}{1+z}\right)^\frac53 f_\mathrm{e}^\frac{11}{3},
+\end{align*}
+isto é, a \emph{chirp mass} observada \(\mathcal{M}_\mathrm{obs}\) é relacionada com a \emph{chirp mass} absoluta \(\mathcal{M}_\mathrm{e}\) por
+\begin{equation*}
+    \mathcal{M}_\mathrm{obs} = (1 + z)\mathcal{M}_e.
+\end{equation*}
+
+Notemos que a relação entre os valores observados e emitidos são tais que
+\begin{equation*}
+    \mathcal{M}_\mathrm{e} f_\mathrm{e} = \mathcal{M}_\mathrm{obs} f_\mathrm{obs}.
+\end{equation*}
+Podemos utilizar estes resultados para expressar a distância \(R\) e a constante de Hubble \(H_0\) em relação aos valores observados e o \emph{redshift} \(z\),
+\begin{equation*}
+    R = \frac{2G\mathcal{M}_\mathrm{obs}}{(1+z) hc^2}\left(\frac{\pi G}{c^3}\mathcal{M}_\mathrm{obs} f_\mathrm{obs}\right)^\frac23\quad\text{e}\quad
+    H_0 = \frac{zc}{R} = \frac{z(1+z)h c^3}{2G \mathcal{M}_\mathrm{obs}}\left(\frac{\pi G}{c^3} \mathcal{M}_\mathrm{obs} f_\mathrm{obs}\right)^{-\frac23}.
+\end{equation*}
+Deste modo, se o valor do \emph{redshift} for diferente, como por exemplo uma velocidade peculiar da kilonova na direção da linha de visada, os valores obtidos para a distância e para a constante de Hubble seriam diferentes. De fato, sejam \(R\) e \(H_0\) os valores obtidos com o \emph{redshift} \(z\) e sejam \(\tilde{R}\) e \(\tilde{H}_0\) os valores obtidos com o \emph{redshift} \(z + \delta z\), então
+\begin{align*}
+    \tilde{R} &= \frac{1 + z}{1 + z + \delta z} R&
+    \tilde{H}_0 &= \frac{(z + \delta z)(1 + z + \delta z)}{z(1 + z)}H_0\\
+                &= \frac{R}{1 + \frac{\delta z}{1+z}}&
+                &= \left(1 + \frac{\delta z}{z}\right)\left(1 + \frac{\delta z}{1+z}\right) H_0
+\end{align*}
+são as relações entre as previsões. Por exemplo, para \(z = 0.0099\) e \(\delta z = \pm\frac{\SI{500}{\kilo\meter\per\second}}{c}\), temos \(\tilde{R} \in [0.998 R, 1.002 R]\) e \(\tilde{H}_0 \in [0.830H_0,1.170 H_0]\).
