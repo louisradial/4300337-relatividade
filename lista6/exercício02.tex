@@ -32,7 +32,7 @@ portanto \(q_{i3} = 0\), exceto para \(i = 3\). Determinemos os componentes rest
               &= \left[m_1 c^2 r_1^2 + m_2 c^2 r_2^2\right] \cos(\omega t)\sin(\omega t)\\
               &= \frac12 \left[m_1 \left(\frac{\mu r}{m_1}\right)^2 + m_2\left(\frac{\mu r}{m_2}\right)^2\right] c^2\cos(2\omega t)&
               &= \frac12\left[m_1\left(\frac{\mu r}{m_1}\right)^2 + m_2\left(\frac{\mu r}{m_2}\right)^2\right]c^2\sin(2\omega t)\\
-              &= \frac12 \mu c^2 r^2\cos(2\omega t)&
+              &= \frac12 \mu c^2 r^2\cos(2\omega t),&
               &= \frac12 \mu c^2 r^2 \sin(2\omega t),
 \end{align*}
 \begin{align*}
@@ -40,7 +40,7 @@ portanto \(q_{i3} = 0\), exceto para \(i = 3\). Determinemos os componentes rest
     q_{33}(t) &= \frac12 \int_{\Sigma}\dln3x (z^2 - x^2 - y^2) \rho(t, \vetor{x})\\
               &= \frac12\left[m_1c^2 r_1^2 + m_2 c^2r_2^2\right] \left(\sin^2\omega t - \cos^2 \omega t\right)&
               &= -\frac12 m_1c^2r_1^2  - \frac12 m_2c^2r_2^2\\
-              &= - q_{11}(t),&
+              &= - q_{11}(t),\quad\text{e}&
               &= - \frac12 \mu c^2 r^2.
 \end{align*}
 Assim, na aproximação de zona de radiação \(R \gg r\), a perturbação da métrica é dada por
@@ -62,9 +62,9 @@ O momento de quadrupolo reduzido é dado por
     Q_{ij} = q_{ij} - \frac13 \delta_{ij} \delta^{k\ell}q_{k\ell} = q_{ij} + \frac16 \mu c^2 r^2 \delta_{ij},
 \end{equation*}
 de modo que
-\begin{equation*}
-    \dddot{Q}_{ij} \dddot{Q}^{ij} = \dddot{q}_{ij} \dddot{q}^{ij} = 2\left(\dddot{q}_{11}^2 + \dddot{q}_{12}^2\right) = 32 \mu^2 c^4 r^4 \omega^6 \left[\sin^2(2 \omega t) + \cos^2(2 \omega t)\right] = 32 \mu^2 c^4 r^4 \omega^6.
-\end{equation*}
+\begin{align*}
+    \dddot{Q}_{ij} \dddot{Q}^{ij} &= \dddot{q}_{ij} \dddot{q}^{ij}\\&= \dddot{q}_{11}^2 + 2\dddot{q}_{12}^2 + \dddot{q}_{22}^2\\&= 2\left(\dddot{q}_{11}^2 + \dddot{q}_{12}^2\right)\\&= 32 \mu^2 c^4 r^4 \omega^6 \left[\sin^2(2 \omega t) + \cos^2(2 \omega t)\right]\\&= 32 \mu^2 c^4 r^4 \omega^6.
+\end{align*}
 Desse modo, a potência irradiada pela onda gravitacional é
 \begin{equation*}
     P = \frac{G}{5c^9}\left\langle \dddot{Q}_{ij}\dddot{Q}^{ij}\right\rangle = \frac{32 G \mu^2 r^4 \omega^6}{5c^5}.

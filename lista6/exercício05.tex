@@ -30,7 +30,8 @@ e que
 logo a divergência procurada é dada por
 \begin{align*}
     \nabla_\mu T\indices{^\mu_\nu} &= (\dot{\rho} + \dot{p})U_\nu + (\rho + p) \left(U_\nu \nabla_\mu U^\mu + U^\mu \nabla_\mu U_\nu\right) + \dot{p}\delta\indices{^0_\nu}\\
-                                   &= \left[\dot\rho + \dot{p} + 3\frac{\dot{a}}{a}(\rho + p)\right]U_\nu + \dot{p} \delta\indices{^0_\nu}.
+                                   &= \left[\dot\rho + \dot{p} + 3\frac{\dot{a}}{a}(\rho + p)\right]U_\nu + \dot{p} \delta\indices{^0_\nu}\\
+                                   &= -\left[\dot\rho + 3\frac{\dot{a}}{a}(\rho + p)\right]\delta\indices{^0_\nu}.
 \end{align*}
 Da conservação do tensor de energia e momento, \(\nabla_\mu T\indices{^\mu_\nu} = 0\), temos
 \begin{equation*}
@@ -98,6 +99,9 @@ Para calcular esta integral, consideremos a mudança de variáveis
     \frac{\Omega_{m}}{\Omega_{\Lambda}}\xi^2 = a^3 \implies \frac{\dl{a}}{a} = \frac{2\dl{\xi}}{3\xi},
 \end{equation*}
 de modo que
-\begin{equation*}
-    T = \frac{2}{3H_0 \sqrt{\Omega_\Lambda}} \int_0^{\sqrt{\frac{\Omega_{\Lambda}}{\Omega_m}}}\frac{\dl{\xi}}{\sqrt{\xi^2 + 1}} = \frac{2}{3H_0 \sqrt{\Omega_\Lambda}} \arsinh{\left(\sqrt{\frac{\Omega_{\Lambda}}{\Omega_m}}\right)} \approx \SI{13.467E9}{anos}.
-\end{equation*}
+\begin{align*}
+    T &= \frac{2}{3H_0 \sqrt{\Omega_\Lambda}} \int_0^{\sqrt{\frac{\Omega_{\Lambda}}{\Omega_m}}}\frac{\dl{\xi}}{\sqrt{\xi^2 + 1}}\\
+      &= \frac{2}{3H_0 \sqrt{\Omega_\Lambda}} \arsinh{\left(\sqrt{\frac{\Omega_{\Lambda}}{\Omega_m}}\right)}\\
+      &\approx \SI{13.467E9}{anos}
+\end{align*}
+é o valor obtido para a idade do universo.
