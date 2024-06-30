@@ -1,0 +1,50 @@
+\section*{Exercício 1}
+Para um oscilador harmônico de massa \(m = \SI{0.2}{\kilogram}\), amplitude de movimento \(A = \SI{1}{\meter}\), e frequência de oscilação \(f = \frac{\omega}{2\pi} = \SI{5}{\hertz}\), temos a densidade de energia dada por
+\begin{equation*}
+    \rho(t, \vetor{x}) = mc^2 \delta\left(x - A \cos\omega t\right)\delta(y)\delta(z).
+\end{equation*}
+A uma distância \(D = \SI{10}{\meter} \gg A\), podemos utilizar a aproximação de zona de radiação e determinar o momento de quadrupolo \(q_{ij}(t)\), dado por
+\begin{equation*}
+    q_{ij}(t) = \int_{\Sigma} \dln3x \left(x_i x_j - \frac12 \delta_{ij} \norm{\vetor{x}}^2\right)\rho(t, \vetor{x}),
+\end{equation*}
+para obter a perturbação na métrica \(h_{ij}\) a partir de
+\begin{equation*}
+    h_{ij}(t, \vetor{x}) = \frac{2G}{Dc^6} \ddot{q}_{ij}(t_R),
+\end{equation*}
+onde \(t_R = t - \frac{D}{c}\) é o tempo retardado.
+
+Notemos que pela expressão da densidade, as componentes \(q_{ij}\) com índices distintos e com um índice igual a dois ou três se anulam, isto é, \(q_{12} = q_{13} = q_{23} = 0\), de modo que resta apenas determinar os termos \(q_{11}\), \(q_{22}\), e \(q_{33}\). Temos
+\begin{align*}
+    q_{11}(t) &= \frac12 \int_{\Sigma} \dln3x \left(x^2 - y^2 - z^2\right) \rho(t, \vetor{x}) = \frac12 mc^2A^2 \cos^2\omega t = \frac{1 + \cos2\omega t}4 mc^2A^2\\
+    q_{22}(t) &= \frac12 \int_{\Sigma} \dln3x \left(y^2-x^2  - z^2\right) \rho(t, \vetor{x})= -\frac12 mc^2A^2 \cos^2\omega t = -q_{11}(t)\\
+    q_{33}(t) &= \frac12 \int_{\Sigma} \dln3x \left(z^2-x^2 - y^2\right) \rho(t, \vetor{x})= -\frac12 mc^2A^2\cos^2\omega t = -q_{11}(t),
+\end{align*}
+portanto a perturbação da métrica é dada por
+\begin{equation*}
+    h_{11} = -\frac{2mA^2\omega^2G}{Dc^4} \cos(2\omega t_R)\quad\text{e}\quad h_{22} = h_{33} = \frac{2mA^2\omega^2G}{Dc^4} \cos(2\omega t_R),
+\end{equation*}
+e vemos que a frequência de oscilação é \(2f = \SI{10}{Hz}\). Tomando a raiz do valor quadrático médio das perturbações para obter os estresses, obtemos
+\begin{equation*}
+    h_+ = \frac{\sqrt{2}mA^2\omega^2 G}{D c^4} = 2.307\times 10^{-43}\quad\text{e}\quad h_\times = 0.
+\end{equation*}
+
+A potência irradiada pela onda gravitacional é dada por
+\begin{equation*}
+    P = \frac{G}{5c^9} \left\langle \diff[3]{Q_{ij}}{t}\diff[3]{Q^{ij}}{t}\right\rangle,
+\end{equation*}
+onde \(Q_{ij}\) é o momento de quadrupolo reduzido,
+\begin{equation*}
+    Q_{ij} = q_{ij} - \frac13 \delta_{ij} \delta^{k\ell} q_{k\ell}.
+\end{equation*}
+Notando que \(q_{ij}\) é nulo para todo \(i \neq j\) e que \(q_{22} = q_{33} = -q_{11}\), temos
+\begin{equation*}
+    Q_{11} = \frac43 q_{11}, \quad Q_{22} = - \frac23 q_{11}, \quad\text{e}\quad Q_{33} = -\frac23 q_{11}
+\end{equation*}
+como as únicas componentes não nulas. Como \(\ddot{q}_{11}= - 4\omega^2q_{11}\), temos \(\dddot{q}_{11} = -4 \omega^2 \dot{q}_{11}\), logo
+\begin{equation*}
+    \diff[3]{Q_{ij}}{t}\diff[3]{Q^{ij}}{t} = \frac83 \left(\diff[3]{q_{11}}{t}\right)^2 = \frac{64}{3} \omega^4 \left(\dot{q}_{11}\right)^2 = \frac{16}{3} m^2c^4 A^4 \omega^6 \sin^2 2\omega t.
+\end{equation*}
+Deste modo, a potência irradiada é
+\begin{equation*}
+    P = \frac{8m^2 A^4 \omega^6 G}{15c^5} = \SI{5.653E-46}{\watt}.
+\end{equation*}
