@@ -1,0 +1,59 @@
+\section*{Exercício 7}
+Consideremos a métrica no limite de campo fraco dada por
+\begin{equation*}
+    \dl[2]{s} = -(1 + 2\Phi) \dl[2]{t} + (1 - 2\Phi)\delta_{ij} \dl{x}^i \dl{x}^j- w_i(\dl{t}\dl{x}^i + \dl{x}^i \dl{t}),
+\end{equation*}
+com \(\abs{\Phi} \ll 1\) e \(\abs{w_i} \ll 1\).
+Calculemos os coeficientes da conexão de Levi-Civita a partir de
+\begin{equation*}
+    \Gamma\indices{^\sigma_{\mu\nu}} = \frac12 g^{\sigma \rho}\left(\partial_\mu g_{\rho \nu} + \partial_\nu g_{\rho \mu} - \partial_\rho g_{\mu\nu}\right),
+\end{equation*}
+em primeira ordem na perturbação da métrica, obtendo
+\begin{align*}
+    \Gamma\indices{^0_{00}} &= \frac12 g^{0\rho} \left(\partial_0 g_{\rho 0}  + \partial_0 g_{\rho 0} - \partial_\rho g_{00}\right)&
+    \Gamma\indices{^0_{j0}} &= \frac12 g^{0\rho} \left(\partial_j g_{\rho0} + \partial_0 g_{\rho j} - \partial_\rho g_{j0}\right)&
+    \Gamma\indices{^0_{jk}} &= \frac12 g^{0\rho} \left(\partial_j g_{\rho k} + \partial_k g_{\rho j} - \partial_\rho g_{jk}\right)\\
+                            &= \eta^{0\rho}\left(\partial_0g_{\rho 0} + \partial_\rho\Phi\right)&
+                            &= \frac12 \eta^{0\rho}\left(\partial_j g_{\rho 0} + \partial_0 g_{\rho j} + \partial_\rho w_j\right)&
+                            &= \frac12 \eta^{0\rho}\left(\partial_j g_{\rho k} + \partial_k g_{\rho j} + 2 \delta_{jk}\partial_\rho \Phi\right)\\
+                            &= \partial_0 \Phi&
+                            &=\partial_j \Phi&
+                            &= \frac12 \left(\partial_j w_k + \partial_k w_j - 2 \delta_{kj} \partial_0 \Phi\right)\\
+    \Gamma\indices{^i_{00}} &= \frac12 g^{i\rho} \left(\partial_0 g_{\rho 0}  + \partial_0 g_{\rho 0} - \partial_\rho g_{00}\right)&
+    \Gamma\indices{^i_{j0}} &= \frac12 g^{i\rho} \left(\partial_j g_{\rho0} + \partial_0 g_{\rho j} - \partial_\rho g_{j0}\right)&
+    \Gamma\indices{^i_{jk}} &= \frac12 g^{i\rho} \left(\partial_j g_{\rho k} + \partial_k g_{\rho j} - \partial_\rho g_{jk}\right)\\
+                            &= \eta^{i\rho}\left(\partial_0g_{\rho 0} + \partial_\rho\Phi\right)&
+                            &= \frac12 \eta^{i\rho}\left(\partial_j g_{\rho 0} + \partial_0 g_{\rho j} + \partial_\rho w_j\right)&
+                            &= \frac12 \eta^{i\rho}\left(\partial_j g_{\rho k} + \partial_k g_{\rho j} + 2 \delta_{jk}\partial_\rho \Phi\right)\\
+                            &= \partial^i \Phi-\partial_0 w^i&
+                            &= \frac12\left(\partial^i w_j - \partial_j w^i - 2\delta^i_{j}\partial_0 \Phi\right)&
+                            &= \delta_{jk} \partial^i \Phi-\delta^i_{k}\partial_j \Phi - \delta^i_{j}\partial_k \Phi.
+\end{align*}
+
+Desse modo, a equação da geodésica para uma partícula de massa \(m\) seguindo uma trajetória \(x^\mu\) é dada pelas equações
+\begin{equation*}
+    m\diff[2]{t}{\tau} = -m \left(\diff{t}{\tau}\right)^2\left[\partial_0\Phi + 2\partial_j\Phi v^j + \left(\partial_jw_k + \partial_k w_j + 2 \delta_{jk} \partial_0 \Phi\right)v^jv^k\right]
+\end{equation*}
+e
+\begin{equation*}
+    m\diff[2]{x^i}{\tau} = -m\left(\diff{t}{\tau}\right)^2\left[\left(\partial^i\Phi - \partial_0 w^i\right) + \left(\partial^i w_j - \partial_j w^i - 2 \delta^{i}_{j} \partial_0 \Phi\right) v^j + 2\left(\delta_{jk} \partial^i\Phi - \delta^{i}_k \partial_j \Phi -\delta^i_j\partial_k \Phi\right)v^jv^k\right],
+\end{equation*}
+onde utilizamos o parâmetro afim \(\lambda = \frac{\tau}{\sqrt{m}}\) para a parametrização da trajetória e utilizamos a regra da cadeia para deixar em evidência as velocidades espaciais \(v^i = \diff{x^i}{t}\). Definindo \(G^i = - \partial^i \Phi + \partial_0 w^i\) e \(H^i = -\epsilon^{ijk} \partial_j w_k\), temos
+\begin{equation*}
+    \left(\vetor{v} \times \vetor{H}\right)^i = \epsilon^{ijk}v_j H_k = - \epsilon^{ijk} v_j \epsilon_{k\ell m}\partial^\ell w^m = \left(\delta^{i}_{m} \delta^{j}_{\ell} - \delta^{i}_{\ell} \delta^{j}_{m}\right)v_j \partial^\ell w^m = v_j \partial^j w^i - v_j \partial^i w_j,
+\end{equation*}
+então
+\begin{align*}
+    m\diff[2]{x^i}{\tau} &= m \left(\diff{t}{\tau}\right)^2 \left[G^i + (\vetor{v}\times \vetor{H})^i + 2v^i \partial_0 \Phi - 2\left(\delta_{jk} \partial^i \Phi-\delta^i_{k}\partial_j \Phi - \delta^i_{j}\partial_k \Phi\right)v^jv^k\right]\\
+                         &= m \left(\diff{t}{\tau}\right)^2 \left[G^i + (\vetor{v}\times \vetor{H})^i + 2\left(v^i \partial_0 \Phi - \norm{\vetor{v}}^2 \partial^i \Phi+2v^i v^j\partial_j \Phi\right)\right].
+\end{align*}
+Perceba que
+\begin{equation*}
+    m \diff[2]{x^i}{\tau} = \diff{p^i}{\tau}\quad\text{e}\quad m \diff{t}{\tau} = p^0 = E,
+\end{equation*}
+então para um potencial estacionário e considerando apenas a aproximação de primeira ordem na velocidade, temos
+\begin{equation*}
+    \diff{\vetor{p}}{t} = E \left(\vetor{G} + \vetor{v}\times\vetor{H}\right)
+\end{equation*}
+como a equação de movimento para a partícula.
+
