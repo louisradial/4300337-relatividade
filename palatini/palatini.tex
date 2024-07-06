@@ -1,170 +1,4 @@
-\documentclass[12pt,a4paper]{article}
-
-% Language and formatting
-\usepackage{polyglossia}
-\usepackage{csquotes} %fvextra to avoid warning?
-\setmainlanguage[variant=brazilian]{portuguese}
-
-% \usepackage[backend=biber, style=alphabetic, sorting=ynt]{biblatex}
-% \addbibresource{bibliography.bib}
-
-% \setmainfont{Palatino Linotype}
-% \setmathfont{Palatino Linotype}
-\usepackage[a4paper, margin=1.5cm]{geometry}
-\usepackage{booktabs}
-
-% % title header
-% \usepackage{titleps}% http://ctan.org/pkg/titleps
-% \makeatletter
-% \newpagestyle{main}{% Define page style main
-%     \sethead%
-%     [\textbf\thepage][][\thechapter.\ \chaptertitle]% [<even-left>][<even-center>][<even-right>]
-%     {\thesection.\ \sectiontitle}{}{\textbf\thepage}% {<odd-left>}{<odd-center>}{<odd-right>}
-%     \setfoot{}{}{}% {<left>}{<center>}{<right>}
-% }
-% \pagestyle{main}% Use page style main
-
-% Images
-\usepackage{tikz}
-\usetikzlibrary{cd}
-\usepackage{graphicx, caption, subcaption}
-\usepackage{float}
-
-% Math tools
-\usepackage{amsfonts, mathtools, amssymb, amsmath, amsthm, enumitem}
-\usepackage{newpxtext, newpxmath}
-% \numberwithin{equation}{section}
-\usepackage[ISO]{diffcoeff}
-\usepackage{tensor}
-\usepackage{siunitx}
-
-% Misc
-\usepackage{luacolor}
-\usepackage[breakable]{tcolorbox}
-
-\difdef{fp}{}{
-    outer-Ldelim = \left.,
-    outer-Rdelim = \right|,
-    sub-nudge=0 mu
-}
-\newcommand\todo[1][!]{{\color{Red} TODO: {#1}}}
-\difdef{l}{i}{outer-Rdelim = \,, outer-Ldelim=}
-\difdef{l}{dn}{style=d^,outer-Rdelim = \,,outer-Ldelim=}
-
-\DeclareSIUnit\parsec{pc}
-\NewDocumentCommand\dli{}{\dl.i.}
-\NewDocumentCommand\dln{m}{\dl.dn.[#1]}
-\DeclareMathOperator\Riem{Riem}
-\DeclareMathOperator\Orb{Orb}
-\DeclareMathOperator\Stab{Stab}
-\DeclareMathOperator\sgn{sgn}
-\DeclareMathOperator\End{End}
-\DeclareMathOperator\tr{tr}
-\DeclareMathOperator\sech{sech}
-\DeclareMathOperator\artanh{artanh}
-\DeclareMathOperator\arcosh{arcosh}
-\DeclareMathOperator\arsinh{arsinh}
-\DeclareMathOperator\hor{hor}
-\DeclareMathOperator\ver{ver}
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}
-\DeclarePairedDelimiterX\inner[2]{\langle}{\rangle}{#1,\mathopen{}#2}
-\DeclarePairedDelimiter\set{\{}{\}}
-
-\newenvironment{smallpmatrix}{\left(\begin{smallmatrix}}{\end{smallmatrix}\right)}
-\newcommand\ract{\mathbin{\vartriangleleft}}
-\newcommand\ractalt{\mathbin{\blacktriangleleft}}
-\newcommand\lact{\mathbin{\vartriangleright}}
-\newcommand\lactalt{\mathbin{\blacktriangleright}}
-\newcommand\ad[1]{\operatorname{ad}_{#1}}
-\newcommand\Ad[1]{\operatorname{Ad}_{#1}}
-\newcommand\preim[2]{\operatorname{preim}_{#1}{\left(#2\right)}}
-\newcommand\id[1]{\operatorname{id}_{#1}}
-\newcommand\colorunderline[2]{{\color{#1}\underline{{\color{black}{#2}}}}}
-\newcommand\Hom[2][]{\ensuremath{\operatorname{Hom}_{#1}{\left(#2\right)}}}
-\newcommand\bundle[3]{\ensuremath{#1 \mathrel{\overset{#2}{\to}} #3}}
-\newcommand\smooth[1]{\ensuremath{\mathcal{C}^\infty(#1)}}
-\newcommand\sections[1]{\ensuremath{\Gamma\left(#1\right)}}
-\newcommand\forms[2][]{\ensuremath{\Lambda^{#1}{\left({#2}\right)}}}
-\newcommand\ffamily[3]{\ensuremath{\set*{#1}_{#2}^{#3}}}
-\newcommand\family[2]{\ensuremath{\set*{#1}_{#2}}}
-\newcommand\vetor[1]{\ensuremath{\boldsymbol{#1}}}
-\newcommand\linear{\ensuremath{\mathrel{\tilde{\to}}}}
-\newcommand\topology[1]{\ensuremath{\left(#1, \mathcal{O}_{#1}\right)}}
-\newcommand\manifold[1]{\ensuremath{\left(#1, \mathcal{O}_{#1}, \mathscr{A}_{#1}\right)}}
-\newcommand\restrict[2]{\ensuremath{\left.#1\right\rvert_{#2}}}
-\newcommand\bfield[1]{\ensuremath{\diffp*{}{#1}}}
-\newcommand\bvec[3][]{\ensuremath{\diffp*{#1}{#2}[#3]}}
-\newcommand\bset[3]{\ensuremath{\set*{\diffp*{}{{#1}^1}[#3], \dots, \diffp*{}{{#1}^{#2}}[#3]}}}
-\newcommand\pf[2][]{\ensuremath{{#2}_{\ast{#1}}}}
-\newcommand\pb[2][]{\ensuremath{{#2}^{\ast}_{#1}}}
-
-% catppuccin (latte)
-\definecolor{Rosewater}{RGB}{220,138,120}
-\definecolor{Flamingo}{RGB}{221,120,120}
-\definecolor{Pink}{RGB}{234,118,203}
-\definecolor{Mauve}{RGB}{136,57,239}
-\definecolor{Red}{RGB}{210,15,57}
-\definecolor{Maroon}{RGB}{230,69,83}
-\definecolor{Peach}{RGB}{254,100,11}
-\definecolor{Yellow}{RGB}{223,142,29}
-\definecolor{Green}{RGB}{64,160,43}
-\definecolor{Teal}{RGB}{23,146,153}
-\definecolor{Sky}{RGB}{4,165,229}
-\definecolor{Sapphire}{RGB}{32,159,181}
-\definecolor{Blue}{RGB}{30,102,245}
-\definecolor{Lavender}{RGB}{114,135,253}
-\definecolor{Text}{RGB}{76,79,105}
-\definecolor{Subtext1}{RGB}{92,95,119}
-\definecolor{Subtext0}{RGB}{108,111,133}
-\definecolor{Overlay2}{RGB}{124,127,147}
-\definecolor{Overlay1}{RGB}{140,143,161}
-\definecolor{Overlay0}{RGB}{156,160,176}
-\definecolor{Surface2}{RGB}{172,176,190}
-\definecolor{Surface1}{RGB}{188,192,204}
-\definecolor{Surface0}{RGB}{204,208,218}
-\definecolor{Base}{RGB}{239,241,245}
-\definecolor{Mantle}{RGB}{230,233,239}
-\definecolor{Crust}{RGB}{220,224,232}
-
-% References
-\usepackage{hyperref}
-\usepackage[brazilian,capitalize,nameinlink,noabbrev]{cleveref}
-% \captionsetup[figure]{hypcap=false}
-\makeatletter
-\hypersetup{
-    pdftitle=\@title,
-    pdfauthor=\@author,
-    colorlinks=true,
-    linkcolor=Mauve,
-    citecolor=pink,
-    filecolor=red,
-    urlcolor=blue,
-    bookmarksdepth=4
-}
-\makeatother
-
-% tcolorbox environments
-\tcbuselibrary{theorems}
-% theorem
-\newtcbtheorem[auto counter, crefname={Teorema}{Teoremas}]{theorem}{Teorema}%
-{breakable,colback=Mauve!5,colframe=Mauve!95!black,fonttitle=\bfseries}{thm}
-
-% definition
-\newtcbtheorem[auto counter, crefname={Definição}{Definições}]{definition}{Definição}%
-{breakable, colback=Pink!5,colframe=Pink!95!black,fonttitle=\bfseries}{def}
-
-% proposition
-\newtcbtheorem[auto counter, crefname={Proposição}{Proposições}]{proposition}{Proposição}%
-{breakable,colback=Lavender!5,colframe=Lavender!95!black,fonttitle=\bfseries}{prop}
-
-% lemma
-\newtcbtheorem[auto counter, crefname={Lema}{Lemas}]{lemma}{Lema}%
-{breakable,colback=Flamingo!5,colframe=Flamingo!95!black,fonttitle=\bfseries}{lem}
-
-% exercício
-\newtcbtheorem[auto counter, crefname={Exercício}{Exercícios}]{exercício}{Exercício}%
-{breakable,colback=Sky!5,colframe=Sky!95!black,fonttitle=\bfseries}{ex}
+\documentclass[portuguese]{artigo}
 
 \title{Variação de Palatini}
 \author{Louis Bergamo Radial\\8992822}
@@ -172,27 +6,194 @@
 \begin{document}
 \maketitle
 \begin{lemma}{A diferença entre conexões é um tensor}{conexões_tensor}
-    Seja \((M, g)\) uma variedade Lorentziana. Se \(\nabla, \nabla' : \sections{TM} \times \sections{TM} \to \sections{TM}\) são conexões afins, então a aplicação
-    \begin{align*}
-        D : \sections{TM} \times \sections{TM} &\to \sections{TM}\\
-                                         (X,Y) &\mapsto \nabla_XY - \nabla'_XY
-    \end{align*}
-    é um campo tensorial de ordem \((1, 2)\).
-\end{lemma}
-\begin{proof}
-    Consideremos \(f,g\in\smooth{M}\) e \(X,Y,Z \in\sections{TM}\) e mostremos que \(D\) é linear na dependência nos dois campos vetoriais. Utilizando a linearidade no primeiro argumento de uma conexão, segue que
-    \begin{align*}
-        D(fX + gY, Z) &= \nabla_{fX + gY}Z - \nabla'_{fX + gY}Z\\
-                      &= f \nabla_X Z + g\nabla_Y Z - f\nabla_X Z - g\nabla_Y Z\\
-                      &= f D(X,Z) + g D(Y,Z),
-    \end{align*}
-    logo \(D\) é linear em seu primeiro argumento. Pela aditividade e pela regra de Leibniz, obtemos
-    \begin{align*}
-        D(X, fY + gZ) &= \nabla_X (fY) + \nabla_X (gZ) - \nabla'_X (fY) - \nabla'_X (gZ)\\
-                      &= \left[(Xf)Y + f\nabla_X Y\right] + \left[(Xg)Z + g\nabla_X Z\right] - \left[(Xf)Y + f\nabla'_X Y\right] - \left[(Xg)Z + g\nabla'_X Z\right]\\
-                      &=  fD(X,Y) + gD(X,Z),
-    \end{align*}
-    portanto \(D\) é linear em seu segundo argumento. Por fim, notando que \(D(X,Y)\) é a combinação linear de dois campos vetoriais, segue que \(D(X,Y) \in \sections{TM}\) para todo \(X,Y\in \sections{TM}\), o que conclui a demonstração.
+        Seja \((M, g)\) uma variedade Lorentziana. Se \(\nabla, \tilde{\nabla} : \sections{TM} \times \sections{TM} \to \sections{TM}\) são conexões afins, então a aplicação
+        \begin{align*}
+            D : \sections{TM} \times \sections{TM} &\to \sections{TM}\\
+                                             (X,Y) &\mapsto \nabla_XY - \tilde{\nabla}_XY
+        \end{align*}
+        é um campo tensorial de ordem \((1, 2)\). Ainda, se os coeficientes das conexões em uma dada carta local são \(\Gamma\indices{^k_{ij}}\) e \(\tilde{\Gamma}\indices{^k_{ij}}\), então \(D\indices{^k_{ij}} = \Gamma\indices{^k_{ij}} - \tilde{\Gamma}\indices{^k_{ij}}\) é a expressão em coordenadas locais deste tensor.
+    \end{lemma}
+    \begin{proof}
+        Consideremos \(f,g\in\smooth{M}\) e \(X,Y,Z \in\sections{TM}\) e mostremos que \(D\) é linear na dependência nos dois campos vetoriais. Utilizando a linearidade no primeiro argumento de uma conexão, segue que
+        \begin{align*}
+            D(fX + gY, Z) &= \nabla_{fX + gY}Z - \tilde{\nabla}_{fX + gY}Z\\
+                          &= f \nabla_X Z + g\nabla_Y Z - f\nabla_X Z - g\nabla_Y Z\\
+                          &= f D(X,Z) + g D(Y,Z),
+        \end{align*}
+        logo \(D\) é linear em seu primeiro argumento. Pela aditividade e pela regra de Leibniz, obtemos
+        \begin{align*}
+            D(X, fY + gZ) &= \nabla_X (fY) + \nabla_X (gZ) - \tilde{\nabla}_X (fY) - \tilde{\nabla}_X (gZ)\\
+                          &= \left[(Xf)Y + f\nabla_X Y\right] + \left[(Xg)Z + g\nabla_X Z\right] - \left[(Xf)Y + f\tilde{\nabla}_X Y\right] - \left[(Xg)Z + g\tilde{\nabla}_X Z\right]\\
+                          &=  fD(X,Y) + gD(X,Z),
+        \end{align*}
+        portanto \(D\) é linear em seu segundo argumento. Por fim, notando que \(D(X,Y)\) é a combinação linear de dois campos vetoriais, segue que \(D(X,Y) \in \sections{TM}\) para todo \(X,Y\in \sections{TM}\), portanto concluímos que \(D\) é um tensor de ordem \((1,2)\).
+
+        Seja \((U, x) \in \mathscr{A}_M\) uma carta de coordenadas locais, então
+        \begin{align*}
+            D\indices{^k_{ij}} &= \inner*{\dl{x}^k}{D\left(\bfield{x^i}, \bfield{x^j}\right)}\\
+                               &= \inner*{\dl{x}^k}{\nabla_{\bfield{x^i}}\bfield{x^j} - \tilde{\nabla}_{\bfield{x^i}}\bfield{x^j}}\\
+                               &= \inner*{\dl{x}^k}{\nabla_{\bfield{x^i}}\bfield{x^j}} - \inner*{\dl{x}^k}{\tilde{\nabla}_{\bfield{x^i}}\bfield{x^j}}\\
+                               &= \Gamma\indices{^k_{ij}} - \tilde{\Gamma}\indices{^k_{ij}},
+        \end{align*}
+        como desejado.
 \end{proof}
 
+\begin{proposition}{Expressão em coordenadas locais do tensor de curvatura}{Riemann}
+    Seja \((M, g)\) uma variedade Lorentziana dotada de uma conexão \(\nabla\). O tensor de curvatura de Riemann, definido pela aplicação
+    \begin{align*}
+        R : \sections{TM} \times \sections{TM} \times \sections{TM} &\to \sections{TM}\\
+        (X, Y, Z) &\mapsto R(X,Y)Z = \nabla_X \nabla_Y Z - \nabla_Y \nabla_X Z - \nabla_{[X,Y]}Z,
+    \end{align*}
+    tem componentes em coordenadas locais dadas por
+    \begin{equation*}
+        R\indices{^\ell_{kij}} = \partial_i \Gamma\indices{^\ell_{jk}} - \partial_j \Gamma\indices{^\ell_{ik}} + \Gamma\indices{^m_{jk}}\Gamma\indices{^\ell_{im}} - \Gamma\indices{^m_{ik}}\Gamma\indices{^\ell_{jm}},
+    \end{equation*}
+    onde \(\Gamma\indices{^k_{ij}}\) são os coeficientes da conexão em coordenadas locais.
+\end{proposition}
+\begin{proof}
+    Seja \((U, x) \in \mathscr{A}_M\) uma carta de coordenadas locais, então
+    \begin{equation*}
+        \left[\bfield{x^i}, \bfield{x^j}\right] = 0
+    \end{equation*}
+    para quaisquer \(i,j\). Dessa forma, temos
+    \begin{align*}
+        R\indices{^\ell_{kij}} &= \inner*{\dl{x}^\ell}{R\left(\bfield{x^i}, \bfield{x^j}\right)\bfield{x^k}}\\
+                               &= \inner*{\dl{x}^\ell}{\nabla_{\bfield{x^i}} \nabla_{\bfield{x^j}} \bfield{x^k} - \nabla_{\bfield{x^j}} \nabla_{\bfield{x^i}} \bfield{x^k} - \nabla_{\left[\bfield{x^i}, \bfield{x^j}\right]}\bfield{x^k}}\\
+                               &= \inner*{\dl{x}^\ell}{\nabla_{\bfield{x^i}}\left(\Gamma\indices{^m_{jk}}\bfield{x^m}\right) - \nabla_{\bfield{x^j}}\left(\Gamma\indices{^m_{ik}}\bfield{x^m}\right)}\\
+                               &= \inner*{\dl{x}^\ell}{\partial_i \Gamma\indices{^m_{jk}}\bfield{x^m} + \Gamma\indices{^m_{jk}} \nabla_{\bfield{x^i}}\bfield{x^m} - \partial_j \Gamma\indices{^m_{ik}}\bfield{x^m} - \Gamma\indices{^m_{ik}}\nabla_{\bfield{x^j}}\bfield{x^m}}\\
+                               &= \inner*{\dl{x}^\ell}{\partial_i \Gamma\indices{^m_{jk}}\bfield{x^m} + \Gamma\indices{^m_{jk}} \Gamma\indices{^n_{im}} \bfield{x^n} - \partial_j \Gamma\indices{^m_{ik}}\bfield{x^m} - \Gamma\indices{^m_{ik}} \Gamma\indices{^n_{jm}} \bfield{x^n}}\\
+                               &= \partial_i \Gamma\indices{^\ell_{jk}} + \Gamma\indices{^m_{jk}}\Gamma\indices{^\ell_{im}} - \partial_j \Gamma\indices{^\ell_{ik}} - \Gamma\indices{^m_{ik}}\Gamma\indices{^\ell_{jm}},
+    \end{align*}
+    como queríamos mostrar.
+\end{proof}
+
+\begin{lemma}{Identidade de Palatini}{palatini}
+    Seja \((M, g)\) uma variedade Lorentziana dotada de uma conexão livre de torção \(\nabla\), cujos coeficientes em uma carta local de coordenadas são \(\Gamma\indices{^k_{ij}}\). Uma variação \(\delta \Gamma\indices{^k_{ij}}\) nos coeficientes da conexão resulta na variação do tensor de curvatura de Riemann \(\delta R^{\ell_{kij}}\) e no tensor de Ricci \(\delta R_{kj}\) dadas por
+    \begin{equation*}
+        \delta R\indices{^\ell_{kij}} = \nabla_i \delta \Gamma\indices{^\ell_{jk}} - \nabla_j \delta \Gamma\indices{^\ell_{ik}}
+        \quad\text{e}\quad
+        \delta R_{kj} = \nabla_i \delta \Gamma\indices{^i_{jk}} - \nabla_j \delta \Gamma\indices{^i_{ik}}.
+    \end{equation*}
+\end{lemma}
+\begin{proof}
+    Consideremos o tensor de curvatura de Riemann, com expressão em coordenadas locais dadas por
+    \begin{equation*}
+        R\indices{^\ell_{kij}} = \partial_i \Gamma\indices{^\ell_{jk}} - \partial_j \Gamma\indices{^\ell_{ik}} + \Gamma\indices{^m_{jk}}\Gamma\indices{^\ell_{im}} - \Gamma\indices{^m_{ik}}\Gamma\indices{^\ell_{jm}},
+    \end{equation*}
+    então uma transformação \(\Gamma\indices{^k_{ij}} \to  \Gamma\indices{^k_{ij}} + \delta \Gamma{^k_{ij}}\) resulta na transformação \(R\indices{^\ell_{kij}} \to R\indices{^\ell_{kij}} + \delta R\indices{^\ell_{kij}}\), onde
+    \begin{equation*}
+        \delta R\indices{^\ell_{kij}} = \partial_i \delta\Gamma\indices{^\ell_{jk}} - \partial_j \delta\Gamma\indices{^\ell_{ik}} + \Gamma\indices{^m_{jk}}\delta\Gamma\indices{^\ell_{im}} + \Gamma\indices{^\ell_{im}}\delta\Gamma\indices{^m_{jk}} - \Gamma\indices{^m_{ik}}\delta\Gamma\indices{^\ell_{jm}} - \Gamma\indices{^\ell_{jm}}\delta\Gamma\indices{^m_{ik}}.
+    \end{equation*}
+    Pelo \cref{lem:conexões_tensor}, segue que \(\delta \Gamma\indices{^k_{ij}}\) é um tensor, portanto sua derivada covariante está bem definida e é dada em coordenadas locais por
+    \begin{equation*}
+        \nabla_{i} \delta\Gamma\indices{^\ell_{jk}} = \partial_i \delta \Gamma\indices{^\ell_{jk}} + \Gamma\indices{^\ell_{im}} \delta\Gamma\indices{^m_{jk}} - \Gamma\indices{^m_{ij}} \delta\Gamma\indices{^\ell_{mk}} - \Gamma\indices{^m_{ik}}\delta\Gamma\indices{^\ell_{jm}}.
+    \end{equation*}
+    Podemos escrever a variação dos componentes do tensor de curvatura como
+    \begin{align*}
+        \delta R\indices{^\ell_{kij}} &= \left(\partial_i \delta\Gamma\indices{^\ell_{jk}}+ \Gamma\indices{^\ell_{im}}\delta\Gamma\indices{^m_{jk}} - \Gamma\indices{^m_{ik}}\delta\Gamma\indices{^\ell_{jm}} \right) - \left(\partial_j \delta\Gamma\indices{^\ell_{ik}} + \Gamma\indices{^\ell_{jm}}\delta\Gamma\indices{^m_{ik}}- \Gamma\indices{^m_{jk}}\delta\Gamma\indices{^\ell_{im}} \right)\\
+                                      &= \left(\nabla_i \delta\Gamma\indices{^\ell_{jk}} + \Gamma\indices{^m_{ij}} \delta\Gamma\indices{^\ell_{mk}}\right) - \left(\nabla_j \delta\Gamma\indices{^\ell_{ik}} + \Gamma\indices{^m_{ji}}\delta\Gamma\indices{^\ell_{mk}}\right)\\
+                                      &= \nabla_i \delta\Gamma\indices{^\ell_{jk}} - \nabla_j \delta\Gamma\indices{^\ell_{ik}},
+    \end{align*}
+    já que a conexão é simétrica.
+\end{proof}
+
+\begin{theorem}{Variação de Palatini}{palatini}
+    Seja \((M,g)\) uma variedade Lorentziana dotada de uma conexão livre de torção \(\nabla\), cujos coeficientes em uma carta local de coordenadas são \(\Gamma\indices{^k_{ij}}\). As equações de Euler-Lagrange para a ação
+    \begin{equation*}
+        S[g_{ij}, \Gamma\indices{^k_{ij}}] = \int_M \sqrt{-g}\dln4x \left(\frac{1}{2 \kappa} R + \mathcal{L}_\mathrm{m}\right),
+    \end{equation*}
+    em que \(R = g^{ij}R_{ij}\) é o escalar de Ricci com \(R_{ij}\) o tensor de Ricci, \(\kappa\) é uma constante, e \(\mathcal{L}_\mathrm{m}\) é uma densidade de lagrangiana para a matéria que não depende da conexão, são dadas por
+    \begin{equation*}
+        R_{ij} - \frac12 Rg_{ij} = \kappa T_{ij}\quad\text{e}\quad \Gamma\indices{^k_{ij}} = \frac12 g^{k\ell}\left(\partial_ig_{\ell j} + \partial_j g_{\ell i} - \partial_\ell g_{ij}\right),
+    \end{equation*}
+    onde
+    \begin{equation*}
+        T_{ij} = \frac{-2}{\sqrt{-g}}\frac{\delta (\sqrt{-g} \mathcal{L}_\mathrm{m})}{\delta g^{ij}}
+    \end{equation*}
+    é o tensor de energia e momento.
+\end{theorem}
+\begin{proof}
+    Pela variação da métrica, temos
+    \begin{align*}
+        \delta S &= \int_M \dln4x \left[\frac1{2 \kappa}\left(R \frac{\delta\sqrt{-g}}{\delta g^{ij}} + \sqrt{-g} \frac{\delta R}{\delta g^{ij}}\right) + \frac{\delta (\sqrt{-g} \mathcal{L}_\mathrm{m})}{\delta g^{ij}}\right] \delta g^{ij}\\
+                 &=\int_M \sqrt{-g}\dln4x \left[\frac1{2 \kappa}\left(\frac{R}{\sqrt{-g}} \frac{\delta\sqrt{-g}}{\delta g^{ij}} +  \frac{\delta R}{\delta g^{ij}}\right) + \frac{1}{\sqrt{-g}}\frac{\delta (\sqrt{-g} \mathcal{L}_\mathrm{m})}{\delta g^{ij}}\right] \delta g^{ij},
+    \end{align*}
+    isto é, a derivada funcional da ação em relação à métrica é
+    \begin{align*}
+        \frac{\delta S}{\delta g^{ij}} &= \frac{1}{2 \kappa}\left(\frac{R}{\sqrt{-g}} \frac{\delta \sqrt{-g}}{\delta g^{ij}} + \frac{\delta R}{\delta g^{ij}} + \frac{2 \kappa}{\sqrt{-g}}\frac{\delta(\sqrt{-g}\mathcal{L}_\mathrm{m})}{\delta g^{ij}}\right)\\
+                                       &=\frac{1}{2 \kappa}\left(\frac{R}{2g} \frac{\delta g}{\delta g^{ij}} + R_{ij} - \kappa T_{ij}\right),
+    \end{align*}
+    em que utilizamos a independência do tensor de Ricci com a métrica. Pela fórmula de Jacobi, temos
+    \begin{equation*}
+        \delta g = g g^{ij} \delta g_{ij},
+    \end{equation*}
+    portanto, como \(g^{ij} \delta g_{ij} + g_{ij} \delta g^{ij} = 0\), temos
+    \begin{equation*}
+        \frac{\delta S}{\delta g^{ij}} = \frac{1}{2 \kappa}\left(R_{ij} - \frac{1}{2}R g_{ij} - \kappa T_{ij}\right).
+    \end{equation*}
+
+    Pela variação dos coeficientes da conexão, temos
+    \begin{equation*}
+        \delta S = \frac{1}{2 \kappa}\int_M \sqrt{-g}\dln4x g^{ij} \left(\nabla_m \delta \Gamma\indices{^m_{ji}} - \nabla_j \delta \Gamma\indices{^m_{mi}}\right),
+    \end{equation*}
+    pelo \cref{lem:palatini} e pela densidade de lagrangiana da matéria ser independente da conexão. Consideremos a conexão de Levi-Civita \(\tilde{\nabla}\), então pelo \cref{lem:conexões_tensor}, existe um tensor \(D\) tal que para todos \(X, Y \in \sections{TM}\)
+    \begin{equation*}
+        \nabla_X Y = \tilde{\nabla}_X Y + D(X,Y),
+    \end{equation*}
+    de modo que
+    \begin{align*}
+        2 \kappa \delta S &= \int_M\sqrt{-g}\dln4x g^{ij} \begin{multlined}[t]\left[\left(\tilde{\nabla}_m \delta\Gamma\indices{^m_{ji}}+ D\indices{^m_{mn}} \delta\Gamma\indices{^n_{ji}} - D\indices{^n_{mj}} \delta\Gamma\indices{^m_{ni}} - D\indices{^n_{mi}}\delta\Gamma\indices{^m_{jn}}\right)\right. \\ - \left.\left(\tilde{\nabla}_j \delta\Gamma\indices{^m_{mi}}+ D\indices{^m_{jn}} \delta\Gamma\indices{^n_{mi}} - D\indices{^n_{jm}} \delta\Gamma\indices{^m_{ni}} - D\indices{^n_{ji}}\delta\Gamma\indices{^m_{mn}}\right)\right]\end{multlined}\\
+                          &= \int_M\sqrt{-g}\dln4x \begin{multlined}[t]\left[
+                              \tilde{\nabla}_m\left(g^{ij}\delta\Gamma\indices{^m_{ji}} - g^{im}\delta\Gamma\indices{^n_{ni}}\right) + g^{ij}\left(D\indices{^n_{jm}} - D\indices{^n_{mj}}\right)\delta\Gamma\indices{^m_{ni}}\right.\\\left.+ g^{ij}\left(D\indices{^m_{mn}}\delta\Gamma\indices{^n_{ji}} - D\indices{^n_{mi}}\delta\Gamma\indices{^m_{jn}} - D\indices{^m_{jn}}\delta\Gamma\indices{^n_{mi}} + D\indices{^n_{ji}}\delta\Gamma\indices{^m_{mn}}\right)\right].
+                          \end{multlined}
+    \end{align*}
+    O termo dado por uma derivada covariante em relação à métrica de Levi-Civita resulta em um termo de fronteira e o termo dada pela antissimetrização do tensor simétrico \(D\) se anula, portanto a variação da ação em relação aos coeficientes da conexão só é dado pelo último termo, isto é,
+    \begin{align*}
+        \delta S &= \frac{1}{2 \kappa}\int_M \sqrt{-g} \dln4x g^{ij}\left(D\indices{^m_{mn}}\delta\Gamma\indices{^n_{ji}} - D\indices{^n_{mi}}\delta\Gamma\indices{^m_{jn}} - D\indices{^m_{jn}}\delta\Gamma\indices{^n_{mi}} + D\indices{^n_{ji}}\delta\Gamma\indices{^m_{mn}}\right)\\
+                 &= \frac{1}{2 \kappa}\int_M\sqrt{-g}\dln4x g^{ij} \left(D\indices{^\ell_{\ell k}}\delta\indices{^r_j}\delta\indices{^s_i} - D\indices{^\ell_{ki}}\delta\indices{^r_j}\delta\indices{^s_\ell} - D\indices{^\ell_{jk}}\delta\indices{^r_\ell}\delta\indices{^s_i} + D\indices{^\ell_{ji}}\delta\indices{^r_k}\delta\indices{^s_\ell}\right) \delta \Gamma\indices{^k_{rs}}\\
+                 &= \frac{1}{2 \kappa}\int_M\sqrt{-g}\dln4x \left(D\indices{^\ell_{\ell k}} g^{sr} - D\indices{^s_{ki}}g^{ir} - D\indices{^r_{jk}}g^{sj} + D\indices{^s_{ji}}\delta\indices{^r_k}g^{ij}\right) \delta\Gamma\indices{^k_{rs}}.
+    \end{align*}
+    Assim, a derivada funcional da ação em relação aos coeficientes da conexão é dada por
+    \begin{align*}
+        \frac{\delta S}{\delta \Gamma\indices{^k_{ij}}} &= \frac1{2 \kappa} \left(D\indices{^\ell_{\ell k}}g^{ji} - D\indices{^j_{k\ell}}g^{\ell i} - D\indices{^i_{\ell k}}g^{j\ell} + D\indices{^j_{m \ell}}\delta\indices{^i_k} g^{\ell m}\right)\\
+                                                        &= \frac{1}{2 \kappa} \left(D\indices{^\ell_{\ell k}}g^{ij} - D\indices{^{ji}_k} - D\indices{^{ij}_k} + D\indices{^{j\ell}_{\ell}}\delta\indices{^i_k}\right),
+    \end{align*}
+    utilizando a simetria da métrica e do tensor \(D\).
+
+    A partir de \(\delta S = 0\) e da independência da variação em relação a métrica e à conexão, obtemos as equações de movimento
+    \begin{equation*}
+        R_{ij} - \frac12 Rg_{ij} = \kappa T_{ij}\quad\text{e}\quad
+    D\indices{^\ell_{\ell k}}g^{ij} - D\indices{^{ji}_k} - D\indices{^{ij}_k} + D\indices{^{j\ell}_{\ell}}\delta\indices{^i_k} = 0.
+    \end{equation*}
+    Para completar a demonstração, devemos mostrar que \(D\) é o tensor nulo, isto é, que a conexão \(\nabla\) deve ser igual à conexão de Levi-Civita. Contraímos os índices \(i\) e \(k\) na equação para \(D\), obtendo
+    \begin{equation*}
+        D\indices{^\ell_\ell^j} +3D\indices{^{j\ell}_\ell} - D\indices{^{\ell j}_\ell} = 0.
+    \end{equation*}
+    Da simetria do tensor, temos
+    \begin{equation*}
+        D\indices{^\ell_{\ell}^j} = g^{ij}D\indices{^\ell_{\ell i}} = g^{ij} D\indices{^\ell_{i\ell}} = D\indices{^{\ell j}_\ell},
+    \end{equation*}
+    portanto \(D\indices{^{j\ell}_\ell} = 0\).
+    Contraímos a equação de movimento para \(D\) com \(g_{ij}\), obtendo
+    \begin{equation*}
+        2D\indices{^\ell_{\ell k}} + D\indices{_k^\ell_\ell} = 0,
+    \end{equation*}
+    portanto, como \(D\indices{_k^\ell_\ell} = g_{kj}D\indices{^{j\ell}_\ell}\), segue que \(D\indices{^\ell_{\ell k}} = 0\). Substituindo na equação de movimento, temos
+    \begin{equation*}
+        D\indices{^{ij}_k} + D\indices{^{ji}_k} = 0
+    \end{equation*}
+    portanto contraindo com \(g^{kn}\) e tomando permutações cíclicas de  \(\set{i,j,n}\), temos
+    \begin{equation*}
+        \begin{cases}
+            D^{ijn} + D^{jin} = 0\\
+            D^{jni} + D^{nji} = 0\\
+            D^{nij} + D^{inj} = 0
+        \end{cases}.
+    \end{equation*}
+    Somando as duas primeiras equações e subtraindo a terceira, temos
+    \begin{equation*}
+        \left(D^{ijn} - D^{inj}\right) + \left(D^{jin} + D^{jni}\right) + \left(D^{nji} - D^{nij}\right) = 0,
+    \end{equation*}
+    portanto pela simetria do último par de índices, temos \(D^{jin} = 0\), isto é, \(D\) é o tensor nulo.
+\end{proof}
 \end{document}
